@@ -57,7 +57,7 @@
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
       <span style="font-size:12px;font-weight:700;color:#e74c3c;">Day 1</span><span style="font-size:10px;color:#a0987a;">6/8 一</span>
     </div>
-    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">北京→浊漳河谷 · 🚗 550km</div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">北京→浊漳河谷 · 🚗 576km · 6.8h</div>
     <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
       <li style="list-style:none;">· ⭐ 龙门寺 · 淳化寺</li>
       <li style="list-style:none;">· 🏨 宿平顺/河谷区</li>
@@ -78,7 +78,7 @@
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
       <span style="font-size:12px;font-weight:700;color:#ccb000;">Day 3</span><span style="font-size:10px;color:#a0987a;">6/10 三</span>
     </div>
-    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">河谷→长治 · 🚗 50km</div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">河谷→长治 · 🚗 57km · 52min</div>
     <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
       <li style="list-style:none;">· ⭐ 观音堂悬塑</li>
       <li style="list-style:none;">· 🕌 铜锅街清真晚餐</li>
@@ -100,7 +100,7 @@
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
       <span style="font-size:12px;font-weight:700;color:#1abc9c;">Day 5</span><span style="font-size:10px;color:#a0987a;">6/12 五</span>
     </div>
-    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">长治→高平 · 🚗 80km</div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">长治→高平 · 🚗 52km · 41min</div>
     <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
       <li style="list-style:none;">· ⭐ 开化寺北宋壁画</li>
       <li style="list-style:none;">· ⭐ 姬氏民居元代孤例</li>
@@ -111,7 +111,7 @@
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
       <span style="font-size:12px;font-weight:700;color:#3498db;">Day 6</span><span style="font-size:10px;color:#a0987a;">6/13 六</span>
     </div>
-    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">高平→晋城·皇城 · 🚗 75km</div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">高平→晋城·皇城 · 🚗 94km · 1.3h</div>
     <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
       <li style="list-style:none;">· ⭐⭐ 玉皇庙二十八星宿</li>
       <li style="list-style:none;">· 皇城相府</li>
@@ -122,7 +122,7 @@
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
       <span style="font-size:12px;font-weight:700;color:#9b59b6;">Day 7</span><span style="font-size:10px;color:#a0987a;">6/14 日</span>
     </div>
-    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">湘峪古堡→北京 · 🚗 700km</div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">湘峪古堡→北京 · 🚗 752km · 8.7h</div>
     <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
       <li style="list-style:none;">· 湘峪古堡明代藏兵</li>
       <li style="list-style:none;">· 🏠 预计晚8点到家</li>
@@ -167,6 +167,15 @@ var routeData = [
 // 返程（虚线）
 var retRoute = r6;
 
+// 绘制路线
+for (var i = 0; i < routeData.length; i++) {
+  ov.addLayer(L.polyline(routeData[i][1], {
+    color: routeData[i][0], weight: 4, opacity: 0.85, smoothFactor: 1
+  }));
+}
+ov.addLayer(L.polyline(retRoute, {
+  color: '#b8b09a', weight: 4, opacity: 0.7, dashArray: '10,10', smoothFactor: 1
+}));
 
 // 总览：城市名
 var cityPos = [
@@ -190,16 +199,16 @@ for (var i = 0; i < cityPos.length; i++) {
   }));
 }
 
-// 总览：每天 D1 / 🚗 550km·6h
+// 总览：每天 D1 / 🚗 576km·6.8h
 var dayPos = [
-  [37.50,114.60,'D1','550km','6h','#e74c3c'],
+  [37.50,114.60,'D1','576km','6.8h','#e74c3c'],
   [36.42,113.70,'D2','20km','1h','#e67e22'],
-  [36.05,113.22,'D3','50km','1h','#f1c40f'],
+  [36.05,113.22,'D3','57km','52min','#f1c40f'],
   [36.26,113.20,'D4','40km','1h','#2ecc71'],
-  [35.92,113.08,'D5','80km','1h','#1abc9c'],
-  [35.30,112.98,'D6','75km','1.5h','#3498db'],
-  [35.72,112.05,'D7','40km','40min','#9b59b6'],
-  [37.30,113.60,'返程','700km','7h','#b8b09a'],
+  [35.92,113.08,'D5','52km','41min','#1abc9c'],
+  [35.30,112.98,'D6','94km','1.3h','#3498db'],
+  [35.72,112.05,'D7','72km','54min','#9b59b6'],
+  [37.30,113.60,'返程','752km','8.7h','#b8b09a'],
 ];
 for (var i = 0; i < dayPos.length; i++) {
   var d = dayPos[i];
