@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晋东南古建自驾 · 路线图 (深色版)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0f172a; color: #e2e8f0; font-family: 'Noto Sans SC', system-ui, sans-serif; min-height: 100vh; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+  header { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; }
+  header h1 { font-size: 28px; font-weight: 900; background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  header .sub { font-size: 14px; color: #64748b; font-weight: 300; }
+  header .badge { background: #1e293b; border: 1px solid #334155; border-radius: 20px; padding: 6px 16px; font-size: 13px; color: #94a3b8; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 36px; }
+  .stat-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px; text-align: center; }
+  .stat-card .num { font-size: 24px; font-weight: 700; background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-card .label { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+  .route-map { position: relative; background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 40px 24px; margin-bottom: 36px; overflow: hidden; }
+  .route-map::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(51,65,85,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(51,65,85,0.2) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+
+  .route-stops { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0; }
+  .stop { display: flex; align-items: flex-start; gap: 20px; position: relative; padding: 16px 0; min-height: 80px; }
+  .stop:last-child { min-height: 0; }
+  .stop-marker { display: flex; flex-direction: column; align-items: center; width: 40px; flex-shrink: 0; position: relative; }
+  .stop-dot { width: 20px; height: 20px; border-radius: 50%; border: 3px solid; background: #1e293b; z-index: 2; position: relative; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
+  .stop-line { width: 2px; flex-grow: 1; min-height: 40px; margin: 4px 0; }
+  .stop:last-child .stop-line { display: none; }
+  .stop-content { flex: 1; padding-top: 2px; }
+  .stop-title { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+  .stop-meta { font-size: 12px; color: #64748b; margin-bottom: 6px; }
+  .stop-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 10px; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); color: #fbbf24; }
+  .tag-star { background: rgba(251,191,36,0.2); border-color: #fbbf24; }
+  .tag-purple { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.2); color: #a78bfa; }
+  .tag-rose { background: rgba(251,113,133,0.1); border-color: rgba(251,113,133,0.2); color: #fb7185; }
+
+  .stop-0 .stop-dot { border-color: #f87171; } .stop-0 .stop-line { background: linear-gradient(to bottom, #f87171, #fbbf24); } .stop-0 .stop-title { color: #f87171; }
+  .stop-1 .stop-dot { border-color: #fbbf24; } .stop-1 .stop-line { background: linear-gradient(to bottom, #fbbf24, #34d399); } .stop-1 .stop-title { color: #fbbf24; }
+  .stop-2 .stop-dot { border-color: #34d399; } .stop-2 .stop-line { background: linear-gradient(to bottom, #34d399, #38bdf8); } .stop-2 .stop-title { color: #34d399; }
+  .stop-3 .stop-dot { border-color: #38bdf8; } .stop-3 .stop-line { background: linear-gradient(to bottom, #38bdf8, #a78bfa); } .stop-3 .stop-title { color: #38bdf8; }
+  .stop-4 .stop-dot { border-color: #a78bfa; } .stop-4 .stop-line { background: linear-gradient(to bottom, #a78bfa, #f472b6); } .stop-4 .stop-title { color: #a78bfa; }
+  .stop-5 .stop-dot { border-color: #f472b6; } .stop-5 .stop-line { background: linear-gradient(to bottom, #f472b6, #fb923c); } .stop-5 .stop-title { color: #f472b6; }
+  .stop-6 .stop-dot { border-color: #fb923c; } .stop-6 .stop-title { color: #fb923c; }
+
+  .day-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 16px; margin-top: 36px; }
+  .day-card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 20px; transition: border-color 0.2s; }
+  .day-card:hover { border-color: #fbbf24; }
+  .day-card .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #334155; }
+  .day-card .day-label { font-size: 14px; font-weight: 700; }
+  .day-card .day-date { font-size: 12px; color: #64748b; }
+  .day-card .day-route { font-size: 12px; color: #fbbf24; margin-bottom: 8px; }
+  .day-card .day-items { list-style: none; font-size: 13px; line-height: 1.7; color: #cbd5e1; }
+  .day-card .day-items li::before { content: '▸ '; color: #fbbf24; }
+  .day-card .highlight { color: #fbbf24; font-weight: 500; }
+
+  .tips { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 12px; }
+  .tip { background: rgba(251,191,36,0.05); border: 1px solid rgba(251,191,36,0.15); border-radius: 10px; padding: 14px 16px; font-size: 13px; color: #94a3b8; display: flex; align-items: start; gap: 10px; }
+  .tip-icon { font-size: 16px; flex-shrink: 0; }
+
+  .footer { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid #1e293b; font-size: 12px; color: #475569; }
+
+  @media (max-width: 640px) { .container { padding: 20px 16px; } header h1 { font-size: 22px; } .stop { gap: 12px; } .stop-title { font-size: 14px; } .day-cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div>
+    <h1>🏛️ 晋东南古建自驾路线图</h1>
+    <div class="sub">北京出发 · 浊漳河谷 · 长治 · 高平 · 晋城 · 七日古建巡礼</div>
+  </div>
+  <div class="badge">🚗 G先生专属定制</div>
+</header>
+
+<div class="stats">
+  <div class="stat-card"><div class="num">7</div><div class="label">天数</div></div>
+  <div class="stat-card"><div class="num">~2,200</div><div class="label">总车程 (km)</div></div>
+  <div class="stat-card"><div class="num">18+</div><div class="label">国保单位</div></div>
+  <div class="stat-card"><div class="num">2</div><div class="label">同行人数</div></div>
+</div>
+
+<div class="route-map">
+  <div class="route-stops">
+
+    <div class="stop stop-0">
+      <div class="stop-marker"><div class="stop-dot">①</div><div class="stop-line"></div></div>
+      <div class="stop-content">
+        <div class="stop-title">北京 · 出发</div>
+        <div class="stop-meta">6月8日（一）早 7:00 🚗 6h / 550km</div>
+        <div class="stop-tags"><span class="tag tag-rose">出发</span><span class="tag">京港澳高速</span></div>
+      </div>
+    </div>
+
+    <div class="stop stop-1">
+      <div class="stop-marker"><div class="stop-dot">②</div><div class="stop-line"></div></div>
+      <div class="stop-content">
+        <div class="stop-title">浊漳河谷 · 古建第一河谷</div>
+        <div class="stop-meta">6月8-9日（一-二）· 住平顺/河谷</div>
+        <div class="stop-tags"><span class="tag tag-star">⭐ 龙门寺</span><span class="tag tag-star">⭐ 大云院</span><span class="tag">天台庵</span><span class="tag">原起寺</span><span class="tag">九天圣母庙</span></div>
+      </div>
+    </div>
+
+    <div class="stop stop-2">
+      <div class="stop-marker"><div class="stop-dot">③</div><div class="stop-line"></div></div>
+      <div class="stop-content">
+        <div class="stop-title">长治 · 悬塑与彩塑</div>
+        <div class="stop-meta">6月10-11日（三-四）· 🚗 50min → 住长治</div>
+        <div class="stop-tags"><span class="tag tag-star">⭐ 观音堂悬塑</span><span class="tag tag-star">⭐ 法兴寺</span><span class="tag">崇庆寺</span><span class="tag tag-purple">🕌 铜锅街清真美食</span></div>
+      </div>
+    </div>
+
+    <div class="stop stop-3">
+      <div class="stop-marker"><div class="stop-dot">④</div><div class="stop-line"></div></div>
+      <div class="stop-content">
+        <div class="stop-title">高平 · 宋代壁画巅峰</div>
+        <div class="stop-meta">6月12日（五）· 🚗 1h → 住高平</div>
+        <div class="stop-tags"><span class="tag tag-star">⭐ 开化寺壁画</span><span class="tag tag-star">⭐ 姬氏民居</span><span class="tag">崇明寺</span></div>
+      </div>
+    </div>
+
+    <div class="stop stop-4">
+      <div class="stop-marker"><div class="stop-dot">⑤</div><div class="stop-line"></div></div>
+      <div class="stop-content">
+        <div class="stop-title">晋城 · 古建终极站</div>
+        <div class="stop-meta">6月13日（六）· 🚗 40min → 住皇城相府附近</div>
+        <div class="stop-tags"><span class="tag tag-star">⭐⭐ 玉皇庙二十八星宿</span><span class="tag">青莲寺</span><span class="tag">皇城相府</span></div>
+      </div>
+    </div>
+
+    <div class="stop stop-5">
+      <div class="stop-marker"><div class="stop-dot">⑥</div><div class="stop-line"></div></div>
+      <div class="stop-content">
+        <div class="stop-title">湘峪古堡 · 明代兵堡</div>
+        <div class="stop-meta">6月14日（日）早 · 🚗 40min 从皇城相府出发</div>
+        <div class="stop-tags"><span class="tag">明代藏兵洞</span><span class="tag tag-star">人少味正</span></div>
+      </div>
+    </div>
+
+    <div class="stop stop-6">
+      <div class="stop-marker"><div class="stop-dot">⑦</div><div class="stop-line"></div></div>
+      <div class="stop-content">
+        <div class="stop-title">返程 · 北京</div>
+        <div class="stop-meta">6月14日（日）🚗 7h / 700km 预计晚8点到家</div>
+        <div class="stop-tags"><span class="tag tag-rose">到家 🏠</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h2 style="font-size:18px;font-weight:700;margin-bottom:16px;color:#94a3b8;">📋 每日详情</h2>
+<div class="day-cards">
+
+  <div class="day-card">
+    <div class="day-header"><span class="day-label">Day 1 · 6/8（一）</span><span class="day-date">🚗 550km</span></div>
+    <div class="day-route">北京 → 浊漳河谷</div>
+    <ul class="day-items"><li>早 7:00 从北京出发</li><li>龙门寺 ⭐ 六朝木构于一寺</li><li>淳化寺 金代大殿</li><li>🏨 宿平顺/河谷区</li></ul>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header"><span class="day-label">Day 2 · 6/9（二）</span><span class="day-date">🚗 短途河谷穿梭</span></div>
+    <div class="day-route">浊漳河谷深度游</div>
+    <ul class="day-items"><li>天台庵 → 大云院 <span class="highlight">五代壁画</span></li><li>原起寺 → 佛头寺 → 回龙寺</li><li>夏禹神祠 → 九天圣母庙</li><li>🏨 宿平顺/河谷区</li></ul>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header"><span class="day-label">Day 3 · 6/10（三）</span><span class="day-date">🚗 50km</span></div>
+    <div class="day-route">河谷 → 长治</div>
+    <ul class="day-items"><li>上午河谷扫尾或补觉</li><li>观音堂 <span class="highlight">明代悬塑巅峰</span></li><li>上党门（长治地标）</li><li>🏨 长治精品酒店 · 🕌 铜锅街清真晚餐</li></ul>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header"><span class="day-label">Day 4 · 6/11（四）</span><span class="day-date">🚗 短途</span></div>
+    <div class="day-route">长治周边</div>
+    <ul class="day-items"><li>法兴寺 <span class="highlight">宋代十二圆觉彩塑</span></li><li>崇庆寺 宋代罗汉像</li><li>可选：金灯寺石窟（悬崖石窟）</li><li>🏨 长治</li></ul>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header"><span class="day-label">Day 5 · 6/12（五）</span><span class="day-date">🚗 80km</span></div>
+    <div class="day-route">长治 → 高平</div>
+    <ul class="day-items"><li>开化寺 <span class="highlight">北宋壁画 88㎡</span></li><li>崇明寺 北宋早期大木作</li><li>姬氏民居 <span class="highlight">全国最早元代民居</span></li><li>🏨 高平</li></ul>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header"><span class="day-label">Day 6 · 6/13（六）</span><span class="day-date">🚗 40km</span></div>
+    <div class="day-route">高平 → 晋城 · 皇城相府</div>
+    <ul class="day-items"><li>玉皇庙 <span class="highlight">⭐⭐ 二十八星宿彩塑</span></li><li>青莲寺 唐代彩塑</li><li>下午：皇城相府（清代相府）</li><li>🏨 宿皇城相府/阳城县</li></ul>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header"><span class="day-label">Day 7 · 6/14（日）</span><span class="day-date">🚗 700km</span></div>
+    <div class="day-route">湘峪古堡 → 🏠 北京</div>
+    <ul class="day-items"><li>早：湘峪古堡 <span class="highlight">明代藏兵城堡</span></li><li>🚗 7h 一路北上回北京</li><li>预计晚 7-8 点到家</li></ul>
+  </div>
+
+</div>
+
+<div class="tips">
+  <div class="tip"><span class="tip-icon">🔦</span><span>带手电筒 — 很多古殿内没照明</span></div>
+  <div class="tip"><span class="tip-icon">💰</span><span>备零钱 — 找文保员开门，10-20元</span></div>
+  <div class="tip"><span class="tip-icon">📱</span><span>提前下载离线地图</span></div>
+  <div class="tip"><span class="tip-icon">🌅</span><span>上午看古建光线最好</span></div>
+  <div class="tip"><span class="tip-icon">🕌</span><span>长治铜锅街·晋城南大街 — 清真补给站</span></div>
+  <div class="tip"><span class="tip-icon">🌧️</span><span>浊漳河谷山路雨后易滑，注意安全</span></div>
+</div>
+
+<div class="footer">由 Hermes Agent 为 G先生定制 · 2026年6月 · 深色版</div>
+</div>
+</body>
+</html>
