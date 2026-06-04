@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晋东南古建自驾 · 路线图</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans SC',sans-serif;background:#faf8f5;color:#3d3929}
+  .container{max-width:1200px;margin:0 auto;padding:28px 16px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  header h1{font-size:22px;font-weight:700;color:#3d3929}
+  header h1 small{font-size:12px;font-weight:400;color:#a0987a;margin-left:10px}
+  header .meta{font-size:12px;color:#a0987a}
+  header .badge{background:#efece4;color:#7a7258;font-size:11px;padding:4px 12px;border-radius:12px}
+  .map-wrap{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.06)}
+  #map{height:700px;width:100%}
+  .legend{display:flex;gap:10px;padding:8px 16px;background:#faf8f5;border-bottom:1px solid #f0ede6;font-size:11px;color:#7a7258;flex-wrap:wrap;align-items:center}
+  .legend-item{display:flex;align-items:center;gap:4px}
+  .legend-line{width:20px;height:3px;border-radius:2px}
+  .legend-dash{width:20px;height:0;border-top:3px dashed #b8b09a}
+  .legend-sep{color:#ddd8ce;margin:0 2px}
+  .legend-hint{color:#b8b09a;font-size:10px}
+  .footer{text-align:center;margin-top:24px;padding-top:14px;border-top:1px solid #f0ede6;font-size:11px;color:#b8b09a}
+  @media(max-width:640px){.container{padding:16px 10px}#map{height:500px}}
+</style>
+</head><body>
+<div class="container">
+
+<header>
+  <div>
+    <h1>🏛️ 晋东南古建自驾 <small>2026.6.8 — 6.14</small></h1>
+    <div class="meta">北京出发 · 浊漳河谷 · 长治 · 高平 · 晋城 · 🕌 清真饮食</div>
+  </div>
+  <span class="badge">🚗 G先生定制</span>
+</header>
+
+<div class="map-wrap">
+  <div class="legend">
+    <span class="legend-item"><span class="legend-line" style="background:#e74c3c"></span>D1</span>
+    <span class="legend-item"><span class="legend-line" style="background:#e67e22"></span>D2</span>
+    <span class="legend-item"><span class="legend-line" style="background:#f1c40f"></span>D3</span>
+    <span class="legend-item"><span class="legend-line" style="background:#2ecc71"></span>D4</span>
+    <span class="legend-item"><span class="legend-line" style="background:#1abc9c"></span>D5</span>
+    <span class="legend-item"><span class="legend-line" style="background:#3498db"></span>D6</span>
+    <span class="legend-item"><span class="legend-line" style="background:#9b59b6"></span>D7</span>
+    <span class="legend-sep">|</span>
+    <span class="legend-item"><span class="legend-dash"></span>返程</span>
+    <span class="legend-sep">|</span>
+    <span class="legend-hint">🔍 放大看详情</span>
+  </div>
+  <div id="map"></div>
+</div>
+
+<div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;">
+  <div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);border-left:3px solid #e74c3c;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="font-size:12px;font-weight:700;color:#e74c3c;">Day 1</span>
+      <span style="font-size:10px;color:#a0987a;">6/8 一</span>
+    </div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">北京→浊漳河谷 · 🚗 550km</div>
+    <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
+      <li style="list-style:none;">· ⭐ 龙门寺 · 淳化寺</li>
+      <li style="list-style:none;">· 🏨 宿平顺/河谷区</li>
+    </ul>
+  </div>
+
+  <div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);border-left:3px solid #e67e22;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="font-size:12px;font-weight:700;color:#e67e22;">Day 2</span>
+      <span style="font-size:10px;color:#a0987a;">6/9 二</span>
+    </div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">浊漳河谷全天 · 🚗 短途</div>
+    <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
+      <li style="list-style:none;">· ⭐ 大云院五代壁画</li>
+      <li style="list-style:none;">· 天台庵 · 原起寺 · 佛头寺</li>
+      <li style="list-style:none;">· 🏨 宿平顺/河谷区</li>
+    </ul>
+  </div>
+
+  <div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);border-left:3px solid #f1c40f;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="font-size:12px;font-weight:700;color:#ccb000;">Day 3</span>
+      <span style="font-size:10px;color:#a0987a;">6/10 三</span>
+    </div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">河谷→长治 · 🚗 50km</div>
+    <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
+      <li style="list-style:none;">· ⭐ 观音堂悬塑</li>
+      <li style="list-style:none;">· 🕌 铜锅街清真晚餐</li>
+      <li style="list-style:none;">· 🏨 长治</li>
+    </ul>
+  </div>
+
+  <div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);border-left:3px solid #2ecc71;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="font-size:12px;font-weight:700;color:#2ecc71;">Day 4</span>
+      <span style="font-size:10px;color:#a0987a;">6/11 四</span>
+    </div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">长治周边 · 🚗 短途</div>
+    <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
+      <li style="list-style:none;">· ⭐ 法兴寺宋代彩塑</li>
+      <li style="list-style:none;">· 崇庆寺 · 金灯寺石窟(可选)</li>
+      <li style="list-style:none;">· 🏨 长治</li>
+    </ul>
+  </div>
+
+  <div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);border-left:3px solid #1abc9c;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="font-size:12px;font-weight:700;color:#1abc9c;">Day 5</span>
+      <span style="font-size:10px;color:#a0987a;">6/12 五</span>
+    </div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">长治→高平 · 🚗 80km</div>
+    <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
+      <li style="list-style:none;">· ⭐ 开化寺北宋壁画</li>
+      <li style="list-style:none;">· ⭐ 姬氏民居元代孤例</li>
+      <li style="list-style:none;">· 🏨 高平</li>
+    </ul>
+  </div>
+
+  <div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);border-left:3px solid #3498db;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="font-size:12px;font-weight:700;color:#3498db;">Day 6</span>
+      <span style="font-size:10px;color:#a0987a;">6/13 六</span>
+    </div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">高平→晋城·皇城 · 🚗 75km</div>
+    <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
+      <li style="list-style:none;">· ⭐⭐ 玉皇庙二十八星宿</li>
+      <li style="list-style:none;">· 皇城相府</li>
+      <li style="list-style:none;">· 🏨 宿阳城县</li>
+    </ul>
+  </div>
+
+  <div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);border-left:3px solid #9b59b6;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="font-size:12px;font-weight:700;color:#9b59b6;">Day 7</span>
+      <span style="font-size:10px;color:#a0987a;">6/14 日</span>
+    </div>
+    <div style="font-size:11px;color:#c49a6c;font-weight:500;margin-bottom:4px;">湘峪古堡→北京 · 🚗 700km</div>
+    <ul style="list-style:none;font-size:11px;line-height:1.7;color:#5a5240;padding:0;">
+      <li style="list-style:none;">· 湘峪古堡明代藏兵</li>
+      <li style="list-style:none;">· 🏠 预计晚8点到家</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">由 Hermes Agent 为 G先生定制</div>
+</div>
+
+<script>
+var tiles = {
+  'Positron 浅灰': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'),
+  'Esri 地形 中文': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'),
+};
+var map = L.map('map', { center: [36.5, 113.5], zoom: 8, scrollWheelZoom: true, attributionControl: false, zoomControl: true, layers: [tiles['Positron 浅灰']] });
+L.control.layers(tiles, null, { position: 'topright', collapsed: true }).addTo(map);
+
+var ov = L.layerGroup().addTo(map);
+var dt = L.layerGroup();
+var sub = L.layerGroup();
+
+// 彩色路线
+var routeData = [
+  ['#e74c3c', [[39.9042,116.4074],[38.05,114.50],[36.60,114.48],[36.10,114.38],[36.21,113.58]]],
+  ['#e67e22', [[36.21,113.58],[36.22,113.57],[36.20,113.56],[36.205,113.57],[36.21,113.58]]],
+  ['#f1c40f', [[36.21,113.58],[36.20,113.40],[36.191,113.116]]],
+  ['#2ecc71', [[36.191,113.116],[36.10,113.06],[36.191,113.116]]],
+  ['#1abc9c', [[36.191,113.116],[35.90,113.00],[35.80,112.93],[35.798,112.93]]],
+  ['#3498db', [[35.798,112.93],[35.60,112.90],[35.49,112.86],[35.46,112.46]]],
+  ['#9b59b6', [[35.46,112.46],[35.55,112.30],[35.67,112.18]]],
+];
+for (var i = 0; i < routeData.length; i++) {
+  ov.addLayer(L.polyline(routeData[i][1], { color: routeData[i][0], weight: 4, opacity: 0.85 }));
+}
+ov.addLayer(L.polyline([[35.67,112.18],[36.50,113.60],[37.80,114.70],[38.80,115.30],[39.9042,116.4074]], { color: '#b8b09a', weight: 3, opacity: 0.5, dashArray: '10,10' }));
+
+// ===== 总览：城市名（带浅白背景确保看清）=====
+var cities = [
+  [39.9042,116.4074,'北京','#e74c3c',0,-18],
+  [36.21,113.58,'浊漳河谷','#e67e22',18,0],
+  [36.191,113.116,'长治','#f1c40f',-18,0],
+  [35.80,112.93,'高平','#1abc9c',18,0],
+  [35.49,112.86,'晋城','#3498db',0,18],
+  [35.46,112.46,'皇城相府','#3498db',18,0],
+  [35.67,112.18,'湘峪古堡','#9b59b6',-18,0],
+];
+for (var i = 0; i < cities.length; i++) {
+  var c = cities[i];
+  ov.addLayer(L.marker([c[0], c[1]], {
+    icon: L.divIcon({
+      className: '',
+      html: '<div style="color:'+c[3]+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.85);border-radius:4px;padding:1px 6px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">'+c[2]+'</div>',
+      iconSize: [20, 20],
+      iconAnchor: [c[4]+10, c[5]+10],
+    })
+  }));
+}
+
+// ===== 总览：每天三行 D1 / 550km / 约6小时 =====
+var days = [
+  [37.50,114.60,'D1','550km','6h','#e74c3c'],
+  [36.40,113.68,'D2','20km','1h','#e67e22'],
+  [36.10,113.28,'D3','50km','1h','#f1c40f'],
+  [36.22,113.18,'D4','40km','1h','#2ecc71'],
+  [35.92,113.08,'D5','80km','1h','#1abc9c'],
+  [35.38,112.98,'D6','75km','1.5h','#3498db'],
+  [35.72,112.05,'D7','40km','40min','#9b59b6'],
+  [37.30,113.60,'返程','700km','7h','#b8b09a'],
+];
+for (var i = 0; i < days.length; i++) {
+  var d = days[i];
+  ov.addLayer(L.marker([d[0], d[1]], {
+    icon: L.divIcon({
+      className: '',
+      html: '<div style="text-align:center;line-height:1.3;">'
+        + '<div style="font-weight:700;font-size:12px;color:'+d[5]+';text-shadow:0 0 4px #fff,0 0 8px #fff;">'+d[2]+'</div>'
+        + '<div style="font-size:10px;color:#7a7258;text-shadow:0 0 4px #fff,0 0 8px #fff;">🚗 '+d[3]+'·'+d[4]+'</div>'
+        + '</div>',
+      iconSize: [50, 32],
+      iconAnchor: [25, 16],
+    })
+  }));
+}
+
+// ===== 详情层 zoom>=9 =====
+// 放大后只增加路段拆分小标签，不堆卡片
+var segs = [
+  [37.20,114.60,'D1 北京→石家庄','280km 3h','#e74c3c'],
+  [36.40,114.55,'D1 石家庄→安阳','170km 2h','#e74c3c'],
+  [36.18,114.15,'D1 安阳→河谷','100km 1h','#e74c3c'],
+  [35.38,112.94,'D6 高平→晋城','40km 40min','#3498db'],
+  [35.47,112.66,'D6 晋城→皇城','35km 40min','#3498db'],
+];
+for (var i = 0; i < segs.length; i++) {
+  var s = segs[i];
+  dt.addLayer(L.marker([s[0], s[1]], {
+    icon: L.divIcon({
+      className: '',
+      html: '<div style="background:#fff;border-radius:4px;padding:2px 6px;text-align:center;line-height:1.4;border:1px solid #e8e4d8;">'
+        + '<div style="font-size:10px;font-weight:600;color:'+s[4]+';">'+s[2]+'</div>'
+        + '<div style="font-size:9px;color:#7a7258;">'+s[3]+'</div>'
+        + '</div>',
+      iconSize: [0, 0], iconAnchor: [0, 0],
+    })
+  }));
+}
+
+// 次要景点 zoom>=10
+var spots = [
+  [36.20,113.56,'天台庵 · 五代'],
+  [36.22,113.55,'淳化寺 · 金'],
+  [36.205,113.57,'原起寺 · 宋塔'],
+  [35.82,112.92,'崇明寺 · 北宋'],
+  [35.48,112.87,'青莲寺 · 唐塑'],
+  [36.10,113.06,'法兴寺 ⭐'],
+];
+for (var i = 0; i < spots.length; i++) {
+  var s = spots[i];
+  sub.addLayer(L.marker([s[0], s[1]], {
+    icon: L.divIcon({
+      className: '',
+      html: '<div style="display:flex;align-items:center;gap:3px;">'
+        + '<div style="width:7px;height:7px;background:#a0987a;border-radius:50%;border:1.5px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.12);flex-shrink:0;"></div>'
+        + '<span style="font-size:10px;color:#7a7258;background:rgba(255,255,255,0.85);padding:1px 4px;border-radius:3px;white-space:nowrap;">'+s[2]+'</span>'
+        + '</div>',
+      iconSize: [90, 18],
+      iconAnchor: [4, 9],
+    })
+  }));
+}
+
+function u() {
+  var z = map.getZoom();
+  if (z >= 9) { if (!map.hasLayer(dt)) map.addLayer(dt); } else { if (map.hasLayer(dt)) map.removeLayer(dt); }
+  if (z >= 10) { if (!map.hasLayer(sub)) map.addLayer(sub); } else { if (map.hasLayer(sub)) map.removeLayer(sub); }
+}
+map.on('zoomend', u); u();
+</script>
+</body>
+</html>
