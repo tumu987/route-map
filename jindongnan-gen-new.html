@@ -1004,6 +1004,17 @@ function placeLabel(lat, lng, minGap, maxStep) {
 var closeGap = 0.025, closeStep = 8;
 var farGap = 0.08, farStep = 20;
 
+// 精确测量文字宽度（替代 length*7 估算）
+function measureTextWidth(txt, size) {
+  var c = document.createElement('canvas');
+  var ctx = c.getContext('2d');
+  ctx.font = size + 'px "Noto Sans SC", system-ui, sans-serif';
+  return Math.round(ctx.measureText(txt).width);
+}
+
+function cityIcon(w) { return w + 12; }
+function cityAnchor(w) { return Math.round((w + 12) / 2); }
+
 placedLabels = [];
 var cityClose = [], cityFar = [], dxClose = [], dxFar = [];
 for (var i = 0; i < cityPosData.length; i++) {
@@ -1034,7 +1045,7 @@ for (var i = 0; i < dxData.length; i++) {
 for (var i = 0; i < cityPosData.length; i++) {
   var c = cityPosData[i], p = cityClose[i];
   cityOv.addLayer(L.marker(p, {
-    icon: L.divIcon({ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.85);border-radius:4px;padding:1px 6px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">'+c.name+'</div>', iconSize: null, iconAnchor: [c.name.length * 7 + 6, 15] })
+    icon: L.divIcon({ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.85);border-radius:4px;padding:1px 6px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">'+c.name+'</div>', iconSize: null, iconAnchor: [cityAnchor(measureTextWidth(c.name, 14)), 15] })
   }));
 }
 
@@ -1042,7 +1053,7 @@ for (var i = 0; i < cityPosData.length; i++) {
 for (var i = 0; i < cityPosData.length; i++) {
   var c = cityPosData[i];
   cityOvOrig.addLayer(L.marker([c.lat, c.lng], {
-    icon: L.divIcon({ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.92);border-radius:4px;padding:2px 8px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">'+c.name+'</div>', iconSize: null, iconAnchor: [c.name.length * 7 + 8, 15] })
+    icon: L.divIcon({ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.92);border-radius:4px;padding:2px 8px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">'+c.name+'</div>', iconSize: null, iconAnchor: [cityAnchor(measureTextWidth(c.name, 14)), 15] })
   }));
 }
 
@@ -1054,7 +1065,7 @@ for (var i = 0; i < cityPosData.length; i++) {
     ld.addLayer(L.circleMarker([c.lat, c.lng], { radius: 4, color: c.color, weight: 2, fillColor: '#fff', fillOpacity: 1 }));
     ld.addLayer(L.polyline([[c.lat, c.lng], p], { color: c.color, weight: 2, opacity: 0.5, dashArray: '5,4' }));
   }
-  cityLite.addLayer(L.marker(p, { icon: L.divIcon({className:'',html:'<span style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;text-shadow:0 0 4px #fff,0 0 8px #fff;">'+c.name+'</span>',iconSize:null,iconAnchor:[c.name.length*7,10]}) }));
+  cityLite.addLayer(L.marker(p, { icon: L.divIcon({className:'',html:'<span style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;text-shadow:0 0 4px #fff,0 0 8px #fff;">'+c.name+'</span>',iconSize:null,iconAnchor:[cityAnchor(measureTextWidth(c.name, 14)), 10]}) }));
 }
 
 // Dx 标签
@@ -1074,7 +1085,7 @@ for (var i = 0; i < dxData.length; i++) {
 
 // zoom = 9 引线
 for (var i = 0; i < cityPosData.length; i++) {
-  var c = cityPosData[i], p = dxClose[i];
+  var c = cityPosData[i], p = cityClose[i];
   var orig = [c.lat, c.lng];
   var p2 = cityClose[i];
   var dx = p2[0] - orig[0], dy = p2[1] - orig[1];

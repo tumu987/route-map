@@ -26,9 +26,6 @@ from collections import OrderedDict
 
 import yaml
 
-def parse_yaml(text):
-    """使用标准 PyYAML 解析"""
-    return yaml.safe_load(text) or {}
 
 
 # ─────────────────────────────────────────────
@@ -49,25 +46,53 @@ COLOR_PALETTE = [
     '#8bc34a',  # D12 草绿
     '#ff5722',  # D13 深橙
     '#9e9e9e',  # D14 灰
+    '#5c6bc0',  # D15 靛蓝
+    '#ec407a',  # D16 粉
+    '#26a69a',  # D17 碧绿
+    '#d4e157',  # D18 柠黄
+    '#7e57c2',  # D19 深紫
+    '#ffa726',  # D20 杏橙
+    '#ef5350',  # D21 浅红
+    '#42a5f5',  # D22 天蓝
+    '#ab47bc',  # D23 紫红
+    '#66bb6a',  # D24 翠绿
+    '#ff7043',  # D25 珊瑚
+    '#78909c',  # D26 青灰
+    '#8d6e63',  # D27 咖啡
+    '#bdbdbd',  # D28 银灰
+    '#f06292',  # D29 粉红
+    '#4db6ac',  # D30 墨绿
 ]
 
-def get_day_color(day_index):
+def get_day_color(day_index: int) -> str:
     """获取第 N 天的颜色"""
-    return COLOR_PALETTE[day_index % len(COLOR_PALETTE)]
+    if day_index < len(COLOR_PALETTE):
+        return COLOR_PALETTE[day_index]
+    # 超过色盘数量时用哈希生成稳定颜色
+    import hashlib
+    h = hashlib.md5(str(day_index).encode())
+    return '#' + h.hexdigest()[:6]
 
 
 # ─────────────────────────────────────────────
 # 3. OSRM 算路
 # ─────────────────────────────────────────────
 OSRM_BASE = 'https://router.project-osrm.org/route/v1/driving/'
+_osrm_call_count = 0
 
-def fetch_osrm_route(start, end, via=None):
+def fetch_osrm_route(start: list, end: list, via: list | None = None) -> list:
     """
     调用 OSRM API 获取行车路线
     start/end: [lat, lng]
     via: [[lat, lng], ...]
     Returns: [[lat, lng], ...] polyline
     """
+    global _osrm_call_count
+    _osrm_call_count += 1
+    # 前3次不等待，后续每次等0.3s限流
+    if _osrm_call_count > 3:
+        time.sleep(0.3)
+
     coords = []
     coords.append(f"{start[1]},{start[0]}")
     if via:
@@ -84,7 +109,7 @@ def fetch_osrm_route(start, end, via=None):
         data = json.loads(resp.read().decode('utf-8'))
         if data.get('code') != 'Ok' or not data.get('routes'):
             print(f"  ⚠ OSRM 返回错误: {data.get('code', 'unknown')}, 使用直线")
-            return _straight_line(start, end, via)
+            return _fallback_straight_line(start, end, via)
         coords_raw = data['routes'][0]['geometry']['coordinates']
         # OSRM 返回 [lng, lat]，转成 [lat, lng]
         polyline = [[c[1], c[0]] for c in coords_raw]
@@ -92,10 +117,10 @@ def fetch_osrm_route(start, end, via=None):
         return polyline
     except Exception as e:
         print(f"  ⚠ OSRM 请求失败: {e}, 使用直线")
-        return _straight_line(start, end, via)
+        return _fallback_straight_line(start, end, via)
 
 
-def _straight_line(start, end, via=None):
+def _fallback_straight_line(start: list, end: list, via: list | None = None) -> list:
     """无 OSRM 时的直线路径"""
     pts = [start]
     if via:
@@ -146,16 +171,19 @@ def load_leaflet():
     return leaflet_css, leaflet_js
 
 
-def generate_html(trip_data, yaml_path):
+def generate_html(trip_data, yaml_path, output_path=None):
     """生成完整 HTML"""
     title = trip_data.get('trip', {}).get('title', '自驾路线图')
     subtitle = trip_data.get('trip', {}).get('subtitle', '')
-    dates = trip_data.get('trip', {}).get('dates', '')
     basemap = trip_data.get('trip', {}).get('basemap', 'light')
     stats_data = trip_data.get('trip', {}).get('stats', {})
 
-    days_data = trip_data.get('days', [])
-    cities_yaml = trip_data.get('cities', {})
+    if not trip_data.get('days') or not trip_data.get('cities'):
+        print("❌ YAML 缺少 days 或 cities 字段")
+        sys.exit(1)
+
+    days_data = trip_data['days']
+    cities_yaml = trip_data['cities']
     pois_yaml = trip_data.get('pois', [])
 
     N = len(days_data)
@@ -178,8 +206,11 @@ def generate_html(trip_data, yaml_path):
             minor_spots.append([p['lat'], p['lng'], p['name']])
 
     # 生成路线
-    out_name = os.path.splitext(os.path.basename(yaml_path))[0]
-    output_file = os.path.join(os.path.dirname(yaml_path), '..', 'output', out_name + '.html')
+    if output_path:
+        output_file = output_path
+    else:
+        out_name = os.path.splitext(os.path.basename(yaml_path))[0]
+        output_file = os.path.join(os.path.dirname(yaml_path), '..', 'output', out_name + '.html')
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
     # ── OSRM: 获取每条路线的 polyline ──
@@ -574,6 +605,17 @@ function placeLabel(lat, lng, minGap, maxStep) {{
 var closeGap = 0.025, closeStep = 8;
 var farGap = 0.08, farStep = 20;
 
+// 精确测量文字宽度（替代 length*7 估算）
+function measureTextWidth(txt, size) {{
+  var c = document.createElement('canvas');
+  var ctx = c.getContext('2d');
+  ctx.font = size + 'px "Noto Sans SC", system-ui, sans-serif';
+  return Math.round(ctx.measureText(txt).width);
+}}
+
+function cityIcon(w) {{ return w + 12; }}
+function cityAnchor(w) {{ return Math.round((w + 12) / 2); }}
+
 placedLabels = [];
 var cityClose = [], cityFar = [], dxClose = [], dxFar = [];
 for (var i = 0; i < cityPosData.length; i++) {{
@@ -604,7 +646,7 @@ for (var i = 0; i < dxData.length; i++) {{
 for (var i = 0; i < cityPosData.length; i++) {{
   var c = cityPosData[i], p = cityClose[i];
   cityOv.addLayer(L.marker(p, {{
-    icon: L.divIcon({{ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.85);border-radius:4px;padding:1px 6px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">'+c.name+'</div>', iconSize: null, iconAnchor: [c.name.length * 7 + 6, 15] }})
+    icon: L.divIcon({{ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.85);border-radius:4px;padding:1px 6px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">'+c.name+'</div>', iconSize: null, iconAnchor: [cityAnchor(measureTextWidth(c.name, 14)), 15] }})
   }}));
 }}
 
@@ -612,7 +654,7 @@ for (var i = 0; i < cityPosData.length; i++) {{
 for (var i = 0; i < cityPosData.length; i++) {{
   var c = cityPosData[i];
   cityOvOrig.addLayer(L.marker([c.lat, c.lng], {{
-    icon: L.divIcon({{ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.92);border-radius:4px;padding:2px 8px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">'+c.name+'</div>', iconSize: null, iconAnchor: [c.name.length * 7 + 8, 15] }})
+    icon: L.divIcon({{ className: '', html: '<div style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;background:rgba(255,255,255,0.92);border-radius:4px;padding:2px 8px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">'+c.name+'</div>', iconSize: null, iconAnchor: [cityAnchor(measureTextWidth(c.name, 14)), 15] }})
   }}));
 }}
 
@@ -624,7 +666,7 @@ for (var i = 0; i < cityPosData.length; i++) {{
     ld.addLayer(L.circleMarker([c.lat, c.lng], {{ radius: 4, color: c.color, weight: 2, fillColor: '#fff', fillOpacity: 1 }}));
     ld.addLayer(L.polyline([[c.lat, c.lng], p], {{ color: c.color, weight: 2, opacity: 0.5, dashArray: '5,4' }}));
   }}
-  cityLite.addLayer(L.marker(p, {{ icon: L.divIcon({{className:'',html:'<span style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;text-shadow:0 0 4px #fff,0 0 8px #fff;">'+c.name+'</span>',iconSize:null,iconAnchor:[c.name.length*7,10]}}) }}));
+  cityLite.addLayer(L.marker(p, {{ icon: L.divIcon({{className:'',html:'<span style="display:inline-block;color:'+c.color+';font-size:14px;font-weight:700;white-space:nowrap;text-shadow:0 0 4px #fff,0 0 8px #fff;">'+c.name+'</span>',iconSize:null,iconAnchor:[cityAnchor(measureTextWidth(c.name, 14)), 10]}}) }}));
 }}
 
 // Dx 标签
@@ -644,7 +686,7 @@ for (var i = 0; i < dxData.length; i++) {{
 
 // zoom = 9 引线
 for (var i = 0; i < cityPosData.length; i++) {{
-  var c = cityPosData[i], p = dxClose[i];
+  var c = cityPosData[i], p = cityClose[i];
   var orig = [c.lat, c.lng];
   var p2 = cityClose[i];
   var dx = p2[0] - orig[0], dy = p2[1] - orig[1];
@@ -738,6 +780,12 @@ def main():
         sys.exit(1)
 
     yaml_path = sys.argv[1]
+    output_path = None
+    if '--output' in sys.argv:
+        idx = sys.argv.index('--output')
+        if idx + 1 < len(sys.argv):
+            output_path = sys.argv[idx + 1]
+
     if not os.path.exists(yaml_path):
         print(f"❌ 文件不存在: {yaml_path}")
         sys.exit(1)
@@ -746,13 +794,13 @@ def main():
     print(f"\n📖 读取 YAML: {yaml_path}")
     with open(yaml_path, 'r', encoding='utf-8') as f:
         text = f.read()
-    data = parse_yaml(text)
+    data = yaml.safe_load(text) or {}
     print(f"   行程: {data.get('trip', {}).get('title', '未知')}")
     days = data.get('days', [])
     print(f"   天数: {len(days)}")
 
     # 生成 HTML
-    output = generate_html(data, yaml_path)
+    output = generate_html(data, yaml_path, output_path)
 
     # HTTP 预览提示
     print(f"\n🌐 预览: http://localhost:9120/{os.path.basename(output)}")

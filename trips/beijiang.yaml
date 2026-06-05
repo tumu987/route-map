@@ -105,6 +105,8 @@ pois:
 days:
   - day: 1
     label: "D1"
+    day_type: transit
+    city: 富蕴
     theme: "乌鲁木齐 → 富蕴"
     distance: "400km · 5h"
     route_class: main
@@ -126,6 +128,8 @@ days:
 
   - day: 2
     label: "D2"
+    day_type: transit
+    city: 布尔津
     theme: "富蕴 → 可可托海 → 布尔津"
     distance: "300km · 4h"
     route_class: main
@@ -146,6 +150,8 @@ days:
 
   - day: 3
     label: "D3"
+    day_type: transit
+    city: 禾木
     theme: "布尔津 → 禾木"
     distance: "160km · 4h"
     route_class: main
@@ -166,6 +172,8 @@ days:
 
   - day: 4
     label: "D4"
+    day_type: transit
+    city: 喀纳斯
     theme: "禾木 → 喀纳斯"
     distance: "60km · 2h"
     route_class: main
@@ -187,6 +195,8 @@ days:
 
   - day: 5
     label: "D5"
+    day_type: transit
+    city: 喀纳斯
     theme: "喀纳斯 → 白哈巴"
     distance: "50km"
     route_class: spur
@@ -206,6 +216,8 @@ days:
 
   - day: 6
     label: "D6"
+    day_type: transit
+    city: 克拉玛依
     theme: "喀纳斯 → 魔鬼城 → 克拉玛依"
     distance: "480km · 6h"
     route_class: main
@@ -226,6 +238,8 @@ days:
 
   - day: 7
     label: "D7"
+    day_type: transit
+    city: 伊宁
     theme: "克拉玛依 → 赛里木湖 → 伊宁"
     distance: "550km · 6h"
     route_class: main
@@ -246,6 +260,8 @@ days:
 
   - day: 8
     label: "D8"
+    day_type: transit
+    city: 特克斯
     theme: "伊宁 → 伊昭公路 → 昭苏 → 特克斯"
     distance: "250km · 5h"
     route_class: main
@@ -268,6 +284,8 @@ days:
 
   - day: 9
     label: "D9"
+    day_type: transit
+    city: 那拉提
     theme: "特克斯 → 喀拉峻 → 那拉提"
     distance: "250km · 4h"
     route_class: main
@@ -287,6 +305,8 @@ days:
 
   - day: 10
     label: "D10"
+    day_type: local
+    city: 那拉提
     theme: "那拉提草原全天"
     distance: "短途"
     route_class: spur
@@ -306,6 +326,8 @@ days:
 
   - day: 11
     label: "D11"
+    day_type: transit
+    city: 巴音布鲁克
     theme: "那拉提 → 巴音布鲁克"
     distance: "200km · 3h"
     route_class: main
@@ -326,6 +348,8 @@ days:
 
   - day: 12
     label: "D12"
+    day_type: transit
+    city: 奎屯
     theme: "巴音布鲁克 → 独库北段 → 奎屯"
     distance: "250km · 5h"
     route_class: main
@@ -347,6 +371,8 @@ days:
 
   - day: 13
     label: "D13"
+    day_type: transit
+    city: 乌鲁木齐
     theme: "奎屯 → S101 → 乌鲁木齐"
     distance: "300km · 4h"
     route_class: main
@@ -367,6 +393,8 @@ days:
 
   - day: 14
     label: "D14"
+    day_type: transit
+    city: 乌鲁木齐
     theme: "乌鲁木齐 → 🛫 返程"
     distance: ""
     route_class: main
