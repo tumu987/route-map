@@ -1,0 +1,295 @@
+# 晋东南古建自驾 — 行程数据
+# 自动从 jindongnan-route-light.html v0.1.1 提取，添加路线起终点
+trip:
+  title: 🏛️ 晋东南古建自驾路线图
+  subtitle: 北京出发 · 浊漳河谷 · 长治 · 高平 · 晋城 · 七日古建巡礼
+  dates: 6月8日 — 6月14日
+  basemap: light
+  stats:
+    days: 7
+    distance: "~2,200"
+    heritage: "18+"
+    people: 2
+  colors:
+    D1: '#e74c3c'
+    D2: '#f39c12'
+    D3: '#27ae60'
+    D4: '#00bcd4'
+    D5: '#3f51b5'
+    D6: '#9c27b0'
+    D7: '#e91e63'
+
+cities:
+  北京: [39.9042, 116.4074]
+  平顺: [36.2000, 113.4390]
+  长治: [36.1910, 113.1160]
+  高平: [35.8000, 112.9300]
+  皇城相府: [35.5144, 112.5778]
+  湘峪古堡: [35.6720, 112.1820]
+
+pois:
+  - name: 龙门寺
+    lat: 36.39028
+    lng: 113.62278
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 大云院
+    lat: 36.20200
+    lng: 113.57400
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 天台庵
+    lat: 36.38306
+    lng: 113.39861
+    rank: major
+    iconAnchor: [-14, 0]
+  - name: 观音堂
+    lat: 36.19500
+    lng: 113.11500
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 崇庆寺
+    lat: 35.98056
+    lng: 112.95972
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 法兴寺
+    lat: 36.09800
+    lng: 113.05600
+    rank: major
+    iconAnchor: [0, -18]
+  - name: 开化寺
+    lat: 35.83800
+    lng: 112.91500
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 姬氏民居
+    lat: 35.86583
+    lng: 113.06333
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 玉皇庙星宿彩塑
+    lat: 35.48800
+    lng: 112.86000
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 皇城相府
+    lat: 35.51444
+    lng: 112.57778
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 青莲寺
+    lat: 35.45806
+    lng: 112.98917
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 湘峪古堡
+    lat: 35.67200
+    lng: 112.18200
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 淳化寺 · 金
+    lat: 36.35444
+    lng: 113.58944
+    rank: minor
+  - name: 原起寺 · 宋塔
+    lat: 36.35333
+    lng: 113.42583
+    rank: minor
+  - name: 崇明寺 · 北宋
+    lat: 35.71444
+    lng: 113.00861
+    rank: minor
+
+days:
+  - day: 1
+    label: "6月8日（一）"
+    theme: "北京 → 浊漳河谷"
+    distance: "586km · 6.8h"
+    route_class: main
+    route:
+      start: [39.9042, 116.4074]
+      via: [[38.0428, 114.5149]]
+      end: [36.2000, 113.4390]
+      segments:
+        - label: "北京→石家庄"
+        - label: "石家庄→平顺"
+    items:
+      - "早 7:00 从北京出发"
+      - "龙门寺 <span class=\"highlight\">⭐ 六朝木构于一寺</span>"
+      - "淳化寺 金代大殿"
+      - "🏨 宿平顺/河谷区"
+    stop_tags:
+      - "龙门寺"
+      - "淳化寺"
+    tips:
+      - "📱 提前下载离线地图 — 太行山区多无信号"
+      - "🌅 上午看古建光线最好，下午背光"
+    pois:
+      - name: 龙门寺
+        coord: [36.39028, 113.62278]
+        rank: major
+      - name: 淳化寺 · 金
+        coord: [36.35444, 113.58944]
+        rank: minor
+
+  - day: 2
+    label: "6月9日（二）"
+    theme: "浊漳河谷全天"
+    distance: "85km · 1.5h"
+    route_class: spur
+    route:
+      start: [36.2020, 113.5740]
+      via: [[36.39028, 113.62278], [36.38306, 113.39861]]
+      end: [36.3533, 113.4258]
+    items:
+      - "龙门寺 → 天台庵 → 大云院"
+      - "原起寺 → 淳化寺"
+      - "🏨 宿平顺/河谷区"
+    stop_tags:
+      - "大云院"
+      - "天台庵"
+      - "原起寺"
+      - "九天圣母庙"
+    tips:
+      - "🔦 古殿内多无照明，自带手电筒"
+      - "💰 备零钱10-20元，找文保员开门"
+      - "🌧️ 河谷山路雨后易滑，注意安全"
+    pois:
+      - name: 大云院
+        coord: [36.20200, 113.57400]
+        rank: major
+      - name: 天台庵
+        coord: [36.38306, 113.39861]
+        rank: major
+      - name: 原起寺 · 宋塔
+        coord: [36.35333, 113.42583]
+        rank: minor
+
+  - day: 3
+    label: "6月10日（三）"
+    theme: "河谷 → 长治"
+    distance: "53km · 52min"
+    route_class: main
+    route:
+      start: [36.2000, 113.4390]
+      end: [36.1910, 113.1160]
+    items:
+      - "上午河谷扫尾或补觉"
+      - "观音堂 <span class=\"highlight\">明代悬塑巅峰</span>"
+      - "上党门（长治地标）"
+      - "🏨 长治精品酒店 · 🕌 铜锅街清真晚餐"
+    stop_tags:
+      - "观音堂悬塑"
+      - "上党门"
+      - "🕌 铜锅街清真晚餐"
+    pois:
+      - name: 观音堂
+        coord: [36.19500, 113.11500]
+        rank: major
+
+  - day: 4
+    label: "6月11日（四）"
+    theme: "长治周边"
+    distance: "72km · 1.2h"
+    route_class: spur
+    route:
+      start: [36.1910, 113.1160]
+      end: [36.1910, 113.1160]
+    items:
+      - "法兴寺 <span class=\"highlight\">宋代十二圆觉彩塑</span>"
+      - "崇庆寺 宋代罗汉像"
+      - "可选：金灯寺石窟（悬崖石窟）"
+      - "🏨 长治"
+    stop_tags:
+      - "法兴寺彩塑"
+      - "崇庆寺"
+      - "金灯寺石窟"
+    pois:
+      - name: 法兴寺
+        coord: [36.09800, 113.05600]
+        rank: major
+      - name: 崇庆寺
+        coord: [35.98056, 112.95972]
+        rank: major
+
+  - day: 5
+    label: "6月12日（五）"
+    theme: "长治 → 高平"
+    distance: "100km · 2h"
+    route_class: main
+    route:
+      start: [36.1910, 113.1160]
+      end: [35.8000, 112.9300]
+    items:
+      - "开化寺 <span class=\"highlight\">北宋壁画 88㎡</span>"
+      - "崇明寺 北宋早期大木作"
+      - "姬氏民居 <span class=\"highlight\">全国最早元代民居</span>"
+      - "🏨 高平"
+    stop_tags:
+      - "开化寺壁画"
+      - "姬氏民居"
+      - "崇明寺"
+    pois:
+      - name: 开化寺
+        coord: [35.83800, 112.91500]
+        rank: major
+      - name: 姬氏民居
+        coord: [35.86583, 113.06333]
+        rank: major
+      - name: 崇明寺 · 北宋
+        coord: [35.71444, 113.00861]
+        rank: minor
+
+  - day: 6
+    label: "6月13日（六）"
+    theme: "高平 → 晋城 · 皇城相府"
+    distance: "107km · 2h"
+    route_class: main
+    route:
+      start: [35.8000, 112.9300]
+      end: [35.5144, 112.5778]
+    items:
+      - "玉皇庙 <span class=\"highlight\">⭐⭐ 二十八星宿彩塑</span>"
+      - "青莲寺 唐代彩塑"
+      - "下午：皇城相府（清代相府）"
+      - "🏨 宿皇城相府/阳城县"
+    stop_tags:
+      - "玉皇庙星宿彩塑"
+      - "青莲寺"
+      - "皇城相府"
+      - "🕌 南大街清真美食"
+    pois:
+      - name: 玉皇庙星宿彩塑
+        coord: [35.48800, 112.86000]
+        rank: major
+      - name: 青莲寺
+        coord: [35.45806, 112.98917]
+        rank: major
+      - name: 皇城相府
+        coord: [35.51444, 112.57778]
+        rank: major
+
+  - day: 7
+    label: "6月14日（日）"
+    theme: "湘峪古堡 → 🏠 北京"
+    distance: "79→752km · 8.5h"
+    route_class: main
+    route:
+      start: [35.6720, 112.1820]
+      via: [[36.72, 114.03]]
+      end: [39.9042, 116.4074]
+      segments:
+        - label: "湘峪→G4"
+        - label: "G4→北京（与去程同路重叠不画）"
+    items:
+      - "早：湘峪古堡 <span class=\"highlight\">明代藏兵城堡</span>"
+      - "🚗 7h 一路北上回北京"
+      - "预计晚 7-8 点到家"
+    stop_tags:
+      - "湘峪古堡早"
+      - "返程 🏠"
+    pois:
+      - name: 湘峪古堡
+        coord: [35.67200, 112.18200]
+        rank: major
