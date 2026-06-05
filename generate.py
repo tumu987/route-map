@@ -205,11 +205,18 @@ def generate_html(trip_data, yaml_path):
 
         color = day_colors[idx]
         name = f'D{d}'
+        day_type = day.get('day_type', 'transit')
+        city = day.get('city', '')
 
-        # 生成 Dx 位置（取出发地或第一个途经点与目的地的中点）
-        dx_lat = (start[0] + end[0]) / 2 if start and end else (start or [0,0])[0]
-        dx_lng = (start[1] + end[1]) / 2 if start and end else (start or [0,0])[1]
-        subtext = ''
+        # 生成 Dx 位置
+        if day_type == 'local' and city and city in cities_yaml:
+            cc = cities_yaml[city]
+            dx_lat = cc[0] + 0.02  # 当地日标签贴城市偏上
+            dx_lng = cc[1]
+        else:
+            dx_lat = (start[0] + end[0]) / 2 if start and end else (start or [0,0])[0]
+            dx_lng = (start[1] + end[1]) / 2 if start and end else (start or [0,0])[1]
+        subtext = f'{city}全天' if day_type == 'local' else ''
         disttime = f'🚗 {distance}' if distance else ''
         dx_positions.append([dx_lat, dx_lng, color, name, subtext, disttime])
 
@@ -323,7 +330,7 @@ def generate_html(trip_data, yaml_path):
     cities_js = 'var cityPosData = ' + json.dumps(city_pos_data, ensure_ascii=False) + ';'
 
     # Dx 数据
-    dx_data_js = 'var dxData = ' + json.dumps([{'name': d[3], 'lat': d[0], 'lng': d[1], 'color': d[2], 'dist': d[5]} for d in dx_positions], ensure_ascii=False) + ';'
+    dx_data_js = 'var dxData = ' + json.dumps([{'name': d[3], 'lat': d[0], 'lng': d[1], 'color': d[2], 'dist': d[5], 'sub': d[4]} for d in dx_positions], ensure_ascii=False) + ';'
 
     # POI 数据
     major_js = 'var majorSpots = ' + json.dumps(major_spots, ensure_ascii=False) + ';'
@@ -624,10 +631,13 @@ for (var i = 0; i < cityPosData.length; i++) {{
 for (var i = 0; i < dxData.length; i++) {{
   var d = dxData[i], p = dxClose[i];
   var fullName = d.name;
+  var subText = d.sub || '';
   var distTime = d.dist || '';
-  var label = '<div style="text-align:center;line-height:1.3;white-space:nowrap;"><div style="font-weight:700;font-size:12px;color:'+d.color+';text-shadow:0 0 4px #fff,0 0 8px #fff;">'+fullName+'</div><div style="font-size:10px;color:#7a7258;text-shadow:0 0 4px #fff,0 0 8px #fff;">'+distTime+'</div></div>';
+  var label = '<div style="text-align:center;line-height:1.3;white-space:nowrap;"><div style="font-weight:700;font-size:12px;color:'+d.color+';text-shadow:0 0 4px #fff,0 0 8px #fff;">'+fullName+'</div>';
+  if (subText) {{ label += '<div style="font-size:10px;color:'+d.color+';text-shadow:0 0 4px #fff,0 0 8px #fff;">'+subText+'</div>'; }}
+  label += '<div style="font-size:10px;color:#7a7258;text-shadow:0 0 4px #fff,0 0 8px #fff;">'+distTime+'</div></div>';
   dayOv.addLayer(L.marker(p, {{
-    icon: L.divIcon({{ className: '', html: label, iconSize: [80, 32], iconAnchor: [40, 16] }})
+    icon: L.divIcon({{ className: '', html: label, iconSize: [80, 36], iconAnchor: [40, 18] }})
   }}));
   dayLite.addLayer(L.marker(p, {{ icon: L.divIcon({{className:'',html:'<div style="text-align:center;line-height:1.3;white-space:nowrap;"><div style="font-weight:700;font-size:12px;color:'+d.color+';text-shadow:0 0 4px #fff,0 0 8px #fff;">'+d.name+'</div></div>', iconSize: [40,16], iconAnchor: [20,8]}}) }}));
 }}

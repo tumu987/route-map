@@ -104,7 +104,9 @@ pois:
 days:
   - day: 1
     label: "6月8日（一）"
-    theme: "北京 → 浊漳河谷"
+    day_type: transit
+    city: 平顺
+    theme: "北京 → 平顺"
     distance: "586km · 6.8h"
     route_class: main
     route:
@@ -118,7 +120,7 @@ days:
       - "早 7:00 从北京出发"
       - "龙门寺 <span class=\"highlight\">⭐ 六朝木构于一寺</span>"
       - "淳化寺 金代大殿"
-      - "🏨 宿平顺/河谷区"
+      - "🏨 宿平顺"
     stop_tags:
       - "龙门寺"
       - "淳化寺"
@@ -135,7 +137,9 @@ days:
 
   - day: 2
     label: "6月9日（二）"
-    theme: "浊漳河谷全天"
+    day_type: local
+    city: 平顺
+    theme: "平顺 · 浊漳河谷"
     distance: "85km · 1.5h"
     route_class: spur
     route:
@@ -145,7 +149,7 @@ days:
     items:
       - "龙门寺 → 天台庵 → 大云院"
       - "原起寺 → 淳化寺"
-      - "🏨 宿平顺/河谷区"
+      - "🏨 宿平顺"
     stop_tags:
       - "大云院"
       - "天台庵"
@@ -168,7 +172,9 @@ days:
 
   - day: 3
     label: "6月10日（三）"
-    theme: "河谷 → 长治"
+    day_type: transit
+    city: 长治
+    theme: "平顺 → 长治"
     distance: "53km · 52min"
     route_class: main
     route:
@@ -190,6 +196,8 @@ days:
 
   - day: 4
     label: "6月11日（四）"
+    day_type: local
+    city: 长治
     theme: "长治周边"
     distance: "72km · 1.2h"
     route_class: spur
@@ -215,6 +223,8 @@ days:
 
   - day: 5
     label: "6月12日（五）"
+    day_type: transit
+    city: 高平
     theme: "长治 → 高平"
     distance: "100km · 2h"
     route_class: main
@@ -243,6 +253,8 @@ days:
 
   - day: 6
     label: "6月13日（六）"
+    day_type: transit
+    city: 皇城相府
     theme: "高平 → 晋城 · 皇城相府"
     distance: "107km · 2h"
     route_class: main
@@ -272,6 +284,8 @@ days:
 
   - day: 7
     label: "6月14日（日）"
+    day_type: transit
+    city: 北京
     theme: "湘峪古堡 → 🏠 北京"
     distance: "79→752km · 8.5h"
     route_class: main
