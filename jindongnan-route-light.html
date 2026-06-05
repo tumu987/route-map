@@ -40,13 +40,13 @@
   .tag-purple { background: rgba(131,151,207,0.1); border-color: rgba(131,151,207,0.2); color: #7a8eb8; }
   .tag-rose { background: rgba(200,120,120,0.1); border-color: rgba(200,120,120,0.2); color: #b07878; }
 
-  .stop-0 .stop-dot { border-color: #f87171; } .stop-0 .stop-line { background: linear-gradient(to bottom, #f87171, #fbbf24); } .stop-0 .stop-title { color: #d46060; }
-  .stop-1 .stop-dot { border-color: #fbbf24; } .stop-1 .stop-line { background: linear-gradient(to bottom, #fbbf24, #34d399); } .stop-1 .stop-title { color: #c49a6c; }
-  .stop-2 .stop-dot { border-color: #34d399; } .stop-2 .stop-line { background: linear-gradient(to bottom, #34d399, #38bdf8); } .stop-2 .stop-title { color: #3da87a; }
-  .stop-3 .stop-dot { border-color: #38bdf8; } .stop-3 .stop-line { background: linear-gradient(to bottom, #38bdf8, #a78bfa); } .stop-3 .stop-title { color: #4a8fc7; }
-  .stop-4 .stop-dot { border-color: #a78bfa; } .stop-4 .stop-line { background: linear-gradient(to bottom, #a78bfa, #f472b6); } .stop-4 .stop-title { color: #8a7bc4; }
-  .stop-5 .stop-dot { border-color: #f472b6; } .stop-5 .stop-line { background: linear-gradient(to bottom, #f472b6, #fb923c); } .stop-5 .stop-title { color: #c46a94; }
-  .stop-6 .stop-dot { border-color: #fb923c; } .stop-6 .stop-title { color: #c47a38; }
+  .stop-0 .stop-dot { border-color: #e74c3c; } .stop-0 .stop-line { background: linear-gradient(to bottom, #e74c3c, #f39c12); } .stop-0 .stop-title { color: #e74c3c; }
+  .stop-1 .stop-dot { border-color: #f39c12; } .stop-1 .stop-line { background: linear-gradient(to bottom, #f39c12, #27ae60); } .stop-1 .stop-title { color: #f39c12; }
+  .stop-2 .stop-dot { border-color: #27ae60; } .stop-2 .stop-line { background: linear-gradient(to bottom, #27ae60, #00bcd4); } .stop-2 .stop-title { color: #27ae60; }
+  .stop-3 .stop-dot { border-color: #00bcd4; } .stop-3 .stop-line { background: linear-gradient(to bottom, #00bcd4, #3f51b5); } .stop-3 .stop-title { color: #00bcd4; }
+  .stop-4 .stop-dot { border-color: #3f51b5; } .stop-4 .stop-line { background: linear-gradient(to bottom, #3f51b5, #9c27b0); } .stop-4 .stop-title { color: #3f51b5; }
+  .stop-5 .stop-dot { border-color: #9c27b0; } .stop-5 .stop-line { background: linear-gradient(to bottom, #9c27b0, #e91e63); } .stop-5 .stop-title { color: #9c27b0; }
+  .stop-6 .stop-dot { border-color: #e91e63; } .stop-6 .stop-title { color: #e91e63; }
 
   .day-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 16px; margin-top: 36px; }
   .day-card { background: #fff; border: 1px solid #f0ede6; border-radius: 14px; padding: 20px; transition: box-shadow 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
@@ -54,10 +54,10 @@
   .day-card .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #f0ede6; }
   .day-card .day-label { font-size: 14px; font-weight: 700; }
   .day-card .day-date { font-size: 12px; color: #a0987a; }
-  .day-card .day-route { font-size: 12px; color: #c49a6c; margin-bottom: 8px; }
+  .day-card .highlight { color: #c49a6c; font-weight: 600; }
+  .day-card .day-route { font-size: 14px; color: #c49a6c; margin-bottom: 8px; }
   .day-card .day-items { list-style: none; font-size: 13px; line-height: 1.7; color: #5a5240; }
   .day-card .day-items li::before { content: '▸ '; color: #fbbf24; }
-  .day-card .highlight { color: #c49a6c; font-weight: 600; }
 
 
   .footer { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid #f0ede6; font-size: 12px; color: #b8b09a; }
@@ -855,43 +855,43 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <h2 style="font-size:18px;font-weight:700;margin-bottom:16px;color:#94a3b8;">📋 每日详情</h2>
 <div class="day-cards">
 
-  <div class="day-card">
-    <div class="day-header"><span class="day-label" style="color:#e74c3c">Day 1 · 6/8（一）</span><span class="day-date">🚗 576km · 6.8h</span></div>
+  <div class="day-card card-0">
+    <div class="day-header"><span class="day-label" style="color:#e74c3c">Day 1 · 6/8（一）</span><span class="day-date">🚗 586km · 6.8h</span></div>
     <div class="day-route">北京 → 浊漳河谷</div>
     <ul class="day-items"><li>早 7:00 从北京出发</li><li>龙门寺 ⭐ 六朝木构于一寺</li><li>淳化寺 金代大殿</li><li>🏨 宿平顺/河谷区</li></ul>
   </div>
 
-  <div class="day-card">
+  <div class="day-card card-1">
     <div class="day-header"><span class="day-label" style="color:#f39c12">Day 2 · 6/9（二）</span><span class="day-date">🚗 85km · 1.5h</span></div>
     <div class="day-route">平顺 · 浊漳河谷</div>
     <ul class="day-items"><li>龙门寺 → 天台庵 → 大云院</li><li>原起寺 → 淳化寺</li><li>🏨 宿平顺/河谷区</li></ul>
   </div>
 
-  <div class="day-card">
+  <div class="day-card card-2">
     <div class="day-header"><span class="day-label" style="color:#27ae60">Day 3 · 6/10（三）</span><span class="day-date">🚗 53km · 52min</span></div>
     <div class="day-route">河谷 → 长治</div>
     <ul class="day-items"><li>上午河谷扫尾或补觉</li><li>观音堂 <span class="highlight">明代悬塑巅峰</span></li><li>上党门（长治地标）</li><li>🏨 长治精品酒店 · 🕌 铜锅街清真晚餐</li></ul>
   </div>
 
-  <div class="day-card">
+  <div class="day-card card-3">
     <div class="day-header"><span class="day-label" style="color:#00bcd4">Day 4 · 6/11（四）</span><span class="day-date">🚗 72km · 1.2h</span></div>
     <div class="day-route">长治周边</div>
     <ul class="day-items"><li>法兴寺 <span class="highlight">宋代十二圆觉彩塑</span></li><li>崇庆寺 宋代罗汉像</li><li>可选：金灯寺石窟（悬崖石窟）</li><li>🏨 长治</li></ul>
   </div>
 
-  <div class="day-card">
+  <div class="day-card card-4">
     <div class="day-header"><span class="day-label" style="color:#3f51b5">Day 5 · 6/12（五）</span><span class="day-date">🚗 100km · 2h</span></div>
     <div class="day-route">长治 → 高平</div>
     <ul class="day-items"><li>开化寺 <span class="highlight">北宋壁画 88㎡</span></li><li>崇明寺 北宋早期大木作</li><li>姬氏民居 <span class="highlight">全国最早元代民居</span></li><li>🏨 高平</li></ul>
   </div>
 
-  <div class="day-card">
+  <div class="day-card card-5">
     <div class="day-header"><span class="day-label" style="color:#9c27b0">Day 6 · 6/13（六）</span><span class="day-date">🚗 107km · 2h</span></div>
     <div class="day-route">高平 → 晋城 · 皇城相府</div>
     <ul class="day-items"><li>玉皇庙 <span class="highlight">⭐⭐ 二十八星宿彩塑</span></li><li>青莲寺 唐代彩塑</li><li>下午：皇城相府（清代相府）</li><li>🏨 宿皇城相府/阳城县</li></ul>
   </div>
 
-  <div class="day-card">
+  <div class="day-card card-6">
     <div class="day-header"><span class="day-label" style="color:#e91e63">Day 7（返程）· 6/14（日）</span><span class="day-date">🚗 79km·1.5h 皇城→湘峪 → 752km·8.5h 🏠</span></div>
     <div class="day-route">湘峪古堡 → 🏠 北京</div>
     <ul class="day-items"><li>早：湘峪古堡 <span class="highlight">明代藏兵城堡</span></li><li>🚗 7h 一路北上回北京</li><li>预计晚 7-8 点到家</li></ul>
