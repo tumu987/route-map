@@ -25,7 +25,6 @@ cities:
   长治: [36.1910, 113.1160]
   高平: [35.8000, 112.9300]
   皇城相府: [35.5144, 112.5778]
-  湘峪古堡: [35.6720, 112.1820]
 
 pois:
   - name: 龙门寺
@@ -73,11 +72,6 @@ pois:
     lng: 112.86000
     rank: major
     iconAnchor: [0, -20]
-  - name: 皇城相府
-    lat: 35.51444
-    lng: 112.57778
-    rank: major
-    iconAnchor: [0, -20]
   - name: 青莲寺
     lat: 35.45806
     lng: 112.98917
@@ -118,7 +112,7 @@ days:
         - label: "石家庄→平顺"
     items:
       - "早 7:00 从北京出发"
-      - "龙门寺 <span class=\"highlight\">⭐ 六朝木构于一寺</span>"
+      - '龙门寺 <span class="highlight">⭐ 六朝木构于一寺</span>'
       - "淳化寺 金代大殿"
       - "🏨 宿平顺"
     stop_tags:
@@ -182,7 +176,7 @@ days:
       end: [36.1910, 113.1160]
     items:
       - "上午河谷扫尾或补觉"
-      - "观音堂 <span class=\"highlight\">明代悬塑巅峰</span>"
+      - '观音堂 <span class="highlight">明代悬塑巅峰</span>'
       - "上党门（长治地标）"
       - "🏨 长治精品酒店 · 🕌 铜锅街清真晚餐"
     stop_tags:
@@ -205,7 +199,7 @@ days:
       start: [36.1910, 113.1160]
       end: [36.1910, 113.1160]
     items:
-      - "法兴寺 <span class=\"highlight\">宋代十二圆觉彩塑</span>"
+      - '法兴寺 <span class="highlight">宋代十二圆觉彩塑</span>'
       - "崇庆寺 宋代罗汉像"
       - "可选：金灯寺石窟（悬崖石窟）"
       - "🏨 长治"
@@ -232,9 +226,9 @@ days:
       start: [36.1910, 113.1160]
       end: [35.8000, 112.9300]
     items:
-      - "开化寺 <span class=\"highlight\">北宋壁画 88㎡</span>"
+      - '开化寺 <span class="highlight">北宋壁画 88㎡</span>'
       - "崇明寺 北宋早期大木作"
-      - "姬氏民居 <span class=\"highlight\">全国最早元代民居</span>"
+      - '姬氏民居 <span class="highlight">全国最早元代民居</span>'
       - "🏨 高平"
     stop_tags:
       - "开化寺壁画"
@@ -262,7 +256,7 @@ days:
       start: [35.8000, 112.9300]
       end: [35.5144, 112.5778]
     items:
-      - "玉皇庙 <span class=\"highlight\">⭐⭐ 二十八星宿彩塑</span>"
+      - '玉皇庙 <span class="highlight">⭐⭐ 二十八星宿彩塑</span>'
       - "青莲寺 唐代彩塑"
       - "下午：皇城相府（清代相府）"
       - "🏨 宿皇城相府/阳城县"
@@ -278,10 +272,6 @@ days:
       - name: 青莲寺
         coord: [35.45806, 112.98917]
         rank: major
-      - name: 皇城相府
-        coord: [35.51444, 112.57778]
-        rank: major
-
   - day: 7
     label: "6月14日（日）"
     day_type: transit
@@ -297,7 +287,7 @@ days:
         - label: "湘峪→G4"
         - label: "G4→北京（与去程同路重叠不画）"
     items:
-      - "早：湘峪古堡 <span class=\"highlight\">明代藏兵城堡</span>"
+      - '早：湘峪古堡 <span class="highlight">明代藏兵城堡</span>'
       - "🚗 7h 一路北上回北京"
       - "预计晚 7-8 点到家"
     stop_tags:

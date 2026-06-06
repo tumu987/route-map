@@ -64,8 +64,12 @@ COLOR_PALETTE = [
     '#4db6ac',  # D30 墨绿
 ]
 
-def get_day_color(day_index: int) -> str:
+def get_day_color(day_index: int, colors_override: dict | None = None) -> str:
     """获取第 N 天的颜色"""
+    if colors_override:
+        key = f'D{day_index + 1}'
+        if key in colors_override:
+            return colors_override[key]
     if day_index < len(COLOR_PALETTE):
         return COLOR_PALETTE[day_index]
     # 超过色盘数量时用哈希生成稳定颜色
@@ -186,9 +190,10 @@ def generate_html(trip_data, yaml_path, output_path=None):
     cities_yaml = trip_data['cities']
     pois_yaml = trip_data.get('pois', [])
 
+    yaml_colors = trip_data.get('trip', {}).get('colors', {}) or {}
     N = len(days_data)
-    # 颜色映射
-    day_colors = [get_day_color(i) for i in range(N)]
+    # 颜色映射（优先使用 YAML 中的自定义颜色）
+    day_colors = [get_day_color(i, yaml_colors) for i in range(N)]
 
     # 城市数据：从 YAML cities 中取，但需要 deduplicate 住过的城市
     city_names = list(cities_yaml.keys())
@@ -245,6 +250,8 @@ def generate_html(trip_data, yaml_path, output_path=None):
             dx_lat = cc[0] + 0.02  # 当地日标签贴城市偏上
             dx_lng = cc[1]
         else:
+            if day_type == 'local' and city and city not in cities_yaml:
+                print(f"  ⚠ 城市 '{city}' 未在 cities 中找到，以 transit 处理")
             dx_lat = (start[0] + end[0]) / 2 if start and end else (start or [0,0])[0]
             dx_lng = (start[1] + end[1]) / 2 if start and end else (start or [0,0])[1]
         subtext = f'{city}全天' if day_type == 'local' else ''
@@ -253,8 +260,14 @@ def generate_html(trip_data, yaml_path, output_path=None):
 
         # 获取路线坐标
         print(f"\n  D{d}: {theme}")
-        time.sleep(0.3)  # OSRM 限流保护
-        polyline = fetch_osrm_route(start, end, via_list) if start and end else [[0,0],[0,0]]
+        # start == end → 当地行程，直线路径，跳过 OSRM
+        if start and end and start[0] == end[0] and start[1] == end[1]:
+            polyline = [[start[0], start[1]], [end[0], end[1]]]
+            print(f"  ✓ 当地行程，直线路径")
+        elif start and end:
+            polyline = fetch_osrm_route(start, end, via_list)
+        else:
+            polyline = [[0,0],[0,0]]
         # 至少2个点
         if len(polyline) < 2:
             polyline = [start or [0,0], end or [0,0]]
@@ -605,12 +618,12 @@ function placeLabel(lat, lng, minGap, maxStep) {{
 var closeGap = 0.025, closeStep = 8;
 var farGap = 0.08, farStep = 20;
 
-// 精确测量文字宽度（替代 length*7 估算）
+// 精确测量文字宽度（替代 length*7 估算），复用 canvas 提高性能
+var _mwCanvas = null, _mwCtx = null;
 function measureTextWidth(txt, size) {{
-  var c = document.createElement('canvas');
-  var ctx = c.getContext('2d');
-  ctx.font = size + 'px "Noto Sans SC", system-ui, sans-serif';
-  return Math.round(ctx.measureText(txt).width);
+  if (!_mwCtx) {{ _mwCanvas = document.createElement('canvas'); _mwCtx = _mwCanvas.getContext('2d'); }}
+  _mwCtx.font = size + 'px "Noto Sans SC", system-ui, sans-serif';
+  return Math.round(_mwCtx.measureText(txt).width);
 }}
 
 function cityIcon(w) {{ return w + 12; }}
