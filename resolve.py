@@ -18,6 +18,8 @@ import sys
 import os
 import json
 import time
+import math
+import re
 import hashlib
 import urllib.request
 import urllib.parse
@@ -247,8 +249,8 @@ SPEED_GRADIENTS = {
 }
 
 DAILY_CEILING = {
-    'single_highway':  400,
-    'single_mountain': 150,
+    'single_highway':  600,
+    'single_mountain': 300,
     'dual_highway':    700,
     'dual_mountain':   300,
 }
@@ -315,6 +317,22 @@ def validate_daily(d, day_idx, day_colors, cities_data, city_coords_dict):
             warnings.append(f"🌅 D{d['day']} 由西向东 — 早晨 07:00-09:00 迎光驾驶，注意遮阳")
         elif lng_diff < -2:  # Going west
             warnings.append(f"🌅 D{d['day']} 由东向西 — 下午 16:00-18:00 迎光驾驶，注意遮阳")
+    
+    # 3.6 OSRM 异常路线检测（路网缺失导致大绕路）
+    if start_coord and end_coord and distance_km > 0:
+        lat_avg = math.radians((start_coord[0] + end_coord[0]) / 2)
+        dlat = abs(start_coord[0] - end_coord[0]) * 111
+        dlng = abs(start_coord[1] - end_coord[1]) * 111 * math.cos(lat_avg)
+        straight_km = (dlat ** 2 + dlng ** 2) ** 0.5
+        # 两种异常检测：远超直线 或 远超YAML预期里程
+        if straight_km > 10 and distance_km / straight_km > 4:
+            warnings.append(f"🔄 D{d['day']} {theme}: OSRM路线({distance_km}km)远超直线({straight_km:.0f}km)，路网可能缺失")
+        elif distance_km > 0 and straight_km > 10:
+            distance_expected = d.get('distance', '')
+            if distance_expected:
+                nums = re.findall(r'\d+', distance_expected.replace(',', ''))
+                if nums and int(nums[0]) > 10 and distance_km / int(nums[0]) > 2:
+                    warnings.append(f"🔄 D{d['day']} {theme}: OSRM路线({distance_km}km)是YAML预期({nums[0]}km)的{distance_km//int(nums[0])}倍，路网可能缺失请核对")
     
     return warnings
 
@@ -537,6 +555,11 @@ def resolve(yaml_path: str, output_path: str | None = None):
         tips = day.get('tips', [])
         distance_manual = day.get('distance', '')
         
+        # 获取城市海拔
+        city_elev = None
+        if city and city in city_name_to_coord:
+            city_elev = city_name_to_coord[city].get('elevation', 0)
+        
         color = day_colors[idx]
         name = f'D{d}'
         
@@ -658,14 +681,18 @@ def resolve(yaml_path: str, output_path: str | None = None):
                     stop_tags.append(f'🔄 含摆渡车')
                     tag_htmls.append(f'<span class="tag">🔄 含摆渡车</span>')
         
-        tips_html = ''.join(f'<div class="tip-note">{tip}</div>' for tip in tips[:2])
+        tips_html = ''.join(f'<div class="tip-note">{tip}</div>' for tip in tips[:5])
+        
+        elev_tag = ''
+        if city_elev and city_elev > 2000:
+            elev_tag = f'<span class="tag tag-elev">🏔️{city_elev}m</span>'
         
         sidebar_items.append(f'''    <div class="stop stop-{idx}">
       <div class="stop-marker"><div class="stop-dot">{d}</div><div class="stop-line"></div></div>
       <div class="stop-content">
         <div class="stop-title" style="color:{color}">{name} <span class="st-sub">{theme}</span></div>
         <div class="stop-meta">{day_label} {disttime}</div>
-        <div class="stop-tags">{''.join(tag_htmls)}</div>
+        <div class="stop-tags">{''.join(tag_htmls)}{elev_tag}</div>
         {tips_html}
       </div>
     </div>''')

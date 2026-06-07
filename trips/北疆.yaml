@@ -1,0 +1,457 @@
+# 🏞️ 北疆大环线 — 行程数据
+# 经典14天：乌鲁木齐 → 可可托海 → 布尔津 → 喀纳斯 → 禾木 → 乌尔禾魔鬼城 →
+# 赛里木湖 → 伊宁 → 伊昭公路 → 喀拉峻 → 那拉提 → 独库公路 → 乌鲁木齐
+# 最佳季节：6-9月（独库公路通常6月中-10月初开放）
+
+trip:
+  title: 🏞️ 北疆大环线
+  subtitle: 乌鲁木齐出发 · 喀纳斯 · 赛里木湖 · 伊犁草原 · 独库公路 · 十四日全景巡礼
+  dates: 7-8月
+  basemap: light
+  stats:
+    days: 14
+    distance: "~3,000"
+    heritage: "12+"
+    people: 2
+
+cities:
+  乌鲁木齐: ~
+  富蕴: ~
+  布尔津: ~
+  喀纳斯: ~
+  禾木: [48.569, 87.428]
+  克拉玛依: ~
+  赛里木湖: ~
+  伊宁: ~
+  特克斯: ~
+  那拉提: ~
+  巴音布鲁克: ~
+  独山子: ~
+
+pois:
+  - name: 天山天池
+    coord: [43.886, 88.131]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 可可托海
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 五彩滩
+    coord: [48.323, 86.835]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 观鱼台
+    coord: [48.697, 87.017]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 神仙湾
+    hint: "喀纳斯"
+    rank: minor
+  - name: 月亮湾
+    coord: [48.668, 87.045]
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 禾木观景台
+    coord: [48.572, 87.430]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 乌尔禾魔鬼城
+    coord: [46.104, 85.718]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 赛里木湖
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 果子沟大桥
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 霍城薰衣草
+    coord: [44.060, 80.878]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 喀赞其民俗街
+    hint: "伊宁"
+    rank: minor
+  - name: 伊昭公路
+    hint: "白石峰"
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 昭苏天马
+    coord: [43.134, 81.132]
+    rank: minor
+  - name: 喀拉峻草原
+    hint: "特克斯"
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 阔克苏大峡谷
+    coord: [43.080, 82.119]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 那拉提空中草原
+    coord: [42.898, 86.496]
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 九曲十八弯
+    hint: "巴音布鲁克"
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 独库公路纪念碑
+    coord: [43.650, 84.357]
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 乔尔玛烈士陵园
+    coord: [43.695, 84.433]
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 国际大巴扎
+    hint: "乌鲁木齐"
+    rank: minor
+
+days:
+  - day: 1
+    label: "D1"
+    day_type: local
+    city: 乌鲁木齐
+    theme: "乌鲁木齐 · 集结出发"
+    distance: ""
+    route_class: spur
+    route:
+      start: 乌鲁木齐
+      end: 乌鲁木齐
+    items:
+      - "✈️ 各地抵达乌鲁木齐"
+      - "租车提车，采购补给"
+      - "🏨 宿乌鲁木齐"
+    stop_tags:
+      - "🏨 乌鲁木齐"
+    tips:
+      - "🛒 建议采购：矿泉水、零食、方便食品、车载充电器"
+      - "☀️ 新疆日照长，备好防晒霜、墨镜、帽子"
+
+  - day: 2
+    label: "D2"
+    day_type: transit
+    city: 富蕴
+    theme: "乌鲁木齐 → 天山天池 → 富蕴"
+    distance: "480km · 6h"
+    route_class: main
+    route:
+      start: 乌鲁木齐
+      end: 富蕴
+      terrain: highway
+    items:
+      - "早 8:00 出发，前往天山天池"
+      - "天山天池游览（2-3h）"
+      - "穿越古尔班通古特沙漠"
+      - "🏨 宿富蕴"
+    stop_tags:
+      - "天山天池"
+      - "🏨 富蕴"
+    tips:
+      - "🎫 天池门票+区间车约 155元/人"
+      - "🚗 下午车程较长，建议天池出来后简单午餐再上路"
+      - "💡 实际含天池往返约620km·7h，是新疆长途的正常节奏"
+
+  - day: 3
+    label: "D3"
+    day_type: transit
+    city: 布尔津
+    theme: "富蕴 → 可可托海 → 布尔津"
+    distance: "300km · 4.5h"
+    route_class: main
+    route:
+      start: 富蕴
+      end: 布尔津
+      via: [可可托海]
+      terrain: highway
+    items:
+      - "早 9:00 出发，可可托海国家地质公园"
+      - "神钟山 · 额尔齐斯河大峡谷"
+      - "下午前往布尔津"
+      - "🌅 五彩滩日落（22:00左右）"
+      - "🏨 宿布尔津"
+    stop_tags:
+      - "可可托海"
+      - "五彩滩"
+      - "🏨 布尔津"
+    tips:
+      - "🎫 可可托海门票+区间车约 126元/人"
+      - "🌅 五彩滩日落绝美，夏季大约 21:30-22:00"
+      - "🐟 布尔津夜市冷水鱼值得一试"
+      - "💡 下午由东向西迎光备墨镜；布尔津海拔数据不准，实际约470m"
+
+  - day: 4
+    label: "D4"
+    day_type: transit
+    city: 喀纳斯
+    theme: "布尔津 → 喀纳斯"
+    distance: "140km · 3h"
+    route_class: main
+    route:
+      start: 布尔津
+      end: 喀纳斯
+      terrain: national
+    items:
+      - "早 10:00 出发，北上喀纳斯"
+      - "沿途阿尔泰山风光"
+      - "🏨 宿喀纳斯老村/新村"
+    stop_tags:
+      - "🏨 喀纳斯"
+    tips:
+      - "🎫 喀纳斯门票+区间车约 230元/人"
+      - "🏡 建议住喀纳斯老村或新村，方便次日游玩"
+      - "🌡️ 喀纳斯夏季气温 15-25°C，比北疆其他地区凉爽"
+
+  - day: 5
+    label: "D5"
+    day_type: local
+    city: 喀纳斯
+    theme: "喀纳斯全天 · 三湾 · 观鱼台"
+    distance: "景区游览"
+    route_class: spur
+    route:
+      start: 喀纳斯
+      end: 喀纳斯
+    items:
+      - "早起乘区间车到观鱼台（俯瞰喀纳斯湖全景）"
+      - "神仙湾晨雾"
+      - "月亮湾 → 卧龙湾徒步（经典 2km 栈道）"
+      - "🏨 宿喀纳斯"
+    stop_tags:
+      - "观鱼台"
+      - "月亮湾"
+      - "🏨 喀纳斯"
+    tips:
+      - "🌄 观鱼台建议早上去，逆光最少"
+      - "🚶 月亮湾到卧龙湾栈道 2km，平缓好走，必体验"
+      - "🌲 神仙湾晨雾最佳时间 7:00-8:00"
+
+  - day: 6
+    label: "D6"
+    day_type: transit
+    city: 禾木
+    theme: "喀纳斯 → 禾木村"
+    distance: "60km · 2h"
+    route_class: main
+    route:
+      start: 喀纳斯
+      end: 禾木
+      terrain: national
+    items:
+      - "上午喀纳斯湖畔漫步"
+      - "中午出发前往禾木"
+      - "禾木村自由漫步"
+      - "🏨 宿禾木小木屋"
+    stop_tags:
+      - "🏨 禾木"
+    tips:
+      - "🎫 禾木门票+区间车约 102元/人"
+      - "🏡 禾木小木屋是特色体验，提前预订"
+      - "🌙 禾木无光污染，拍星空绝佳"
+
+  - day: 7
+    label: "D7"
+    day_type: transit
+    city: 克拉玛依
+    theme: "禾木晨雾 → 布尔津 → 魔鬼城 → 克拉玛依"
+    distance: "450km · 6h"
+    route_class: main
+    route:
+      start: 禾木
+      end: 克拉玛依
+      terrain: highway
+    items:
+      - "🌄 禾木观景台晨雾（6:00-8:00）"
+      - "经布尔津，沿额尔齐斯河谷南下"
+      - "乌尔禾魔鬼城（雅丹地貌）"
+      - "🌅 魔鬼城日落"
+      - "🏨 宿克拉玛依"
+    stop_tags:
+      - "禾木观景台"
+      - "乌尔禾魔鬼城"
+      - "🏨 克拉玛依"
+    tips:
+      - "🌄 禾木晨雾是北疆最经典的画面，务必早起"
+      - "🎫 魔鬼城门票+小火车约 62元/人"
+      - "🚗 今天是车程最长的一天，建议魔鬼城安排在下午 18:00 后到（光线最佳）"
+      - "💡 467km是全程最长单天，魔鬼城安排在日落前到光线最佳"
+
+  - day: 8
+    label: "D8"
+    day_type: transit
+    city: 赛里木湖
+    theme: "克拉玛依 → 赛里木湖"
+    distance: "300km · 3.5h"
+    route_class: main
+    route:
+      start: 克拉玛依
+      end: 赛里木湖
+      terrain: highway
+    items:
+      - "上午从克拉玛依出发"
+      - "下午抵达赛里木湖"
+      - "赛里木湖环湖自驾（东门进南门出）"
+      - "🏨 宿赛里木湖湖畔/毡房"
+    stop_tags:
+      - "赛里木湖"
+      - "🏨 赛里木湖"
+    tips:
+      - "🎫 赛里木湖自驾门票约 145元/车（含驾驶员），乘客单独购票"
+      - "🏕️ 赛湖毡房是独特体验，但条件简单，备好保暖衣物"
+      - "🌊 赛湖环湖约 90km，预留 3-4h 边走边拍"
+      - "💡 456km全程高速；海拔354m→2072m高原过渡，赛湖昼夜温差大"
+
+  - day: 9
+    label: "D9"
+    day_type: transit
+    city: 伊宁
+    theme: "赛里木湖 → 果子沟大桥 → 霍城薰衣草 → 伊宁"
+    distance: "150km · 2.5h"
+    route_class: main
+    route:
+      start: 赛里木湖
+      end: 伊宁
+      terrain: highway
+    items:
+      - "赛里木湖晨景"
+      - "果子沟大桥（网红打卡）"
+      - "霍城薰衣草庄园（6月中-7月花期）"
+      - "🏨 宿伊宁"
+    stop_tags:
+      - "果子沟大桥"
+      - "霍城薰衣草"
+      - "🏨 伊宁"
+    tips:
+      - "🌉 果子沟大桥观景台在将军沟，高速看不到"
+      - "🌸 薰衣草花期仅 6月中-7月底，其他季节可略过"
+      - "🏘️ 伊宁喀赞其民俗街值得傍晚散步"
+
+  - day: 10
+    label: "D10"
+    day_type: transit
+    city: 特克斯
+    theme: "伊宁 → 伊昭公路 → 昭苏 → 特克斯"
+    distance: "260km · 5h"
+    route_class: main
+    route:
+      start: 伊宁
+      end: 特克斯
+      terrain: mountain
+    items:
+      - "伊昭公路（白石峰 · 小独库）"
+      - "昭苏油菜花海/天马文化园"
+      - "🏨 宿特克斯八卦城"
+    stop_tags:
+      - "伊昭公路"
+      - "昭苏天马"
+      - "🏨 特克斯"
+    tips:
+      - "🚗 伊昭公路 6-10月开放，7座以下通行"
+      - "🌸 昭苏油菜花 7月最佳，天马节也在7月"
+      - "🧭 特克斯八卦城无红绿灯，航拍效果震撼"
+      - "⚠️ 伊昭公路山路弯多，预留充裕时间"
+      - "💡 156km山路只超上限6km，边走边拍很惬意；海拔993m→2176m是伊昭公路翻山正常跃升"
+
+  - day: 11
+    label: "D11"
+    day_type: transit
+    city: 那拉提
+    theme: "特克斯 → 喀拉峻草原 → 那拉提"
+    distance: "250km · 4h"
+    route_class: main
+    route:
+      start: 特克斯
+      end: 那拉提
+      terrain: national
+    items:
+      - "喀拉峻草原（世界自然遗产）"
+      - "阔克苏大峡谷 · 人体草原"
+      - "傍晚抵达那拉提镇"
+      - "🏨 宿那拉提"
+    stop_tags:
+      - "喀拉峻草原"
+      - "阔克苏大峡谷"
+      - "🏨 那拉提"
+    tips:
+      - "🎫 喀拉峻全域门票+游船+索道约 275元/人"
+      - "📸 阔克苏「人体草原」在下午光影下最美"
+      - "🚗 特克斯→那拉提可走巩乃斯河谷，风景宜人"
+      - "💡 OSRM路网缺少G218段，标注534km系绕路；实际走G578→G218约250km·4h"
+
+  - day: 12
+    label: "D12"
+    day_type: transit
+    city: 巴音布鲁克
+    theme: "那拉提草原 → 巴音布鲁克"
+    distance: "90km · 2h"
+    route_class: main
+    route:
+      start: 那拉提
+      end: 巴音布鲁克
+      terrain: national
+    items:
+      - "上午那拉提空中草原"
+      - "午后沿独库公路中段南下"
+      - "🌅 巴音布鲁克九曲十八弯日落"
+      - "🏨 宿巴音布鲁克镇"
+    stop_tags:
+      - "那拉提空中草原"
+      - "九曲十八弯"
+      - "🏨 巴音布鲁克"
+    tips:
+      - "🎫 那拉提空中草原门票+区间车约 135元/人"
+      - "🌅 九曲十八弯日落需要 21:00-21:30 到观景台"
+      - "🌡️ 巴音布鲁克海拔 2500m，注意保暖"
+      - "💡 那拉提→巴音布鲁克由东向西，下午迎光备墨镜"
+
+  - day: 13
+    label: "D13"
+    day_type: transit
+    city: 独山子
+    theme: "巴音布鲁克 → 独库公路北段 → 独山子"
+    distance: "300km · 5h"
+    route_class: main
+    route:
+      start: 巴音布鲁克
+      end: 独山子
+      terrain: mountain
+    items:
+      - "独库公路北段（全程精华）"
+      - "乔尔玛烈士陵园（致敬筑路人）"
+      - "哈希勒根达坂 3390m"
+      - "🏨 宿独山子"
+    stop_tags:
+      - "独库公路纪念碑"
+      - "乔尔玛烈士陵园"
+      - "🏨 独山子"
+    tips:
+      - "🚗 独库公路 7座以下通行，注意查路况"
+      - "🏔️ 哈希勒根达坂常年积雪，可玩雪"
+      - "⚠️ 独库公路可能因天气临时封闭，出发前确认路况"
+      - "⛽ 乔尔玛有加油站，建议加满油再走北段"
+      - "💡 独库公路290km山路走5-6h，风景绝佳停车点多，走走停停不觉得累"
+
+  - day: 14
+    label: "D14"
+    day_type: transit
+    city: 乌鲁木齐
+    theme: "独山子 → 乌鲁木齐 → 返程"
+    distance: "250km · 3h"
+    route_class: main
+    route:
+      start: 独山子
+      end: 乌鲁木齐
+      terrain: highway
+    items:
+      - "上午独山子大峡谷（可选）"
+      - "连霍高速返回乌鲁木齐"
+      - "国际大巴扎采购伴手礼"
+      - "✈️ 返程"
+    stop_tags:
+      - "国际大巴扎"
+      - "返程 ✈️"
+    tips:
+      - "🛍️ 大巴扎买干果、地毯、乐器等"
+      - "⏰ 预留 3h 到机场，乌鲁木齐市区堵车严重"
+      - "🔄 还车注意检查里程和油量"
+      - "💡 独山子→乌鲁木齐由西向东，早晨至中午迎光备墨镜"

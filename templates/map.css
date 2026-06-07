@@ -47,6 +47,7 @@ header .badge { background: #efece4; border: 1px solid #ddd8ce; border-radius: 2
 .tag-star { background: rgba(196,154,108,0.15); border-color: #c49a6c; color: #c49a6c; }
 .tag-purple { background: rgba(131,151,207,0.1); border-color: rgba(131,151,207,0.2); color: #7a8eb8; }
 .tag-rose { background: rgba(200,120,120,0.1); border-color: rgba(200,120,120,0.2); color: #b07878; }
+.tag-elev { background: rgba(80,140,180,0.1); border-color: rgba(80,140,180,0.2); color: #5a88a8; }
 .tip-note { font-size: 12px; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
 .tip-note .ti { flex-shrink: 0; }
 
