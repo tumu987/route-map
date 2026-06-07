@@ -23,6 +23,7 @@ import re
 import hashlib
 import urllib.request
 import urllib.parse
+from datetime import datetime, timedelta
 from collections import OrderedDict
 
 import yaml
@@ -481,6 +482,17 @@ def resolve(yaml_path: str, output_path: str | None = None):
     title = trip_meta.get('title', '自驾路线图')
     subtitle = trip_meta.get('subtitle', '')
     basemap = trip_meta.get('basemap', 'light')
+    start_date_str = trip_meta.get('start_date', '')
+    
+    # 解析起始日期
+    start_date = None
+    if start_date_str:
+        try:
+            start_date = datetime.strptime(str(start_date_str), '%Y-%m-%d')
+        except:
+            print(f"  ⚠ start_date 格式错误: {start_date_str}，应为 YYYY-MM-DD")
+    
+    weekday_names = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     
     print(f"   行程: {title}")
     print(f"   天数: {len(days_data)}")
@@ -768,8 +780,15 @@ def resolve(yaml_path: str, output_path: str | None = None):
     </div>
   </div>'''
         
+        # 计算当天日期
+        if start_date:
+            day_date = start_date + timedelta(days=idx)
+            date_str = f"{day_date.month}/{day_date.day} {weekday_names[day_date.weekday()]}"
+        else:
+            date_str = ""
+        
         day_card_items.append(f'''  <div class="day-card card-{idx}">
-    <div class="day-header"><span class="day-label" style="color:{color}">Day {d} · {day_label}</span><span class="day-date">{disttime}</span></div>
+    <div class="day-header"><span class="day-label" style="color:{color}">{day_label}{' · ' + date_str if date_str else ''}</span><span class="day-date">{disttime}</span></div>
     <div class="day-route">{theme}</div>
     <ul class="day-items">{items_html}</ul>
     {shuttle_note}

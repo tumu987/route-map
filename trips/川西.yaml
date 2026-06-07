@@ -6,6 +6,7 @@ trip:
   title: 🏔️ 川西小环线
   subtitle: 成都出发 · 康定 · 新都桥 · 丹巴 · 四姑娘山 · 七日雪山巡礼
   dates: 7月
+  start_date: "2026-07-11"
   basemap: light
   stats:
     days: 7
