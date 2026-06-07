@@ -900,10 +900,23 @@ def resolve(yaml_path: str, output_path: str | None = None):
     legend_html = '\n    '.join(f'<span class="legend-item"><span class="legend-line" style="background:{day_colors[i]}"></span>D{i+1}</span>' for i in range(N))
     
     # ── 输出 resolved JSON ──
+    # 把天数、总里程加到副标题
+    stats_info = []
+    days_val = sd.get('days', '')
+    dist_val = sd.get('distance', '')
+    if days_val:
+        stats_info.append(f"{days_val}天")
+    if dist_val:
+        stats_info.append(f"约{dist_val}km")
+    if stats_info:
+        subtitle_ext = f"{subtitle} · {' '.join(stats_info)}"
+    else:
+        subtitle_ext = subtitle
+    
     resolved = {
         "trip": {
             "title": title,
-            "subtitle": subtitle,
+            "subtitle": subtitle_ext,
             "basemap": basemap,
             "stats": sd,
         },
