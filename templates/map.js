@@ -106,49 +106,75 @@ function hasOverlap(cx, cy, w, h, segPx, dp, boxes, checkRoutes) {
 }
 
 // ── 搜索无碰撞位置 ──
-// checkRoutes: true=城市（全检）, false=Dx（不检路线）
+// 逐级半径，每级 8 方向全试，选离路线最远的那个
+// checkRoutes: true=城市+DC（全检）, false=Dx（不检路线）
+function _posScore(cx,cy,segPx,dp,boxes,checkRoutes) {
+  // 返回 {segDist, dotDist, boxDist} 评分用
+  var r = {segDist:Infinity, dotDist:Infinity, boxDist:Infinity};
+  if (checkRoutes)
+    for (var i=0;i<segPx.length;i++) {
+      var mx=(segPx[i].x1+segPx[i].x2)/2, my=(segPx[i].y1+segPx[i].y2)/2;
+      var dd=(cx-mx)*(cx-mx)+(cy-my)*(cy-my);
+      if (dd<r.segDist) r.segDist=dd;
+    }
+  for (var i=0;i<dp.length;i++) {
+    var dd=(cx-dp[i].x)*(cx-dp[i].x)+(cy-dp[i].y)*(cy-dp[i].y);
+    if (dd<r.dotDist) r.dotDist=dd;
+  }
+  for (var i=0;i<boxes.length;i++) {
+    var o=boxes[i];
+    if (cx>=o.l-4&&cx<=o.r+4&&cy>=o.t-4&&cy<=o.b+4) { r.boxDist=0; break; }
+    var dx=Math.max(0,o.l-cx,cx-o.r), dy=Math.max(0,o.t-cy,cy-o.b);
+    var dd=dx*dx+dy*dy;
+    if (dd<r.boxDist) r.boxDist=dd;
+  }
+  return r;
+}
 function findPos(lat,lng,basePx,w,h,segPx,dp,boxes,checkRoutes) {
   var org = map.latLngToLayerPoint(L.latLng(lat,lng));
   var hw = w/2, hh = h/2;
   var sc = [1,1.5,2,2.5,3];
   for (var si=0;si<sc.length;si++) {
     var d = basePx*sc[si];
+    var best=null, bestS={segDist:0,dotDist:0,boxDist:0};
     for (var di=0;di<DIRS.length;di++) {
       var cx=org.x+DIRS[di][0]*d, cy=org.y+DIRS[di][1]*d;
       if (!hasOverlap(cx,cy,w,h,segPx,dp,boxes,checkRoutes)) {
-        var ll = map.layerPointToLatLng(L.point(cx,cy));
-        return {lat:ll.lat,lng:ll.lng,box:{l:cx-hw,r:cx+hw,t:cy-hh,b:cy+hh}};
+        var s = _posScore(cx,cy,segPx,dp,boxes,checkRoutes);
+        // 同半径内比谁离路线更远 > 离圆点更远 > 离标签更远
+        if (!best || s.segDist>bestS.segDist ||
+            (s.segDist==bestS.segDist && s.dotDist>bestS.dotDist) ||
+            (s.segDist==bestS.segDist && s.dotDist==bestS.dotDist && s.boxDist>bestS.boxDist)) {
+          best = {cx:cx,cy:cy};
+          bestS = s;
+        }
       }
     }
+    if (best) {
+      var ll = map.layerPointToLatLng(L.point(best.cx,best.cy));
+      return {lat:ll.lat,lng:ll.lng,box:{l:best.cx-hw,r:best.cx+hw,t:best.cy-hh,b:best.cy+hh}};
+    }
   }
-  // fallback: 3×basePx 中最优方向
-  var best=null, bestSc=-Infinity;
-  for (var di=0;di<DIRS.length;di++) {
-    var cx=org.x+DIRS[di][0]*basePx*3, cy=org.y+DIRS[di][1]*basePx*3;
-    var minR=checkRoutes?Infinity:999, minD=Infinity;
-    if (checkRoutes) {
-      for (var i=0;i<segPx.length;i++) {
-        var mx=(segPx[i].x1+segPx[i].x2)/2, my=(segPx[i].y1+segPx[i].y2)/2;
-        var dd=(cx-mx)*(cx-mx)+(cy-my)*(cy-my);
-        if (dd<minR) minR=dd;
+  // fallback: 4×–10× basePx 逐级搜（几不可达）
+  for (var si=4;si<=10;si++) {
+    var d = basePx*si;
+    var best=null, bestS={segDist:0,dotDist:0,boxDist:0};
+    for (var di=0;di<DIRS.length;di++) {
+      var cx=org.x+DIRS[di][0]*d, cy=org.y+DIRS[di][1]*d;
+      if (!hasOverlap(cx,cy,w,h,segPx,dp,boxes,checkRoutes)) {
+        var s = _posScore(cx,cy,segPx,dp,boxes,checkRoutes);
+        if (!best || s.segDist>bestS.segDist ||
+            (s.segDist==bestS.segDist && s.dotDist>bestS.dotDist) ||
+            (s.segDist==bestS.segDist && s.dotDist==bestS.dotDist && s.boxDist>bestS.boxDist)) {
+          best = {cx:cx,cy:cy};
+          bestS = s;
+        }
       }
     }
-    for (var i=0;i<dp.length;i++) {
-      var dd=(cx-dp[i].x)*(cx-dp[i].x)+(cy-dp[i].y)*(cy-dp[i].y);
-      if (dd<minD) minD=dd;
+    if (best) {
+      var ll = map.layerPointToLatLng(L.point(best.cx,best.cy));
+      return {lat:ll.lat,lng:ll.lng,box:{l:best.cx-hw,r:best.cx+hw,t:best.cy-hh,b:best.cy+hh}};
     }
-    for (var i=0;i<boxes.length;i++) {
-      var o=boxes[i];
-      if (cx>=o.l-10&&cx<=o.r+10&&cy>=o.t-10&&cy<=o.b+10) minD=0;
-    }
-    if (Math.sqrt(minR)+Math.sqrt(minD)>bestSc) {
-      bestSc = Math.sqrt(minR)+Math.sqrt(minD);
-      best = {cx:cx,cy:cy};
-    }
-  }
-  if (best) {
-    var ll = map.layerPointToLatLng(L.point(best.cx,best.cy));
-    return {lat:ll.lat,lng:ll.lng,box:{l:best.cx-hw,r:best.cx+hw,t:best.cy-hh,b:best.cy+hh}};
   }
   return {lat:lat,lng:lng,box:{l:0,r:0,t:0,b:0}};
 }
