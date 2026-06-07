@@ -1,0 +1,1260 @@
+{
+  "trip": {
+    "title": "🏛️ 晋东南古建自驾路线图",
+    "subtitle": "北京出发 · 浊漳河谷 · 长治 · 高平 · 晋城 · 七日古建巡礼",
+    "basemap": "light",
+    "stats": {
+      "days": 7,
+      "distance": "~2,200",
+      "heritage": "18+",
+      "people": 2
+    }
+  },
+  "cities": [
+    {
+      "name": "北京",
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "color": "#e74c3c",
+      "elevation": 50
+    },
+    {
+      "name": "平顺",
+      "lat": 36.2,
+      "lng": 113.439,
+      "color": "#e74c3c",
+      "elevation": 1078
+    },
+    {
+      "name": "长治",
+      "lat": 36.191,
+      "lng": 113.116,
+      "color": "#27ae60",
+      "elevation": 932
+    },
+    {
+      "name": "高平",
+      "lat": 35.8,
+      "lng": 112.93,
+      "color": "#3f51b5",
+      "elevation": 831
+    },
+    {
+      "name": "皇城相府",
+      "lat": 35.5144,
+      "lng": 112.5778,
+      "color": "#9c27b0",
+      "elevation": 651
+    }
+  ],
+  "pois": {
+    "major": [
+      [
+        36.39028,
+        113.62278,
+        "#8b6a4a",
+        "龙门寺",
+        0,
+        -20
+      ],
+      [
+        36.202,
+        113.574,
+        "#8b6a4a",
+        "大云院",
+        0,
+        18
+      ],
+      [
+        36.38306,
+        113.39861,
+        "#8b6a4a",
+        "天台庵",
+        -14,
+        0
+      ],
+      [
+        36.195,
+        113.115,
+        "#8b6a4a",
+        "观音堂",
+        0,
+        -20
+      ],
+      [
+        35.98056,
+        112.95972,
+        "#8b6a4a",
+        "崇庆寺",
+        0,
+        18
+      ],
+      [
+        36.098,
+        113.056,
+        "#8b6a4a",
+        "法兴寺",
+        0,
+        -18
+      ],
+      [
+        35.838,
+        112.915,
+        "#8b6a4a",
+        "开化寺",
+        0,
+        -20
+      ],
+      [
+        35.86583,
+        113.06333,
+        "#8b6a4a",
+        "姬氏民居",
+        0,
+        18
+      ],
+      [
+        35.488,
+        112.86,
+        "#8b6a4a",
+        "玉皇庙星宿彩塑",
+        0,
+        -20
+      ],
+      [
+        35.45806,
+        112.98917,
+        "#8b6a4a",
+        "青莲寺",
+        0,
+        18
+      ],
+      [
+        35.672,
+        112.182,
+        "#8b6a4a",
+        "湘峪古堡",
+        0,
+        -20
+      ]
+    ],
+    "minor": [
+      [
+        36.35444,
+        113.58944,
+        "淳化寺 · 金"
+      ],
+      [
+        36.35333,
+        113.42583,
+        "原起寺 · 宋塔"
+      ],
+      [
+        35.71444,
+        113.00861,
+        "崇明寺 · 北宋"
+      ]
+    ]
+  },
+  "routes": {
+    "main": [
+      {
+        "day": 1,
+        "color": "#e74c3c",
+        "polyline": [
+          [
+            39.904421,
+            116.407381
+          ],
+          [
+            39.841286,
+            116.206
+          ],
+          [
+            39.733836,
+            116.109346
+          ],
+          [
+            39.429786,
+            116.01207
+          ],
+          [
+            39.112146,
+            115.733985
+          ],
+          [
+            38.787533,
+            115.53757
+          ],
+          [
+            38.740877,
+            115.467949
+          ],
+          [
+            38.72566,
+            115.325382
+          ],
+          [
+            38.574181,
+            115.081315
+          ],
+          [
+            38.461817,
+            114.983393
+          ],
+          [
+            38.437994,
+            114.866663
+          ],
+          [
+            38.348892,
+            114.73284
+          ],
+          [
+            38.162897,
+            114.588617
+          ],
+          [
+            38.043533,
+            114.570485
+          ],
+          [
+            38.042377,
+            114.514906
+          ],
+          [
+            37.953684,
+            114.502963
+          ],
+          [
+            37.799258,
+            114.314401
+          ],
+          [
+            37.348545,
+            114.319193
+          ],
+          [
+            37.148889,
+            114.235243
+          ],
+          [
+            37.101399,
+            114.256661
+          ],
+          [
+            36.905954,
+            114.16474
+          ],
+          [
+            36.714097,
+            113.949857
+          ],
+          [
+            36.567318,
+            113.847317
+          ],
+          [
+            36.367224,
+            113.869608
+          ],
+          [
+            36.300155,
+            113.797263
+          ],
+          [
+            36.24648,
+            113.833275
+          ],
+          [
+            36.252703,
+            113.674534
+          ],
+          [
+            36.209205,
+            113.596976
+          ],
+          [
+            36.186386,
+            113.388983
+          ],
+          [
+            36.200151,
+            113.439324
+          ]
+        ]
+      },
+      {
+        "day": 3,
+        "color": "#27ae60",
+        "polyline": [
+          [
+            36.200151,
+            113.439324
+          ],
+          [
+            36.20103,
+            113.436272
+          ],
+          [
+            36.193025,
+            113.416
+          ],
+          [
+            36.186691,
+            113.404105
+          ],
+          [
+            36.185591,
+            113.391295
+          ],
+          [
+            36.186991,
+            113.38931
+          ],
+          [
+            36.185472,
+            113.388125
+          ],
+          [
+            36.17953,
+            113.375014
+          ],
+          [
+            36.179129,
+            113.359635
+          ],
+          [
+            36.180255,
+            113.346734
+          ],
+          [
+            36.171981,
+            113.301343
+          ],
+          [
+            36.174298,
+            113.294307
+          ],
+          [
+            36.182929,
+            113.284474
+          ],
+          [
+            36.183825,
+            113.280152
+          ],
+          [
+            36.183604,
+            113.269841
+          ],
+          [
+            36.177829,
+            113.253195
+          ],
+          [
+            36.176835,
+            113.236637
+          ],
+          [
+            36.16684,
+            113.221548
+          ],
+          [
+            36.16519,
+            113.214911
+          ],
+          [
+            36.165742,
+            113.198094
+          ],
+          [
+            36.174692,
+            113.162008
+          ],
+          [
+            36.17708,
+            113.146677
+          ],
+          [
+            36.188411,
+            113.1113
+          ],
+          [
+            36.191976,
+            113.113555
+          ],
+          [
+            36.191115,
+            113.116061
+          ]
+        ]
+      },
+      {
+        "day": 5,
+        "color": "#3f51b5",
+        "polyline": [
+          [
+            36.191115,
+            113.116061
+          ],
+          [
+            36.180245,
+            113.111812
+          ],
+          [
+            36.182607,
+            113.10377
+          ],
+          [
+            36.162383,
+            113.09643
+          ],
+          [
+            36.167927,
+            113.078938
+          ],
+          [
+            36.145501,
+            113.068501
+          ],
+          [
+            36.122789,
+            113.038662
+          ],
+          [
+            36.021041,
+            113.036818
+          ],
+          [
+            36.00352,
+            113.03417
+          ],
+          [
+            35.974638,
+            113.01292
+          ],
+          [
+            35.934791,
+            113.017165
+          ],
+          [
+            35.921939,
+            113.006486
+          ],
+          [
+            35.908893,
+            113.003691
+          ],
+          [
+            35.874724,
+            112.971871
+          ],
+          [
+            35.8522,
+            112.968219
+          ],
+          [
+            35.816455,
+            112.952254
+          ],
+          [
+            35.799105,
+            112.9385
+          ],
+          [
+            35.800061,
+            112.929197
+          ]
+        ]
+      },
+      {
+        "day": 6,
+        "color": "#9c27b0",
+        "polyline": [
+          [
+            35.800061,
+            112.929197
+          ],
+          [
+            35.802274,
+            112.929544
+          ],
+          [
+            35.80222,
+            112.937939
+          ],
+          [
+            35.770086,
+            112.944487
+          ],
+          [
+            35.768016,
+            112.951856
+          ],
+          [
+            35.740023,
+            112.968442
+          ],
+          [
+            35.729274,
+            112.968851
+          ],
+          [
+            35.703595,
+            112.962672
+          ],
+          [
+            35.6746,
+            112.966258
+          ],
+          [
+            35.6465,
+            112.96225
+          ],
+          [
+            35.644444,
+            112.939283
+          ],
+          [
+            35.637877,
+            112.918231
+          ],
+          [
+            35.636325,
+            112.898057
+          ],
+          [
+            35.623575,
+            112.871334
+          ],
+          [
+            35.624189,
+            112.847998
+          ],
+          [
+            35.612721,
+            112.830817
+          ],
+          [
+            35.605146,
+            112.812053
+          ],
+          [
+            35.58159,
+            112.800334
+          ],
+          [
+            35.553822,
+            112.794241
+          ],
+          [
+            35.537668,
+            112.79545
+          ],
+          [
+            35.521078,
+            112.786041
+          ],
+          [
+            35.509345,
+            112.785871
+          ],
+          [
+            35.49717,
+            112.777749
+          ],
+          [
+            35.480505,
+            112.778465
+          ],
+          [
+            35.484698,
+            112.726107
+          ],
+          [
+            35.481697,
+            112.680844
+          ],
+          [
+            35.490647,
+            112.65849
+          ],
+          [
+            35.4936,
+            112.643003
+          ],
+          [
+            35.492169,
+            112.636254
+          ],
+          [
+            35.483082,
+            112.619608
+          ],
+          [
+            35.485814,
+            112.604488
+          ],
+          [
+            35.486137,
+            112.579946
+          ],
+          [
+            35.488599,
+            112.569986
+          ],
+          [
+            35.492621,
+            112.569839
+          ],
+          [
+            35.498111,
+            112.56512
+          ],
+          [
+            35.509136,
+            112.575059
+          ],
+          [
+            35.517418,
+            112.578617
+          ],
+          [
+            35.515601,
+            112.578472
+          ]
+        ]
+      },
+      {
+        "day": 7,
+        "color": "#e91e63",
+        "polyline": [
+          [
+            35.677197,
+            112.183478
+          ],
+          [
+            35.646478,
+            112.30964
+          ],
+          [
+            35.532077,
+            112.396001
+          ],
+          [
+            35.463945,
+            112.881912
+          ],
+          [
+            35.516197,
+            112.928686
+          ],
+          [
+            35.814203,
+            112.953821
+          ],
+          [
+            36.010571,
+            113.040355
+          ],
+          [
+            36.016008,
+            113.106391
+          ],
+          [
+            36.114224,
+            113.25047
+          ],
+          [
+            36.312944,
+            113.310991
+          ],
+          [
+            36.339159,
+            113.287028
+          ],
+          [
+            36.519999,
+            113.407981
+          ],
+          [
+            36.53079,
+            113.633728
+          ],
+          [
+            36.661982,
+            113.794937
+          ],
+          [
+            36.632324,
+            114.021255
+          ],
+          [
+            36.717996,
+            114.031224
+          ],
+          [
+            36.740579,
+            113.995403
+          ],
+          [
+            36.939456,
+            114.186133
+          ],
+          [
+            37.29333,
+            114.313232
+          ],
+          [
+            37.799851,
+            114.314809
+          ],
+          [
+            37.954511,
+            114.480699
+          ],
+          [
+            37.959625,
+            114.582636
+          ],
+          [
+            38.160266,
+            114.587773
+          ],
+          [
+            38.295709,
+            114.673869
+          ],
+          [
+            38.436974,
+            114.865024
+          ],
+          [
+            38.462788,
+            114.985233
+          ],
+          [
+            38.67302,
+            115.232282
+          ],
+          [
+            38.78744,
+            115.537758
+          ],
+          [
+            39.112041,
+            115.734144
+          ],
+          [
+            39.429742,
+            116.012171
+          ],
+          [
+            39.733717,
+            116.109563
+          ],
+          [
+            39.8416,
+            116.207009
+          ],
+          [
+            39.904421,
+            116.407381
+          ]
+        ]
+      }
+    ],
+    "spur": [
+      {
+        "day": 2,
+        "color": "#f39c12",
+        "polyline": [
+          [
+            36.20207,
+            113.574456
+          ],
+          [
+            36.208263,
+            113.574731
+          ],
+          [
+            36.210124,
+            113.577941
+          ],
+          [
+            36.213768,
+            113.575323
+          ],
+          [
+            36.215225,
+            113.573109
+          ],
+          [
+            36.212573,
+            113.567433
+          ],
+          [
+            36.217202,
+            113.57084
+          ],
+          [
+            36.221347,
+            113.561536
+          ],
+          [
+            36.219276,
+            113.559858
+          ],
+          [
+            36.22951,
+            113.544426
+          ],
+          [
+            36.246537,
+            113.544361
+          ],
+          [
+            36.254021,
+            113.549817
+          ],
+          [
+            36.256793,
+            113.549186
+          ],
+          [
+            36.256849,
+            113.546454
+          ],
+          [
+            36.259077,
+            113.548499
+          ],
+          [
+            36.260331,
+            113.546807
+          ],
+          [
+            36.259866,
+            113.549056
+          ],
+          [
+            36.26277,
+            113.54681
+          ],
+          [
+            36.273015,
+            113.549435
+          ],
+          [
+            36.274492,
+            113.547795
+          ],
+          [
+            36.278862,
+            113.551454
+          ],
+          [
+            36.279131,
+            113.555406
+          ],
+          [
+            36.281654,
+            113.555563
+          ],
+          [
+            36.279796,
+            113.559227
+          ],
+          [
+            36.284061,
+            113.559456
+          ],
+          [
+            36.288297,
+            113.568637
+          ],
+          [
+            36.292903,
+            113.568826
+          ],
+          [
+            36.298698,
+            113.575342
+          ],
+          [
+            36.303727,
+            113.576925
+          ],
+          [
+            36.312978,
+            113.589544
+          ],
+          [
+            36.312841,
+            113.595967
+          ],
+          [
+            36.318254,
+            113.601376
+          ],
+          [
+            36.327198,
+            113.599281
+          ],
+          [
+            36.351728,
+            113.608572
+          ],
+          [
+            36.351911,
+            113.616437
+          ],
+          [
+            36.36317,
+            113.620464
+          ],
+          [
+            36.3631,
+            113.634433
+          ],
+          [
+            36.366172,
+            113.638415
+          ],
+          [
+            36.369975,
+            113.637264
+          ],
+          [
+            36.37789,
+            113.62555
+          ],
+          [
+            36.38228,
+            113.625137
+          ],
+          [
+            36.384832,
+            113.621919
+          ],
+          [
+            36.389661,
+            113.622567
+          ],
+          [
+            36.390437,
+            113.619326
+          ],
+          [
+            36.387895,
+            113.623556
+          ],
+          [
+            36.384832,
+            113.621919
+          ],
+          [
+            36.382569,
+            113.624987
+          ],
+          [
+            36.37789,
+            113.62555
+          ],
+          [
+            36.369975,
+            113.637264
+          ],
+          [
+            36.366172,
+            113.638415
+          ],
+          [
+            36.3631,
+            113.634433
+          ],
+          [
+            36.36317,
+            113.620464
+          ],
+          [
+            36.351096,
+            113.614939
+          ],
+          [
+            36.350956,
+            113.610344
+          ],
+          [
+            36.356624,
+            113.598201
+          ],
+          [
+            36.352533,
+            113.585454
+          ],
+          [
+            36.365454,
+            113.578491
+          ],
+          [
+            36.369314,
+            113.566736
+          ],
+          [
+            36.366334,
+            113.555319
+          ],
+          [
+            36.354776,
+            113.552549
+          ],
+          [
+            36.360469,
+            113.54436
+          ],
+          [
+            36.359743,
+            113.538499
+          ],
+          [
+            36.36371,
+            113.532332
+          ],
+          [
+            36.354924,
+            113.520042
+          ],
+          [
+            36.362988,
+            113.51017
+          ],
+          [
+            36.363893,
+            113.505226
+          ],
+          [
+            36.354756,
+            113.50057
+          ],
+          [
+            36.348777,
+            113.502579
+          ],
+          [
+            36.346415,
+            113.497259
+          ],
+          [
+            36.347972,
+            113.493434
+          ],
+          [
+            36.358053,
+            113.488626
+          ],
+          [
+            36.359764,
+            113.480365
+          ],
+          [
+            36.356264,
+            113.474918
+          ],
+          [
+            36.354381,
+            113.455821
+          ],
+          [
+            36.36481,
+            113.443833
+          ],
+          [
+            36.362527,
+            113.438127
+          ],
+          [
+            36.35161,
+            113.437486
+          ],
+          [
+            36.352895,
+            113.428729
+          ],
+          [
+            36.360131,
+            113.426016
+          ],
+          [
+            36.361941,
+            113.416196
+          ],
+          [
+            36.374818,
+            113.400256
+          ],
+          [
+            36.383107,
+            113.398943
+          ],
+          [
+            36.384807,
+            113.395811
+          ],
+          [
+            36.380839,
+            113.390366
+          ],
+          [
+            36.371307,
+            113.395822
+          ],
+          [
+            36.361132,
+            113.413752
+          ],
+          [
+            36.361235,
+            113.417869
+          ],
+          [
+            36.357723,
+            113.41832
+          ],
+          [
+            36.35741,
+            113.42365
+          ],
+          [
+            36.353761,
+            113.426298
+          ]
+        ]
+      },
+      {
+        "day": 4,
+        "color": "#00bcd4",
+        "polyline": [
+          [
+            36.191,
+            113.116
+          ],
+          [
+            36.191,
+            113.116
+          ]
+        ]
+      }
+    ]
+  },
+  "dx_data": [
+    {
+      "name": "D1",
+      "lat": 38.0521,
+      "lng": 114.9232,
+      "color": "#e74c3c",
+      "dist": "🚗 586km · 6.8h",
+      "sub": ""
+    },
+    {
+      "name": "D2",
+      "lat": 36.22,
+      "lng": 113.439,
+      "color": "#f39c12",
+      "dist": "🚗 85km · 1.5h",
+      "sub": "平顺全天"
+    },
+    {
+      "name": "D3",
+      "lat": 36.1955,
+      "lng": 113.2775,
+      "color": "#27ae60",
+      "dist": "🚗 53km · 52min",
+      "sub": ""
+    },
+    {
+      "name": "D4",
+      "lat": 36.211,
+      "lng": 113.116,
+      "color": "#00bcd4",
+      "dist": "🚗 72km · 1.2h",
+      "sub": "长治全天"
+    },
+    {
+      "name": "D5",
+      "lat": 35.9955,
+      "lng": 113.023,
+      "color": "#3f51b5",
+      "dist": "🚗 100km · 2h",
+      "sub": ""
+    },
+    {
+      "name": "D6",
+      "lat": 35.6572,
+      "lng": 112.7539,
+      "color": "#9c27b0",
+      "dist": "🚗 107km · 2h",
+      "sub": ""
+    },
+    {
+      "name": "D7",
+      "lat": 37.7881,
+      "lng": 114.2947,
+      "color": "#e91e63",
+      "dist": "🚗 79→752km · 8.5h",
+      "sub": ""
+    }
+  ],
+  "sidebar": [
+    "    <div class=\"stop stop-0\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">1</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#e74c3c\">D1 <span class=\"st-sub\">北京 → 平顺</span></div>\n        <div class=\"stop-meta\">6月8日（一） 🚗 586km · 6.8h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">龙门寺</span><span class=\"tag\">淳化寺</span></div>\n        <div class=\"tip-note\">📱 提前下载离线地图 — 太行山区多无信号</div><div class=\"tip-note\">🌅 上午看古建光线最好，下午背光</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-1\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">2</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#f39c12\">D2 <span class=\"st-sub\">平顺 · 浊漳河谷</span></div>\n        <div class=\"stop-meta\">6月9日（二） 🚗 85km · 1.5h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">大云院</span><span class=\"tag\">天台庵</span><span class=\"tag\">原起寺</span><span class=\"tag\">九天圣母庙</span></div>\n        <div class=\"tip-note\">🔦 古殿内多无照明，自带手电筒</div><div class=\"tip-note\">💰 备零钱10-20元，找文保员开门</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-2\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">3</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#27ae60\">D3 <span class=\"st-sub\">平顺 → 长治</span></div>\n        <div class=\"stop-meta\">6月10日（三） 🚗 53km · 52min</div>\n        <div class=\"stop-tags\"><span class=\"tag\">观音堂悬塑</span><span class=\"tag\">上党门</span><span class=\"tag tag-purple\">🕌 铜锅街清真晚餐</span></div>\n        \n      </div>\n    </div>",
+    "    <div class=\"stop stop-3\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">4</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#00bcd4\">D4 <span class=\"st-sub\">长治周边</span></div>\n        <div class=\"stop-meta\">6月11日（四） 🚗 72km · 1.2h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">法兴寺彩塑</span><span class=\"tag\">崇庆寺</span><span class=\"tag\">金灯寺石窟</span></div>\n        \n      </div>\n    </div>",
+    "    <div class=\"stop stop-4\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">5</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#3f51b5\">D5 <span class=\"st-sub\">长治 → 高平</span></div>\n        <div class=\"stop-meta\">6月12日（五） 🚗 100km · 2h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">开化寺壁画</span><span class=\"tag\">姬氏民居</span><span class=\"tag\">崇明寺</span></div>\n        \n      </div>\n    </div>",
+    "    <div class=\"stop stop-5\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">6</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#9c27b0\">D6 <span class=\"st-sub\">高平 → 晋城 · 皇城相府</span></div>\n        <div class=\"stop-meta\">6月13日（六） 🚗 107km · 2h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">玉皇庙星宿彩塑</span><span class=\"tag\">青莲寺</span><span class=\"tag\">皇城相府</span><span class=\"tag tag-purple\">🕌 南大街清真美食</span></div>\n        \n      </div>\n    </div>",
+    "    <div class=\"stop stop-6\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">7</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#e91e63\">D7 <span class=\"st-sub\">湘峪古堡 → 🏠 北京</span></div>\n        <div class=\"stop-meta\">6月14日（日） 🚗 79→752km · 8.5h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">湘峪古堡早</span><span class=\"tag tag-rose\">返程 🏠</span></div>\n        \n      </div>\n    </div>"
+  ],
+  "day_cards": [
+    "  <div class=\"day-card card-0\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#e74c3c\">Day 1 · 6月8日（一）</span><span class=\"day-date\">🚗 586km · 6.8h</span></div>\n    <div class=\"day-route\">北京 → 平顺</div>\n    <ul class=\"day-items\"><li>早 7:00 从北京出发</li>\n<li>龙门寺 <span class=\"highlight\">⭐ 六朝木构于一寺</span></li>\n<li>淳化寺 金代大殿</li>\n<li>🏨 宿平顺</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-1\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#f39c12\">Day 2 · 6月9日（二）</span><span class=\"day-date\">🚗 85km · 1.5h</span></div>\n    <div class=\"day-route\">平顺 · 浊漳河谷</div>\n    <ul class=\"day-items\"><li>龙门寺 → 天台庵 → 大云院</li>\n<li>原起寺 → 淳化寺</li>\n<li>🏨 宿平顺</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-2\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#27ae60\">Day 3 · 6月10日（三）</span><span class=\"day-date\">🚗 53km · 52min</span></div>\n    <div class=\"day-route\">平顺 → 长治</div>\n    <ul class=\"day-items\"><li>上午河谷扫尾或补觉</li>\n<li>观音堂 <span class=\"highlight\">明代悬塑巅峰</span></li>\n<li>上党门（长治地标）</li>\n<li>🏨 长治精品酒店 · 🕌 铜锅街清真晚餐</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-3\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#00bcd4\">Day 4 · 6月11日（四）</span><span class=\"day-date\">🚗 72km · 1.2h</span></div>\n    <div class=\"day-route\">长治周边</div>\n    <ul class=\"day-items\"><li>法兴寺 <span class=\"highlight\">宋代十二圆觉彩塑</span></li>\n<li>崇庆寺 宋代罗汉像</li>\n<li>可选：金灯寺石窟（悬崖石窟）</li>\n<li>🏨 长治</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-4\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#3f51b5\">Day 5 · 6月12日（五）</span><span class=\"day-date\">🚗 100km · 2h</span></div>\n    <div class=\"day-route\">长治 → 高平</div>\n    <ul class=\"day-items\"><li>开化寺 <span class=\"highlight\">北宋壁画 88㎡</span></li>\n<li>崇明寺 北宋早期大木作</li>\n<li>姬氏民居 <span class=\"highlight\">全国最早元代民居</span></li>\n<li>🏨 高平</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-5\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#9c27b0\">Day 6 · 6月13日（六）</span><span class=\"day-date\">🚗 107km · 2h</span></div>\n    <div class=\"day-route\">高平 → 晋城 · 皇城相府</div>\n    <ul class=\"day-items\"><li>玉皇庙 <span class=\"highlight\">⭐⭐ 二十八星宿彩塑</span></li>\n<li>青莲寺 唐代彩塑</li>\n<li>下午：皇城相府（清代相府）</li>\n<li>🏨 宿皇城相府/阳城县</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-6\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#e91e63\">Day 7 · 6月14日（日）</span><span class=\"day-date\">🚗 79→752km · 8.5h</span></div>\n    <div class=\"day-route\">湘峪古堡 → 🏠 北京</div>\n    <ul class=\"day-items\"><li>早：湘峪古堡 <span class=\"highlight\">明代藏兵城堡</span></li>\n<li>🚗 7h 一路北上回北京</li>\n<li>预计晚 7-8 点到家</li></ul>\n    \n    \n  </div>"
+  ],
+  "timelines": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "legend_html": "<span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#e74c3c\"></span>D1</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#f39c12\"></span>D2</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#27ae60\"></span>D3</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#00bcd4\"></span>D4</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#3f51b5\"></span>D5</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#9c27b0\"></span>D6</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#e91e63\"></span>D7</span>",
+  "stats_html": "<div class=\"stats\">\n  <div class=\"stat-card\"><div class=\"num\">7</div><div class=\"label\">天数</div></div>\n  <div class=\"stat-card\"><div class=\"num\">~2,200</div><div class=\"label\">总车程 (km)</div></div>\n  <div class=\"stat-card\"><div class=\"num\">18+</div><div class=\"label\">国保单位</div></div>\n  <div class=\"stat-card\"><div class=\"num\">2</div><div class=\"label\">同行人数</div></div>\n</div>",
+  "warnings_html": "<div style=\"margin-bottom:24px;\">\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">⚠️ D1 北京 → 平顺: 587km 超过平原/高速上限 (400km)</div>\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">🌅 D1 由东向西 — 下午 16:00-18:00 迎光驾驶，注意遮阳</div>\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">⚠️ D7 湘峪古堡 → 🏠 北京: 766km 超过平原/高速上限 (400km)</div>\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">🌅 D7 由西向东 — 早晨 07:00-09:00 迎光驾驶，注意遮阳</div>\n</div>",
+  "warnings": [
+    "⚠️ D1 北京 → 平顺: 587km 超过平原/高速上限 (400km)",
+    "🌅 D1 由东向西 — 下午 16:00-18:00 迎光驾驶，注意遮阳",
+    "⚠️ D7 湘峪古堡 → 🏠 北京: 766km 超过平原/高速上限 (400km)",
+    "🌅 D7 由西向东 — 早晨 07:00-09:00 迎光驾驶，注意遮阳"
+  ],
+  "stop_css": "  .stop-0 .stop-dot { border-color: #e74c3c; } .stop-0 .stop-line { background: linear-gradient(to bottom, #e74c3c, #f39c12); } .stop-0 .stop-title { color: #e74c3c; }\n  .stop-1 .stop-dot { border-color: #f39c12; } .stop-1 .stop-line { background: linear-gradient(to bottom, #f39c12, #27ae60); } .stop-1 .stop-title { color: #f39c12; }\n  .stop-2 .stop-dot { border-color: #27ae60; } .stop-2 .stop-line { background: linear-gradient(to bottom, #27ae60, #00bcd4); } .stop-2 .stop-title { color: #27ae60; }\n  .stop-3 .stop-dot { border-color: #00bcd4; } .stop-3 .stop-line { background: linear-gradient(to bottom, #00bcd4, #3f51b5); } .stop-3 .stop-title { color: #00bcd4; }\n  .stop-4 .stop-dot { border-color: #3f51b5; } .stop-4 .stop-line { background: linear-gradient(to bottom, #3f51b5, #9c27b0); } .stop-4 .stop-title { color: #3f51b5; }\n  .stop-5 .stop-dot { border-color: #9c27b0; } .stop-5 .stop-line { background: linear-gradient(to bottom, #9c27b0, #e91e63); } .stop-5 .stop-title { color: #9c27b0; }\n  .stop-6 .stop-dot { border-color: #e91e63; } .stop-6 .stop-title { color: #e91e63; }\n",
+  "tile_url": "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+  "center": {
+    "lat": 36.6441,
+    "lng": 113.6081
+  },
+  "day_colors": [
+    "#e74c3c",
+    "#f39c12",
+    "#27ae60",
+    "#00bcd4",
+    "#3f51b5",
+    "#9c27b0",
+    "#e91e63"
+  ]
+}

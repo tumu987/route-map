@@ -1,0 +1,229 @@
+# 🏔️ 川西小环线 — 行程数据
+# 经典7天：成都 → 康定 → 新都桥 → 塔公/丹巴 → 四姑娘山 → 成都
+# 海拔警示：折多山垭口 4298m，全程最高点
+
+trip:
+  title: 🏔️ 川西小环线
+  subtitle: 成都出发 · 康定 · 新都桥 · 丹巴 · 四姑娘山 · 七日雪山巡礼
+  dates: 7月
+  basemap: light
+  stats:
+    days: 7
+    distance: "~1,100"
+    heritage: "6+"
+    people: 2
+
+cities:
+  - 成都
+  - 康定
+  - 新都桥
+  - 丹巴
+  - 四姑娘山
+
+pois:
+  - name: 泸定桥
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 折多山垭口
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 塔公草原
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 墨石公园
+    coord: [30.4496, 101.5417]
+    rank: major
+    shuttle: true
+    iconAnchor: [0, -20]
+  - name: 雅拉雪山观景台
+    rank: major
+    iconAnchor: [0, -20]
+  - name: 甲居藏寨
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 双桥沟
+    hint: "四姑娘山"
+    rank: major
+    shuttle: true
+    iconAnchor: [0, -20]
+  - name: 巴朗山垭口
+    rank: major
+    iconAnchor: [0, 18]
+  - name: 鱼子西
+    rank: minor
+  - name: 惠远寺
+    rank: minor
+
+days:
+  - day: 1
+    label: "D1"
+    day_type: transit
+    city: 康定
+    theme: "成都 → 康定"
+    distance: "280km · 3.5h"
+    route_class: main
+    route:
+      start: 成都
+      end: 康定
+      terrain: highway
+    items:
+      - "早 8:00 成都出发，成雅高速"
+      - "泸定桥（停留 1h）"
+      - "🏨 宿康定（2560m）"
+    stop_tags:
+      - "泸定桥"
+      - "🏨 康定"
+    tips:
+      - "🏔️ 康定海拔 2560m，第一晚注意高反适应"
+      - "🌡️ 昼夜温差大，备厚外套"
+
+  - day: 2
+    label: "D2"
+    day_type: transit
+    city: 新都桥
+    theme: "康定 → 折多山 → 新都桥"
+    distance: "80km · 2.5h"
+    route_class: main
+    route:
+      start: 康定
+      end: 新都桥
+      terrain: mountain
+    items:
+      - "翻越折多山垭口 4298m"
+      - "鱼子西观景台（远眺贡嘎雪山）"
+      - "🏨 宿新都桥（3460m）"
+    stop_tags:
+      - "折多山垭口"
+      - "鱼子西"
+      - "🏨 新都桥"
+    tips:
+      - "💊 折多山海拔高，提前备氧气瓶"
+      - "📸 新都桥是摄影天堂，傍晚光线最佳"
+    timeline:
+      - time: "08:00"
+        action: "【强制拔营】康定出发"
+      - time: "08:00-09:30"
+        action: 翻越折多山，行车40km，发卡弯多
+      - time: "09:30-10:00"
+        action: "【核心窗口】折多山垭口 4298m，拍照休息"
+      - time: "10:00-11:30"
+        action: 下山至新都桥，行车40km
+      - time: "11:30-14:00"
+        action: 新都桥午餐+休整（高原不易过饱）
+      - time: "14:00-17:00"
+        action: 鱼子西观景台（下午光线最佳）
+      - time: "17:00"
+        action: "🏨 入住新都桥"
+
+  - day: 3
+    label: "D3"
+    day_type: transit
+    city: 丹巴
+    theme: "新都桥 → 塔公草原 → 墨石公园 → 丹巴"
+    distance: "150km · 4h"
+    route_class: main
+    route:
+      start: 新都桥
+      end: 丹巴
+      via: [塔公草原, 墨石公园]
+      terrain: national
+    items:
+      - "塔公草原 · 雅拉雪山"
+      - "墨石公园 <span class=\"highlight\">异域星球地貌</span>"
+      - "🏨 宿丹巴（1800m）"
+    stop_tags:
+      - "塔公草原"
+      - "墨石公园"
+      - "雅拉雪山"
+    tips:
+      - "🎫 墨石公园需换乘摆渡车，预留+2h"
+      - "🌡️ 丹巴海拔仅1800m，今晚可以睡个好觉"
+
+  - day: 4
+    label: "D4"
+    day_type: transit
+    city: 四姑娘山
+    theme: "丹巴 → 甲居藏寨 → 四姑娘山"
+    distance: "120km · 3h"
+    route_class: main
+    route:
+      start: 丹巴
+      end: 四姑娘山
+      via: [甲居藏寨]
+      terrain: mountain
+    items:
+      - "甲居藏寨 <span class=\"highlight\">中国最美古村落</span>"
+      - "小金县沿途河谷风光"
+      - "🏨 宿四姑娘山镇（3200m）"
+    stop_tags:
+      - "甲居藏寨"
+      - "🏨 四姑娘山镇"
+    tips:
+      - "🏔️ 四姑娘山镇 3200m，注意高反"
+      - "🌙 今晚早点休息，明天全天徒步"
+
+  - day: 5
+    label: "D5"
+    day_type: local
+    city: 四姑娘山
+    theme: "四姑娘山 · 双桥沟全天"
+    distance: "景区游览"
+    route_class: spur
+    route:
+      start: 四姑娘山
+      end: 四姑娘山
+    items:
+      - "双桥沟景区（景区大巴，轻松游览）"
+      - "红杉林 → 布达拉峰 → 四姑娜措"
+      - "🏨 宿四姑娘山镇"
+    stop_tags:
+      - "双桥沟"
+      - "🏨 四姑娘山镇"
+    tips:
+      - "🎫 双桥沟景区大巴随上随下，最轻松的一条沟"
+      - "🌲 红杉林海拔 3840m，缓步慢行"
+      - "📸 四姑娜措倒影最佳在正午光线"
+
+  - day: 6
+    label: "D6"
+    day_type: transit
+    city: 成都
+    theme: "四姑娘山 → 巴朗山 → 成都"
+    distance: "200km · 4h"
+    route_class: main
+    route:
+      start: 四姑娘山
+      end: 成都
+      via: [巴朗山垭口]
+      terrain: mountain
+    items:
+      - "巴朗山垭口 5040m（川西最高公路垭口）"
+      - "卧龙自然保护区"
+      - "🏠 回成都"
+    stop_tags:
+      - "巴朗山垭口"
+      - "返程 🏠"
+    tips:
+      - "🚗 巴朗山多雾，小心驾驶"
+      - "🏠 预计傍晚到成都"
+
+  - day: 7
+    label: "D7"
+    day_type: local
+    city: 成都
+    theme: "成都 · 休整"
+    distance: ""
+    route_class: spur
+    route:
+      start: 成都
+      end: 成都
+    items:
+      - "上午补觉/自由活动"
+      - "中午成都火锅 🍲"
+      - "✈️ 下午返程"
+    stop_tags:
+      - "🍲 成都火锅"
+      - "返程 ✈️"
+    tips:
+      - "🛍️ 可去宽窄巷子买伴手礼"
+      - "🐼 时间充裕可去大熊猫基地"

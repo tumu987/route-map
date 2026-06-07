@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}}</title>
+{{LEAFLET_CSS}}
+<style>
+{{MAP_CSS}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div>
+    <h1>{{TITLE}}</h1>
+    <div class="sub">{{SUBTITLE}}</div>
+  </div>
+</header>
+
+{{STATS_HTML}}
+
+<div class="map-section">
+  <div class="legend">
+    {{LEGEND_HTML}}
+  </div>
+  <div id="map"></div>
+  <div id="layer-switch">
+    <span class="ls-btn active" data-layer="standard">标准</span>
+    <span class="ls-btn" data-layer="terrain">地形</span>
+  </div>
+  <div id="zoom-display">Zoom 5</div>
+</div>
+
+{{WARNINGS_HTML}}
+
+<div class="route-map">
+  <div class="route-stops">
+{{SIDEBAR_HTML}}
+  </div>
+</div>
+
+<h2 style="font-size:18px;font-weight:700;margin-bottom:16px;color:#94a3b8;">📋 每日详情</h2>
+<div class="day-cards">
+{{CARDS_HTML}}
+</div>
+
+<div class="footer"></div>
+</div>
+
+{{LEAFLET_JS}}
+<script>
+// ═══════════════════ Route Data ═══════════════════
+{{ROUTE_JS}}
+// ═══════════════════════════════════════════════════
+{{MAP_JS}}
+</script>
+</body>
+</html>

@@ -1,0 +1,1388 @@
+{
+  "trip": {
+    "title": "🏔️ 川西小环线",
+    "subtitle": "成都出发 · 康定 · 新都桥 · 丹巴 · 四姑娘山 · 七日雪山巡礼",
+    "basemap": "light",
+    "stats": {
+      "days": 7,
+      "distance": "~1,100",
+      "heritage": "6+",
+      "people": 2
+    }
+  },
+  "cities": [
+    {
+      "name": "成都",
+      "lat": 30.659867,
+      "lng": 104.063315,
+      "color": "#e74c3c",
+      "elevation": 497
+    },
+    {
+      "name": "康定",
+      "lat": 30.000256,
+      "lng": 101.954558,
+      "color": "#e74c3c",
+      "elevation": 2818
+    },
+    {
+      "name": "新都桥",
+      "lat": 30.046713,
+      "lng": 101.491804,
+      "color": "#f39c12",
+      "elevation": 3465
+    },
+    {
+      "name": "丹巴",
+      "lat": 30.987923,
+      "lng": 101.795737,
+      "color": "#27ae60",
+      "elevation": 4170
+    },
+    {
+      "name": "四姑娘山",
+      "lat": 30.995599,
+      "lng": 102.830852,
+      "color": "#00bcd4",
+      "elevation": 3147
+    }
+  ],
+  "pois": {
+    "major": [
+      [
+        29.914526,
+        102.230202,
+        "#8b6a4a",
+        "泸定桥",
+        0,
+        -20
+      ],
+      [
+        30.074341,
+        101.804066,
+        "#8b6a4a",
+        "折多山垭口",
+        0,
+        -20
+      ],
+      [
+        30.337029,
+        101.560724,
+        "#8b6a4a",
+        "塔公草原",
+        0,
+        18
+      ],
+      [
+        30.4496,
+        101.5417,
+        "#8b6a4a",
+        "墨石公园",
+        0,
+        -20
+      ],
+      [
+        30.386496,
+        101.66313,
+        "#8b6a4a",
+        "雅拉雪山观景台",
+        0,
+        -20
+      ],
+      [
+        30.943108,
+        101.864079,
+        "#8b6a4a",
+        "甲居藏寨",
+        0,
+        18
+      ],
+      [
+        30.981747,
+        102.767846,
+        "#8b6a4a",
+        "双桥沟",
+        0,
+        -20
+      ],
+      [
+        30.910711,
+        102.894498,
+        "#8b6a4a",
+        "巴朗山垭口",
+        0,
+        18
+      ]
+    ],
+    "minor": [
+      [
+        31.115827,
+        103.250362,
+        "鱼子西"
+      ],
+      [
+        30.564468,
+        101.4932,
+        "惠远寺"
+      ]
+    ]
+  },
+  "routes": {
+    "main": [
+      {
+        "day": 1,
+        "color": "#e74c3c",
+        "polyline": [
+          [
+            30.660667,
+            104.063294
+          ],
+          [
+            30.550935,
+            104.012504
+          ],
+          [
+            30.401452,
+            103.89486
+          ],
+          [
+            30.370662,
+            103.845879
+          ],
+          [
+            30.321527,
+            103.833763
+          ],
+          [
+            30.302073,
+            103.813676
+          ],
+          [
+            30.277132,
+            103.769273
+          ],
+          [
+            30.273768,
+            103.658655
+          ],
+          [
+            30.232851,
+            103.601877
+          ],
+          [
+            30.206947,
+            103.533967
+          ],
+          [
+            30.183169,
+            103.499872
+          ],
+          [
+            30.187514,
+            103.402399
+          ],
+          [
+            30.151571,
+            103.216989
+          ],
+          [
+            30.117514,
+            103.153771
+          ],
+          [
+            30.064863,
+            103.101138
+          ],
+          [
+            30.017652,
+            102.988882
+          ],
+          [
+            29.977902,
+            102.953812
+          ],
+          [
+            30.00364,
+            102.885316
+          ],
+          [
+            29.998927,
+            102.846706
+          ],
+          [
+            30.051633,
+            102.757932
+          ],
+          [
+            30.026903,
+            102.722166
+          ],
+          [
+            30.027937,
+            102.67258
+          ],
+          [
+            30.018932,
+            102.660848
+          ],
+          [
+            30.038653,
+            102.57846
+          ],
+          [
+            30.012346,
+            102.544193
+          ],
+          [
+            29.999832,
+            102.477636
+          ],
+          [
+            29.94541,
+            102.392656
+          ],
+          [
+            29.951876,
+            102.371925
+          ],
+          [
+            29.946066,
+            102.248873
+          ],
+          [
+            29.968654,
+            102.207227
+          ],
+          [
+            29.991409,
+            102.197307
+          ],
+          [
+            29.990476,
+            102.17054
+          ],
+          [
+            30.030344,
+            102.165084
+          ],
+          [
+            30.033087,
+            102.13658
+          ],
+          [
+            30.060454,
+            102.139895
+          ],
+          [
+            30.055699,
+            102.101522
+          ],
+          [
+            30.085469,
+            102.03981
+          ],
+          [
+            30.078412,
+            102.015221
+          ],
+          [
+            30.060546,
+            101.999504
+          ],
+          [
+            30.054533,
+            101.96542
+          ],
+          [
+            29.999862,
+            101.954555
+          ]
+        ]
+      },
+      {
+        "day": 2,
+        "color": "#f39c12",
+        "polyline": [
+          [
+            29.999862,
+            101.954555
+          ],
+          [
+            29.995193,
+            101.953649
+          ],
+          [
+            30.001973,
+            101.950566
+          ],
+          [
+            30.00798,
+            101.954356
+          ],
+          [
+            30.023075,
+            101.954235
+          ],
+          [
+            30.007542,
+            101.951572
+          ],
+          [
+            30.000692,
+            101.947319
+          ],
+          [
+            30.000924,
+            101.944305
+          ],
+          [
+            29.997207,
+            101.944516
+          ],
+          [
+            29.986947,
+            101.932549
+          ],
+          [
+            29.985811,
+            101.928214
+          ],
+          [
+            29.990164,
+            101.915793
+          ],
+          [
+            29.988291,
+            101.904393
+          ],
+          [
+            29.992754,
+            101.894621
+          ],
+          [
+            29.992963,
+            101.883026
+          ],
+          [
+            29.994107,
+            101.886563
+          ],
+          [
+            29.995764,
+            101.878677
+          ],
+          [
+            29.996446,
+            101.88115
+          ],
+          [
+            29.997434,
+            101.876699
+          ],
+          [
+            30.012916,
+            101.861598
+          ],
+          [
+            30.012419,
+            101.864829
+          ],
+          [
+            30.015049,
+            101.858955
+          ],
+          [
+            30.015459,
+            101.861554
+          ],
+          [
+            30.031437,
+            101.85019
+          ],
+          [
+            30.040603,
+            101.836587
+          ],
+          [
+            30.043784,
+            101.828373
+          ],
+          [
+            30.040699,
+            101.830648
+          ],
+          [
+            30.043831,
+            101.826394
+          ],
+          [
+            30.053081,
+            101.821585
+          ],
+          [
+            30.05277,
+            101.824768
+          ],
+          [
+            30.058071,
+            101.818236
+          ],
+          [
+            30.054475,
+            101.817732
+          ],
+          [
+            30.062739,
+            101.813668
+          ],
+          [
+            30.060872,
+            101.813006
+          ],
+          [
+            30.065837,
+            101.810555
+          ],
+          [
+            30.061768,
+            101.811503
+          ],
+          [
+            30.066888,
+            101.808208
+          ],
+          [
+            30.076582,
+            101.808382
+          ],
+          [
+            30.074184,
+            101.805376
+          ],
+          [
+            30.076736,
+            101.805004
+          ],
+          [
+            30.074341,
+            101.804066
+          ],
+          [
+            30.074486,
+            101.799786
+          ],
+          [
+            30.080709,
+            101.796591
+          ],
+          [
+            30.07438,
+            101.797386
+          ],
+          [
+            30.077095,
+            101.791315
+          ],
+          [
+            30.071768,
+            101.790928
+          ],
+          [
+            30.073455,
+            101.79079
+          ],
+          [
+            30.073451,
+            101.78485
+          ],
+          [
+            30.069002,
+            101.773275
+          ],
+          [
+            30.069982,
+            101.761934
+          ],
+          [
+            30.060978,
+            101.750231
+          ],
+          [
+            30.059937,
+            101.738446
+          ],
+          [
+            30.051646,
+            101.724628
+          ],
+          [
+            30.054347,
+            101.718583
+          ],
+          [
+            30.060301,
+            101.713624
+          ],
+          [
+            30.083071,
+            101.700721
+          ],
+          [
+            30.088647,
+            101.690379
+          ],
+          [
+            30.088528,
+            101.68125
+          ],
+          [
+            30.080234,
+            101.649754
+          ],
+          [
+            30.075651,
+            101.608567
+          ],
+          [
+            30.059447,
+            101.579268
+          ],
+          [
+            30.047318,
+            101.568112
+          ],
+          [
+            30.03767,
+            101.541377
+          ],
+          [
+            30.018143,
+            101.531398
+          ],
+          [
+            30.023967,
+            101.527498
+          ],
+          [
+            30.034494,
+            101.513721
+          ],
+          [
+            30.036317,
+            101.504362
+          ],
+          [
+            30.044387,
+            101.49065
+          ],
+          [
+            30.046372,
+            101.491958
+          ]
+        ]
+      },
+      {
+        "day": 3,
+        "color": "#27ae60",
+        "polyline": [
+          [
+            30.046372,
+            101.491958
+          ],
+          [
+            30.050372,
+            101.482444
+          ],
+          [
+            30.08936,
+            101.479331
+          ],
+          [
+            30.11718,
+            101.485177
+          ],
+          [
+            30.130996,
+            101.499978
+          ],
+          [
+            30.23489,
+            101.496498
+          ],
+          [
+            30.288352,
+            101.531711
+          ],
+          [
+            30.314395,
+            101.534526
+          ],
+          [
+            30.322729,
+            101.520779
+          ],
+          [
+            30.338763,
+            101.542351
+          ],
+          [
+            30.353754,
+            101.537032
+          ],
+          [
+            30.347245,
+            101.563873
+          ],
+          [
+            30.344477,
+            101.57349
+          ],
+          [
+            30.357055,
+            101.546045
+          ],
+          [
+            30.360798,
+            101.57101
+          ],
+          [
+            30.396922,
+            101.56727
+          ],
+          [
+            30.422824,
+            101.541877
+          ],
+          [
+            30.444179,
+            101.535708
+          ],
+          [
+            30.437002,
+            101.534923
+          ],
+          [
+            30.457889,
+            101.52524
+          ],
+          [
+            30.483463,
+            101.492611
+          ],
+          [
+            30.543431,
+            101.509531
+          ],
+          [
+            30.54349,
+            101.57632
+          ],
+          [
+            30.52969,
+            101.61744
+          ],
+          [
+            30.607319,
+            101.67049
+          ],
+          [
+            30.60866,
+            101.736254
+          ],
+          [
+            30.639606,
+            101.732165
+          ],
+          [
+            30.703859,
+            101.749678
+          ],
+          [
+            30.77438,
+            101.721289
+          ],
+          [
+            30.799631,
+            101.775442
+          ],
+          [
+            30.84884,
+            101.812355
+          ],
+          [
+            30.858278,
+            101.849053
+          ],
+          [
+            30.880626,
+            101.879218
+          ],
+          [
+            30.953339,
+            101.881086
+          ],
+          [
+            30.954702,
+            101.863038
+          ],
+          [
+            30.983559,
+            101.858528
+          ],
+          [
+            30.97911,
+            101.853808
+          ]
+        ]
+      },
+      {
+        "day": 4,
+        "color": "#00bcd4",
+        "polyline": [
+          [
+            30.97911,
+            101.853808
+          ],
+          [
+            30.983559,
+            101.858528
+          ],
+          [
+            30.943249,
+            101.86375
+          ],
+          [
+            30.936035,
+            101.868147
+          ],
+          [
+            30.930774,
+            101.863616
+          ],
+          [
+            30.937296,
+            101.870005
+          ],
+          [
+            30.934079,
+            101.876808
+          ],
+          [
+            30.879894,
+            101.879362
+          ],
+          [
+            30.88215,
+            101.889639
+          ],
+          [
+            30.877229,
+            101.901047
+          ],
+          [
+            30.913305,
+            101.940232
+          ],
+          [
+            30.94011,
+            101.954704
+          ],
+          [
+            30.943411,
+            101.971738
+          ],
+          [
+            30.955483,
+            101.993845
+          ],
+          [
+            30.969512,
+            102.014997
+          ],
+          [
+            30.984064,
+            102.023963
+          ],
+          [
+            30.993052,
+            102.037486
+          ],
+          [
+            30.996953,
+            102.052728
+          ],
+          [
+            31.008334,
+            102.067401
+          ],
+          [
+            31.008534,
+            102.084022
+          ],
+          [
+            31.003755,
+            102.091537
+          ],
+          [
+            31.00557,
+            102.111544
+          ],
+          [
+            31.020322,
+            102.134141
+          ],
+          [
+            31.035799,
+            102.173328
+          ],
+          [
+            31.028938,
+            102.197991
+          ],
+          [
+            31.028961,
+            102.260214
+          ],
+          [
+            31.022767,
+            102.270295
+          ],
+          [
+            31.014077,
+            102.323726
+          ],
+          [
+            31.00671,
+            102.328064
+          ],
+          [
+            30.999884,
+            102.344187
+          ],
+          [
+            31.007794,
+            102.366248
+          ],
+          [
+            31.004597,
+            102.382246
+          ],
+          [
+            31.019366,
+            102.408527
+          ],
+          [
+            31.016893,
+            102.435821
+          ],
+          [
+            31.028454,
+            102.493388
+          ],
+          [
+            31.021988,
+            102.526465
+          ],
+          [
+            31.024234,
+            102.539727
+          ],
+          [
+            31.009463,
+            102.567196
+          ],
+          [
+            30.990956,
+            102.582687
+          ],
+          [
+            30.989962,
+            102.590664
+          ],
+          [
+            30.9795,
+            102.600108
+          ],
+          [
+            30.976187,
+            102.619272
+          ],
+          [
+            30.961677,
+            102.647898
+          ],
+          [
+            30.979147,
+            102.703827
+          ],
+          [
+            30.980318,
+            102.764997
+          ],
+          [
+            30.993203,
+            102.789514
+          ],
+          [
+            30.995775,
+            102.830977
+          ]
+        ]
+      },
+      {
+        "day": 6,
+        "color": "#9c27b0",
+        "polyline": [
+          [
+            30.995775,
+            102.830977
+          ],
+          [
+            31.000139,
+            102.840381
+          ],
+          [
+            30.993992,
+            102.835239
+          ],
+          [
+            30.997723,
+            102.862658
+          ],
+          [
+            30.988526,
+            102.842471
+          ],
+          [
+            30.966113,
+            102.876889
+          ],
+          [
+            30.91308,
+            102.901552
+          ],
+          [
+            30.891787,
+            102.913841
+          ],
+          [
+            30.885615,
+            102.936469
+          ],
+          [
+            30.868519,
+            102.96392
+          ],
+          [
+            30.882352,
+            102.965749
+          ],
+          [
+            30.883969,
+            102.97328
+          ],
+          [
+            30.897196,
+            102.982686
+          ],
+          [
+            30.880837,
+            102.975504
+          ],
+          [
+            30.898277,
+            102.988384
+          ],
+          [
+            30.876747,
+            102.974489
+          ],
+          [
+            30.873323,
+            102.979648
+          ],
+          [
+            30.857455,
+            102.972074
+          ],
+          [
+            30.891181,
+            102.992442
+          ],
+          [
+            30.894261,
+            103.007757
+          ],
+          [
+            30.911251,
+            103.016735
+          ],
+          [
+            30.91287,
+            103.034852
+          ],
+          [
+            30.9206,
+            103.051352
+          ],
+          [
+            30.934947,
+            103.065354
+          ],
+          [
+            30.947063,
+            103.068656
+          ],
+          [
+            30.981496,
+            103.131733
+          ],
+          [
+            30.99572,
+            103.135972
+          ],
+          [
+            31.045525,
+            103.200847
+          ],
+          [
+            31.084251,
+            103.223649
+          ],
+          [
+            31.091592,
+            103.248448
+          ],
+          [
+            31.101121,
+            103.257706
+          ],
+          [
+            31.113844,
+            103.251181
+          ],
+          [
+            31.120901,
+            103.253119
+          ],
+          [
+            31.121786,
+            103.280264
+          ],
+          [
+            31.11759,
+            103.29213
+          ],
+          [
+            31.107395,
+            103.293394
+          ],
+          [
+            31.099092,
+            103.304637
+          ],
+          [
+            31.093598,
+            103.302872
+          ],
+          [
+            31.087043,
+            103.311904
+          ],
+          [
+            31.076372,
+            103.313825
+          ],
+          [
+            31.071115,
+            103.329271
+          ],
+          [
+            31.060812,
+            103.336453
+          ],
+          [
+            31.059836,
+            103.353435
+          ],
+          [
+            31.073444,
+            103.374584
+          ],
+          [
+            31.062541,
+            103.387969
+          ],
+          [
+            31.061124,
+            103.410151
+          ],
+          [
+            31.078605,
+            103.425844
+          ],
+          [
+            31.077937,
+            103.451055
+          ],
+          [
+            31.065941,
+            103.478935
+          ],
+          [
+            31.067218,
+            103.490033
+          ],
+          [
+            31.045961,
+            103.52741
+          ],
+          [
+            31.026689,
+            103.537252
+          ],
+          [
+            30.997102,
+            103.591071
+          ],
+          [
+            30.959369,
+            103.598214
+          ],
+          [
+            30.94684,
+            103.625484
+          ],
+          [
+            30.956915,
+            103.669658
+          ],
+          [
+            30.94972,
+            103.682805
+          ],
+          [
+            30.914076,
+            103.727194
+          ],
+          [
+            30.899958,
+            103.758782
+          ],
+          [
+            30.880025,
+            103.773717
+          ],
+          [
+            30.86875,
+            103.7929
+          ],
+          [
+            30.846486,
+            103.815012
+          ],
+          [
+            30.802568,
+            103.852462
+          ],
+          [
+            30.787487,
+            103.878581
+          ],
+          [
+            30.782547,
+            103.903615
+          ],
+          [
+            30.742148,
+            103.962038
+          ],
+          [
+            30.695177,
+            104.011603
+          ],
+          [
+            30.669262,
+            104.05782
+          ],
+          [
+            30.660596,
+            104.058103
+          ],
+          [
+            30.660667,
+            104.063294
+          ]
+        ]
+      }
+    ],
+    "spur": [
+      {
+        "day": 5,
+        "color": "#3f51b5",
+        "polyline": [
+          [
+            30.995599,
+            102.830852
+          ],
+          [
+            30.995599,
+            102.830852
+          ]
+        ]
+      },
+      {
+        "day": 7,
+        "color": "#e91e63",
+        "polyline": [
+          [
+            30.659867,
+            104.063315
+          ],
+          [
+            30.659867,
+            104.063315
+          ]
+        ]
+      }
+    ]
+  },
+  "dx_data": [
+    {
+      "name": "D1",
+      "lat": 30.330061,
+      "lng": 103.008937,
+      "color": "#e74c3c",
+      "dist": "🚗 280km · 3.5h",
+      "sub": ""
+    },
+    {
+      "name": "D2",
+      "lat": 30.023485,
+      "lng": 101.723181,
+      "color": "#f39c12",
+      "dist": "🚗 80km · 2.5h",
+      "sub": ""
+    },
+    {
+      "name": "D3",
+      "lat": 30.517318,
+      "lng": 101.643771,
+      "color": "#27ae60",
+      "dist": "🚗 150km · 4h",
+      "sub": ""
+    },
+    {
+      "name": "D4",
+      "lat": 30.991761,
+      "lng": 102.313294,
+      "color": "#00bcd4",
+      "dist": "🚗 120km · 3h",
+      "sub": ""
+    },
+    {
+      "name": "D5",
+      "lat": 31.015599,
+      "lng": 102.830852,
+      "color": "#3f51b5",
+      "dist": "🚗 景区游览",
+      "sub": "四姑娘山全天"
+    },
+    {
+      "name": "D6",
+      "lat": 30.827733,
+      "lng": 103.447083,
+      "color": "#9c27b0",
+      "dist": "🚗 200km · 4h",
+      "sub": ""
+    },
+    {
+      "name": "D7",
+      "lat": 30.679867,
+      "lng": 104.063315,
+      "color": "#e91e63",
+      "dist": "",
+      "sub": "成都全天"
+    }
+  ],
+  "sidebar": [
+    "    <div class=\"stop stop-0\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">1</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#e74c3c\">D1 <span class=\"st-sub\">成都 → 康定</span></div>\n        <div class=\"stop-meta\">D1 🚗 280km · 3.5h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">泸定桥</span><span class=\"tag\">🏨 康定</span></div>\n        <div class=\"tip-note\">🏔️ 康定海拔 2560m，第一晚注意高反适应</div><div class=\"tip-note\">🌡️ 昼夜温差大，备厚外套</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-1\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">2</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#f39c12\">D2 <span class=\"st-sub\">康定 → 折多山 → 新都桥</span></div>\n        <div class=\"stop-meta\">D2 🚗 80km · 2.5h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">折多山垭口</span><span class=\"tag\">鱼子西</span><span class=\"tag\">🏨 新都桥</span></div>\n        <div class=\"tip-note\">💊 折多山海拔高，提前备氧气瓶</div><div class=\"tip-note\">📸 新都桥是摄影天堂，傍晚光线最佳</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-2\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">3</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#27ae60\">D3 <span class=\"st-sub\">新都桥 → 塔公草原 → 墨石公园 → 丹巴</span></div>\n        <div class=\"stop-meta\">D3 🚗 150km · 4h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">塔公草原</span><span class=\"tag\">墨石公园</span><span class=\"tag\">雅拉雪山</span><span class=\"tag\">🔄 含摆渡车</span></div>\n        <div class=\"tip-note\">🎫 墨石公园需换乘摆渡车，预留+2h</div><div class=\"tip-note\">🌡️ 丹巴海拔仅1800m，今晚可以睡个好觉</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-3\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">4</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#00bcd4\">D4 <span class=\"st-sub\">丹巴 → 甲居藏寨 → 四姑娘山</span></div>\n        <div class=\"stop-meta\">D4 🚗 120km · 3h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">甲居藏寨</span><span class=\"tag\">🏨 四姑娘山镇</span></div>\n        <div class=\"tip-note\">🏔️ 四姑娘山镇 3200m，注意高反</div><div class=\"tip-note\">🌙 今晚早点休息，明天全天徒步</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-4\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">5</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#3f51b5\">D5 <span class=\"st-sub\">四姑娘山 · 双桥沟全天</span></div>\n        <div class=\"stop-meta\">D5 🚗 景区游览</div>\n        <div class=\"stop-tags\"><span class=\"tag\">双桥沟</span><span class=\"tag\">🏨 四姑娘山镇</span><span class=\"tag\">🔄 含摆渡车</span></div>\n        <div class=\"tip-note\">🎫 双桥沟景区大巴随上随下，最轻松的一条沟</div><div class=\"tip-note\">🌲 红杉林海拔 3840m，缓步慢行</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-5\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">6</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#9c27b0\">D6 <span class=\"st-sub\">四姑娘山 → 巴朗山 → 成都</span></div>\n        <div class=\"stop-meta\">D6 🚗 200km · 4h</div>\n        <div class=\"stop-tags\"><span class=\"tag\">巴朗山垭口</span><span class=\"tag tag-rose\">返程 🏠</span></div>\n        <div class=\"tip-note\">🚗 巴朗山多雾，小心驾驶</div><div class=\"tip-note\">🏠 预计傍晚到成都</div>\n      </div>\n    </div>",
+    "    <div class=\"stop stop-6\">\n      <div class=\"stop-marker\"><div class=\"stop-dot\">7</div><div class=\"stop-line\"></div></div>\n      <div class=\"stop-content\">\n        <div class=\"stop-title\" style=\"color:#e91e63\">D7 <span class=\"st-sub\">成都 · 休整</span></div>\n        <div class=\"stop-meta\">D7 </div>\n        <div class=\"stop-tags\"><span class=\"tag\">🍲 成都火锅</span><span class=\"tag tag-rose\">返程 ✈️</span></div>\n        <div class=\"tip-note\">🛍️ 可去宽窄巷子买伴手礼</div><div class=\"tip-note\">🐼 时间充裕可去大熊猫基地</div>\n      </div>\n    </div>"
+  ],
+  "day_cards": [
+    "  <div class=\"day-card card-0\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#e74c3c\">Day 1 · D1</span><span class=\"day-date\">🚗 280km · 3.5h</span></div>\n    <div class=\"day-route\">成都 → 康定</div>\n    <ul class=\"day-items\"><li>早 8:00 成都出发，成雅高速</li>\n<li>泸定桥（停留 1h）</li>\n<li>🏨 宿康定（2560m）</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-1\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#f39c12\">Day 2 · D2</span><span class=\"day-date\">🚗 80km · 2.5h</span></div>\n    <div class=\"day-route\">康定 → 折多山 → 新都桥</div>\n    <ul class=\"day-items\"><li>翻越折多山垭口 4298m</li>\n<li>鱼子西观景台（远眺贡嘎雪山）</li>\n<li>🏨 宿新都桥（3460m）</li></ul>\n    \n      <div class=\"timeline-wrap\">\n    <div class=\"timeline-toggle\" onclick=\"var n=this.nextElementSibling;n.style.display=n.style.display==='none'?'':'none';this.textContent=this.textContent==='📋 微观日志 ▼'?'📋 微观日志 ▶':'📋 微观日志 ▼';\">📋 微观日志 ▼</div>\n    <div class=\"timeline\" style=\"display:none;\">\n      <div class=\"tl-row\"><span class=\"tl-time\">08:00</span><span class=\"tl-action\">【强制拔营】康定出发</span></div>\n<div class=\"tl-row\"><span class=\"tl-time\">08:00-09:30</span><span class=\"tl-action\">翻越折多山，行车40km，发卡弯多</span></div>\n<div class=\"tl-row\"><span class=\"tl-time\">09:30-10:00</span><span class=\"tl-action\">【核心窗口】折多山垭口 4298m，拍照休息</span></div>\n<div class=\"tl-row\"><span class=\"tl-time\">10:00-11:30</span><span class=\"tl-action\">下山至新都桥，行车40km</span></div>\n<div class=\"tl-row\"><span class=\"tl-time\">11:30-14:00</span><span class=\"tl-action\">新都桥午餐+休整（高原不易过饱）</span></div>\n<div class=\"tl-row\"><span class=\"tl-time\">14:00-17:00</span><span class=\"tl-action\">鱼子西观景台（下午光线最佳）</span></div>\n<div class=\"tl-row\"><span class=\"tl-time\">17:00</span><span class=\"tl-action\">🏨 入住新都桥</span></div>\n    </div>\n  </div>\n  </div>",
+    "  <div class=\"day-card card-2\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#27ae60\">Day 3 · D3</span><span class=\"day-date\">🚗 150km · 4h</span></div>\n    <div class=\"day-route\">新都桥 → 塔公草原 → 墨石公园 → 丹巴</div>\n    <ul class=\"day-items\"><li>塔公草原 · 雅拉雪山</li>\n<li>墨石公园 <span class=\"highlight\">异域星球地貌</span></li>\n<li>🏨 宿丹巴（1800m）</li></ul>\n    <div class=\"day-shuttle-note\">🔄 含摆渡车：墨石公园（+2h）</div>\n    \n  </div>",
+    "  <div class=\"day-card card-3\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#00bcd4\">Day 4 · D4</span><span class=\"day-date\">🚗 120km · 3h</span></div>\n    <div class=\"day-route\">丹巴 → 甲居藏寨 → 四姑娘山</div>\n    <ul class=\"day-items\"><li>甲居藏寨 <span class=\"highlight\">中国最美古村落</span></li>\n<li>小金县沿途河谷风光</li>\n<li>🏨 宿四姑娘山镇（3200m）</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-4\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#3f51b5\">Day 5 · D5</span><span class=\"day-date\">🚗 景区游览</span></div>\n    <div class=\"day-route\">四姑娘山 · 双桥沟全天</div>\n    <ul class=\"day-items\"><li>双桥沟景区（景区大巴，轻松游览）</li>\n<li>红杉林 → 布达拉峰 → 四姑娜措</li>\n<li>🏨 宿四姑娘山镇</li></ul>\n    <div class=\"day-shuttle-note\">🔄 含摆渡车：双桥沟（+2h）</div>\n    \n  </div>",
+    "  <div class=\"day-card card-5\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#9c27b0\">Day 6 · D6</span><span class=\"day-date\">🚗 200km · 4h</span></div>\n    <div class=\"day-route\">四姑娘山 → 巴朗山 → 成都</div>\n    <ul class=\"day-items\"><li>巴朗山垭口 5040m（川西最高公路垭口）</li>\n<li>卧龙自然保护区</li>\n<li>🏠 回成都</li></ul>\n    \n    \n  </div>",
+    "  <div class=\"day-card card-6\">\n    <div class=\"day-header\"><span class=\"day-label\" style=\"color:#e91e63\">Day 7 · D7</span><span class=\"day-date\"></span></div>\n    <div class=\"day-route\">成都 · 休整</div>\n    <ul class=\"day-items\"><li>上午补觉/自由活动</li>\n<li>中午成都火锅 🍲</li>\n<li>✈️ 下午返程</li></ul>\n    \n    \n  </div>"
+  ],
+  "timelines": [
+    [],
+    [
+      {
+        "time": "08:00",
+        "action": "【强制拔营】康定出发"
+      },
+      {
+        "time": "08:00-09:30",
+        "action": "翻越折多山，行车40km，发卡弯多"
+      },
+      {
+        "time": "09:30-10:00",
+        "action": "【核心窗口】折多山垭口 4298m，拍照休息"
+      },
+      {
+        "time": "10:00-11:30",
+        "action": "下山至新都桥，行车40km"
+      },
+      {
+        "time": "11:30-14:00",
+        "action": "新都桥午餐+休整（高原不易过饱）"
+      },
+      {
+        "time": "14:00-17:00",
+        "action": "鱼子西观景台（下午光线最佳）"
+      },
+      {
+        "time": "17:00",
+        "action": "🏨 入住新都桥"
+      }
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "legend_html": "<span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#e74c3c\"></span>D1</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#f39c12\"></span>D2</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#27ae60\"></span>D3</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#00bcd4\"></span>D4</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#3f51b5\"></span>D5</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#9c27b0\"></span>D6</span>\n    <span class=\"legend-item\"><span class=\"legend-line\" style=\"background:#e91e63\"></span>D7</span>",
+  "stats_html": "<div class=\"stats\">\n  <div class=\"stat-card\"><div class=\"num\">7</div><div class=\"label\">天数</div></div>\n  <div class=\"stat-card\"><div class=\"num\">~1,100</div><div class=\"label\">总车程 (km)</div></div>\n  <div class=\"stat-card\"><div class=\"num\">6+</div><div class=\"label\">国保单位</div></div>\n  <div class=\"stat-card\"><div class=\"num\">2</div><div class=\"label\">同行人数</div></div>\n</div>",
+  "warnings_html": "<div style=\"margin-bottom:24px;\">\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">🏔️ D1 康定 海拔 2818m — 第一/二晚超过 2500m 建议，考虑低海拔适应</div>\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">🌅 D1 由东向西 — 下午 16:00-18:00 迎光驾驶，注意遮阳</div>\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">🏔️ D2 新都桥 海拔 3465m — 第一/二晚超过 2500m 建议，考虑低海拔适应</div>\n    <div style=\"padding:6px 12px;background:#fff6e5;border-left:3px solid #e8a838;margin:0 0 4px 0;font-size:13px;color:#7a5a20;\">⚠️ D6 四姑娘山 → 巴朗山 → 成都: 198km 超过山路上限 (150km)</div>\n</div>",
+  "warnings": [
+    "🏔️ D1 康定 海拔 2818m — 第一/二晚超过 2500m 建议，考虑低海拔适应",
+    "🌅 D1 由东向西 — 下午 16:00-18:00 迎光驾驶，注意遮阳",
+    "🏔️ D2 新都桥 海拔 3465m — 第一/二晚超过 2500m 建议，考虑低海拔适应",
+    "⚠️ D6 四姑娘山 → 巴朗山 → 成都: 198km 超过山路上限 (150km)"
+  ],
+  "stop_css": "  .stop-0 .stop-dot { border-color: #e74c3c; } .stop-0 .stop-line { background: linear-gradient(to bottom, #e74c3c, #f39c12); } .stop-0 .stop-title { color: #e74c3c; }\n  .stop-1 .stop-dot { border-color: #f39c12; } .stop-1 .stop-line { background: linear-gradient(to bottom, #f39c12, #27ae60); } .stop-1 .stop-title { color: #f39c12; }\n  .stop-2 .stop-dot { border-color: #27ae60; } .stop-2 .stop-line { background: linear-gradient(to bottom, #27ae60, #00bcd4); } .stop-2 .stop-title { color: #27ae60; }\n  .stop-3 .stop-dot { border-color: #00bcd4; } .stop-3 .stop-line { background: linear-gradient(to bottom, #00bcd4, #3f51b5); } .stop-3 .stop-title { color: #00bcd4; }\n  .stop-4 .stop-dot { border-color: #3f51b5; } .stop-4 .stop-line { background: linear-gradient(to bottom, #3f51b5, #9c27b0); } .stop-4 .stop-title { color: #3f51b5; }\n  .stop-5 .stop-dot { border-color: #9c27b0; } .stop-5 .stop-line { background: linear-gradient(to bottom, #9c27b0, #e91e63); } .stop-5 .stop-title { color: #9c27b0; }\n  .stop-6 .stop-dot { border-color: #e91e63; } .stop-6 .stop-title { color: #e91e63; }\n",
+  "tile_url": "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+  "center": {
+    "lat": 30.5897,
+    "lng": 102.5972
+  },
+  "day_colors": [
+    "#e74c3c",
+    "#f39c12",
+    "#27ae60",
+    "#00bcd4",
+    "#3f51b5",
+    "#9c27b0",
+    "#e91e63"
+  ]
+}
