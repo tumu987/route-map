@@ -1202,9 +1202,17 @@ function u() {
   for (var i=0;i<dxData.length;i++) {
     var d = dxData[i];
     if (cfg.compact) {
-      var p = findPos(d.lat,d.lng,cfg.basePx*0.7,40,16,segPx,dp,boxes,true);
+      var nameW = mw(d.name, 12);
+      var distText = d.sub || (d.dist ? d.dist.replace('🚗 ','') : '');
+      var distW = distText ? mw(distText, 10) : 0;
+      var labelW = Math.max(nameW, distW) + 12;
+      var labelH = distText ? 30 : 16;
+      var p = findPos(d.lat,d.lng,cfg.basePx*0.7,labelW,labelH,segPx,dp,boxes,true);
       boxes.push(p.box);
-      labelLayer.addLayer(mkDxC(p.lat,p.lng,d.color,d.name));
+      var lbl = '<div style="text-align:center;line-height:1.3;"><div style="font-weight:700;font-size:12px;color:'+d.color+';text-shadow:0 0 4px #fff,0 0 8px #fff;">'+d.name+'</div>';
+      if (distText) lbl += '<div style="font-size:10px;color:'+d.color+';text-shadow:0 0 4px #fff,0 0 8px #fff;">'+distText+'</div>';
+      lbl += '</div>';
+      labelLayer.addLayer(L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',html:lbl,iconSize:[labelW,labelH],iconAnchor:[Math.round(labelW/2),Math.round(labelH/2)]})}));
     } else {
       var p = findPos(d.lat,d.lng,cfg.basePx*0.7,80,36,segPx,dp,boxes,false);
       boxes.push(p.box);
