@@ -31,6 +31,7 @@ pois:
     rank: major
     iconAnchor: [0, 18]
   - name: 墨石公园
+    hint: 道孚
     coord: [30.4496, 101.5417]
     rank: major
     shuttle: true
