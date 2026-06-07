@@ -746,11 +746,18 @@ def resolve(yaml_path: str, output_path: str | None = None):
         if city_elev and city_elev > 2000:
             elev_tag = f'<span class="tag tag-elev">🏔️{city_elev}m</span>'
         
+        # 计算当天日期
+        if start_date:
+            day_date = start_date + timedelta(days=idx)
+            date_str = f"{day_date.month}月{day_date.day}日 {weekday_names[day_date.weekday()]}"
+        else:
+            date_str = ""
+        
         sidebar_items.append(f'''    <div class="stop stop-{idx}">
       <div class="stop-marker"><div class="stop-dot">{d}</div><div class="stop-line"></div></div>
       <div class="stop-content">
         <div class="stop-title" style="color:{color}">{name} <span class="st-sub">{theme}</span></div>
-        <div class="stop-meta">{day_label} {disttime}</div>
+        <div class="stop-meta">{date_str + (' · ' + disttime if disttime else '') if date_str else disttime}</div>
         <div class="stop-tags">{''.join(tag_htmls)}{elev_tag}</div>
         {tips_html}
       </div>
@@ -779,13 +786,6 @@ def resolve(yaml_path: str, output_path: str | None = None):
       {tl_items}
     </div>
   </div>'''
-        
-        # 计算当天日期
-        if start_date:
-            day_date = start_date + timedelta(days=idx)
-            date_str = f"{day_date.month}月{day_date.day}日 {weekday_names[day_date.weekday()]}"
-        else:
-            date_str = ""
         
         day_card_items.append(f'''  <div class="day-card card-{idx}">
     <div class="day-header"><span class="day-label" style="color:{color}">{day_label}{' · ' + date_str if date_str else ''}</span><span class="day-date">{disttime}</span></div>
