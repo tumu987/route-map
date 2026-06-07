@@ -2,11 +2,11 @@
 // map.js — 线段碰撞检测（路线用线段而非散点）
 // ═══════════════════════════════════════════════════
 
-var map = L.map('map', { center: [{{CENTER_LAT}}, {{CENTER_LNG}}], zoom: 7, zoomControl: true, scrollWheelZoom: true });
-L.tileLayer('{{TILE_URL}}', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+var map = L.map('map', { center: [{{CENTER_LAT}}, {{CENTER_LNG}}], zoom: 7, zoomControl: true, scrollWheelZoom: true, attributionControl: false });
+L.tileLayer('{{TILE_URL}}', { subdomains: 'abcd', maxZoom: 20 }).addTo(map);
 
-var standardTile = L.tileLayer('{{TILE_URL}}', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 });
-var terrainTile = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 17 });
+var standardTile = L.tileLayer('{{TILE_URL}}', { subdomains: 'abcd', maxZoom: 20 });
+var terrainTile = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 17 });
 standardTile.addTo(map);
 document.querySelectorAll('.ls-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {

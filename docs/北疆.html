@@ -695,8 +695,8 @@ header .badge { background: #efece4; border: 1px solid #ddd8ce; border-radius: 2
 #fullscreen-btn { position: absolute; top: 12px; right: 12px; z-index: 1001; width: 36px; height: 36px; border-radius: 8px; border: 1px solid #f0ede6; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; color: #7a7258; transition: all .15s; user-select: none; }
 #fullscreen-btn:hover { background: #efece4; color: #3d3929; }
 .map-section.fullscreen #fullscreen-btn { position: fixed; top: 16px; right: 16px; z-index: 10000; }
-#layer-switch { position: absolute; top: 12px; left: 12px; z-index: 1000; display: flex; gap: 0; background: rgba(255,255,255,0.92); border: 1px solid #f0ede6; border-radius: 8px; overflow: hidden; backdrop-filter: blur(8px); }
-.map-section.fullscreen #layer-switch { position: fixed; top: 16px; left: 16px; z-index: 10000; }
+#layer-switch { position: absolute; bottom: 12px; right: 12px; z-index: 1000; display: flex; gap: 0; background: rgba(255,255,255,0.92); border: 1px solid #f0ede6; border-radius: 8px; overflow: hidden; backdrop-filter: blur(8px); }
+.map-section.fullscreen #layer-switch { position: fixed; bottom: 16px; right: 16px; z-index: 10000; }
 .ls-btn { padding: 6px 12px; font-size: 12px; cursor: pointer; color: #a0987a; transition: all .15s; user-select: none; background: transparent; border: none; font-family: inherit; }
 .ls-btn.active { background: #efece4; color: #7a6a4a; font-weight: 600; }
 .ls-btn:not(.active):hover { color: #3d3929; }
@@ -1115,11 +1115,11 @@ var spots = [[48.658248, 87.037659, "神仙湾"], [43.909509, 81.329979, "喀赞
 // map.js — 线段碰撞检测（路线用线段而非散点）
 // ═══════════════════════════════════════════════════
 
-var map = L.map('map', { center: [45.3554, 85.2702], zoom: 7, zoomControl: true, scrollWheelZoom: true });
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+var map = L.map('map', { center: [45.3554, 85.2702], zoom: 7, zoomControl: true, scrollWheelZoom: true, attributionControl: false });
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 20 }).addTo(map);
 
-var standardTile = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 });
-var terrainTile = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles &copy; Esri', maxZoom: 17 });
+var standardTile = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 20 });
+var terrainTile = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 17 });
 standardTile.addTo(map);
 document.querySelectorAll('.ls-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
