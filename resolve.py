@@ -783,7 +783,7 @@ def resolve(yaml_path: str, output_path: str | None = None):
         # 计算当天日期
         if start_date:
             day_date = start_date + timedelta(days=idx)
-            date_str = f"{day_date.month}/{day_date.day} {weekday_names[day_date.weekday()]}"
+            date_str = f"{day_date.month}月{day_date.day}日 {weekday_names[day_date.weekday()]}"
         else:
             date_str = ""
         
