@@ -64,8 +64,8 @@ def save_elev_cache():
 def geocode(name: str, hint: str = '') -> list[float] | None:
     """查地名坐标，返回 [lat, lng] 或 None
     
-    支持 hint 辅助：若 hint 不为空且初次失败，用 name + hint 重试一次。
-    即便 name_raw 之前被缓存为 None，有 hint 时仍然重试。
+    有 hint 时优先尝试 name + hint，降低裸地名误匹配率。
+    hint 失败后再回退到 name + '中国' 兜底。
     """
     name_raw = name.strip()
     if name_raw in _geo_cache:
@@ -77,27 +77,53 @@ def geocode(name: str, hint: str = '') -> list[float] | None:
             return None
         # 有 hint → 尝试 hint 路径（忽略失败缓存）
     
-    # 初次查询: name + 中国
-    result = _geocode_query(name_raw + ' 中国', name_raw)
-    if result is not None:
-        return result
-    
-    # 有 hint → 重试: name + hint
+    queries = []
     if hint:
         hint = hint.strip()
-        hinted = f"{name_raw} {hint}"
-        if hinted not in _geo_cache:
-            result = _geocode_query(hinted, name_raw)
-            if result is not None:
-                return result
-            # Also cache the hinted name to avoid repeat
-            _geo_cache[hinted] = None
-            save_geo_cache()
+        queries.append((f"{name_raw} {hint}", name_raw))
+    queries.append((name_raw + ' 中国', name_raw))
+    
+    for query, cache_key in queries:
+        result = _geocode_query(query, cache_key)
+        if result is not None:
+            # 合理性校验：若已知坐标群存在，检查结果是否在合理范围内
+            _validate_geocode_sanity(result, name_raw)
+            return result
     
     print(f"  ⚠ 未找到坐标: {name_raw}" + (f" (尝试 hint: {hint})" if hint else ""))
     _geo_cache[name_raw] = None
     save_geo_cache()
     return None
+
+
+# 已知地理参考坐标，用于 geocode 结果合理性校验
+# 当 geocode 返回的结果距所有参考点 >500km 时，发警告
+_geo_reference_coords: list = []
+
+def set_geo_reference_coords(coords: list[list[float]]):
+    """设置地理参考坐标池（来自 YAML 中 cities 和 POI 的 explicit coord）"""
+    global _geo_reference_coords
+    _geo_reference_coords = coords
+
+def _haversine_km(p1: list[float], p2: list[float]) -> float:
+    """Haversine 公式计算两点间距离（km）"""
+    from math import radians, sin, cos, sqrt, atan2
+    R = 6371.0
+    lat1, lon1 = radians(p1[0]), radians(p1[1])
+    lat2, lon2 = radians(p2[0]), radians(p2[1])
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    return R * 2 * atan2(sqrt(a), sqrt(1 - a))
+
+def _validate_geocode_sanity(coord: list[float], name: str):
+    """校验 geocode 结果是否偏离已知参考点过远"""
+    if not _geo_reference_coords:
+        return
+    min_km = min(_haversine_km(coord, ref) for ref in _geo_reference_coords)
+    if min_km > 500:
+        print(f"  ⚠ 地名「{name}」geocode 结果 [{coord[0]:.4f}, {coord[1]:.4f}] "
+              f"距最近参考点 {min_km:.0f}km，可能误匹配！建议加 hint 或显式指定 coord")
 
 
 def _geocode_query(query: str, cache_key: str) -> list[float] | None:
@@ -533,6 +559,25 @@ def resolve(yaml_path: str, output_path: str | None = None):
     
     # POI 摆渡车映射
     poi_shuttle_map = {p['name']: p.get('shuttle', False) for p in pois_yaml if 'name' in p}
+    # POI explicit coord 映射：用于 via 点优先取 explicit coord，避免 geocode 误匹配
+    poi_explicit_coord = {}
+    for p in pois_yaml:
+        name = p.get('name', '')
+        if not name:
+            continue
+        if 'lat' in p and 'lng' in p:
+            poi_explicit_coord[name] = [p['lat'], p['lng']]
+        elif 'coord' in p and isinstance(p['coord'], (list, tuple)) and len(p['coord']) == 2:
+            poi_explicit_coord[name] = [float(p['coord'][0]), float(p['coord'][1])]
+    
+    # 收集参考坐标，用于 geocode 结果校验
+    ref_coords = []
+    for c in city_name_to_coord.values():
+        ref_coords.append([c['lat'], c['lng']])
+    for c in poi_explicit_coord.values():
+        ref_coords.append(c)
+    if ref_coords:
+        set_geo_reference_coords(ref_coords)
     
     # ── 5c. 算路 + 校验 ──
     print(f"\n🚗 获取 {N} 天路线...")
@@ -569,6 +614,8 @@ def resolve(yaml_path: str, output_path: str | None = None):
                 if v in city_name_to_coord:
                     c = city_name_to_coord[v]
                     return [c['lat'], c['lng']]
+                if v in poi_explicit_coord:
+                    return poi_explicit_coord[v]
                 return geocode(v)
             return [round(float(v[0]), 6), round(float(v[1]), 6)] if v else None
         
