@@ -588,11 +588,16 @@ def resolve(yaml_path: str, output_path: str | None = None):
         else:
             spur_routes.append({"day": d, "color": color, "polyline": polyline})
         
-        # Dx position
+        # Dx position — 优先用 OSRM 路线中点（保证在路线上）
         if day_type == 'local' and city and city in city_name_to_coord:
             cc = city_name_to_coord[city]
             dx_lat = cc['lat'] + 0.02
             dx_lng = cc['lng']
+        elif route_result and route_result.get('polyline') and len(route_result['polyline']) > 1:
+            poly = route_result['polyline']
+            mid = len(poly) // 2
+            dx_lat = poly[mid][0]
+            dx_lng = poly[mid][1]
         elif start and end:
             dx_lat = (start[0] + end[0]) / 2
             dx_lng = (start[1] + end[1]) / 2

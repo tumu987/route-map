@@ -220,7 +220,7 @@ function u() {
   for (var i=0;i<dxData.length;i++) {
     var d = dxData[i];
     if (cfg.compact) {
-      var p = findPos(d.lat,d.lng,cfg.basePx*0.7,40,16,segPx,dp,boxes,false);
+      var p = findPos(d.lat,d.lng,cfg.basePx*0.7,40,16,segPx,dp,boxes,true);
       boxes.push(p.box);
       labelLayer.addLayer(mkDxC(p.lat,p.lng,d.color,d.name));
     } else {

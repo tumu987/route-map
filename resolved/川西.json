@@ -1250,32 +1250,32 @@
   "dx_data": [
     {
       "name": "D1",
-      "lat": 30.330061,
-      "lng": 103.008937,
+      "lat": 30.026903,
+      "lng": 102.722166,
       "color": "#e74c3c",
       "dist": "🚗 280km · 3.5h",
       "sub": ""
     },
     {
       "name": "D2",
-      "lat": 30.023485,
-      "lng": 101.723181,
+      "lat": 30.065837,
+      "lng": 101.810555,
       "color": "#f39c12",
       "dist": "🚗 80km · 2.5h",
       "sub": ""
     },
     {
       "name": "D3",
-      "lat": 30.517318,
-      "lng": 101.643771,
+      "lat": 30.437002,
+      "lng": 101.534923,
       "color": "#27ae60",
       "dist": "🚗 150km · 4h",
       "sub": ""
     },
     {
       "name": "D4",
-      "lat": 30.991761,
-      "lng": 102.313294,
+      "lat": 31.035799,
+      "lng": 102.173328,
       "color": "#00bcd4",
       "dist": "🚗 120km · 3h",
       "sub": ""
@@ -1290,8 +1290,8 @@
     },
     {
       "name": "D6",
-      "lat": 30.827733,
-      "lng": 103.447083,
+      "lat": 31.107395,
+      "lng": 103.293394,
       "color": "#9c27b0",
       "dist": "🚗 200km · 4h",
       "sub": ""
@@ -1373,8 +1373,8 @@
   "stop_css": "  .stop-0 .stop-dot { border-color: #e74c3c; } .stop-0 .stop-line { background: linear-gradient(to bottom, #e74c3c, #f39c12); } .stop-0 .stop-title { color: #e74c3c; }\n  .stop-1 .stop-dot { border-color: #f39c12; } .stop-1 .stop-line { background: linear-gradient(to bottom, #f39c12, #27ae60); } .stop-1 .stop-title { color: #f39c12; }\n  .stop-2 .stop-dot { border-color: #27ae60; } .stop-2 .stop-line { background: linear-gradient(to bottom, #27ae60, #00bcd4); } .stop-2 .stop-title { color: #27ae60; }\n  .stop-3 .stop-dot { border-color: #00bcd4; } .stop-3 .stop-line { background: linear-gradient(to bottom, #00bcd4, #3f51b5); } .stop-3 .stop-title { color: #00bcd4; }\n  .stop-4 .stop-dot { border-color: #3f51b5; } .stop-4 .stop-line { background: linear-gradient(to bottom, #3f51b5, #9c27b0); } .stop-4 .stop-title { color: #3f51b5; }\n  .stop-5 .stop-dot { border-color: #9c27b0; } .stop-5 .stop-line { background: linear-gradient(to bottom, #9c27b0, #e91e63); } .stop-5 .stop-title { color: #9c27b0; }\n  .stop-6 .stop-dot { border-color: #e91e63; } .stop-6 .stop-title { color: #e91e63; }\n",
   "tile_url": "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
   "center": {
-    "lat": 30.5897,
-    "lng": 102.5972
+    "lat": 30.5882,
+    "lng": 102.5471
   },
   "day_colors": [
     "#e74c3c",
