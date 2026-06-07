@@ -19,11 +19,9 @@
   </div>
 </header>
 
-<div class="map-section">
-  <div class="legend">
-    {{LEGEND_HTML}}
-  </div>
+<div class="map-section" id="map-section">
   <div id="map"></div>
+  <button id="fullscreen-btn" onclick="toggleMapFullscreen()" title="全屏浏览">⛶</button>
   <div id="layer-switch">
     <span class="ls-btn active" data-layer="standard">标准</span>
     <span class="ls-btn" data-layer="terrain">地形</span>

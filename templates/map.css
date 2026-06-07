@@ -19,12 +19,15 @@ header .badge { background: #efece4; border: 1px solid #ddd8ce; border-radius: 2
 .stat-card .num { font-size: 24px; font-weight: 700; color: #3d3929; }
 .stat-card .label { font-size: 12px; color: #a0987a; margin-top: 4px; }
 
-.map-section { position: relative; background: #fff; border: 1px solid #f0ede6; border-radius: 16px; margin-bottom: 36px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
-.legend { display: flex; gap: 10px; padding: 8px 16px; background: #faf8f5; border-bottom: 1px solid #f0ede6; font-size: 11px; color: #7a7258; flex-wrap: wrap; align-items: center; }
-.legend-item { display: flex; align-items: center; gap: 4px; }
-.legend-line { width: 20px; height: 3px; border-radius: 2px; }
+.map-section { position: relative; background: #fff; border: 1px solid #f0ede6; border-radius: 16px; margin-bottom: 36px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.04); transition: all .3s ease; }
+.map-section.fullscreen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; border-radius: 0; margin: 0; border: none; }
+.map-section.fullscreen #map { height: 100vh !important; border-radius: 0; }
 #map { height: 500px; width: 100%; background: #faf8f5; border-radius: 0; }
-#layer-switch { position: absolute; top: 4.5em; right: 12px; z-index: 1000; display: flex; gap: 0; background: rgba(255,255,255,0.92); border: 1px solid #f0ede6; border-radius: 8px; overflow: hidden; backdrop-filter: blur(8px); }
+#fullscreen-btn { position: absolute; top: 12px; right: 12px; z-index: 1001; width: 36px; height: 36px; border-radius: 8px; border: 1px solid #f0ede6; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; color: #7a7258; transition: all .15s; user-select: none; }
+#fullscreen-btn:hover { background: #efece4; color: #3d3929; }
+.map-section.fullscreen #fullscreen-btn { position: fixed; top: 16px; right: 16px; z-index: 10000; }
+#layer-switch { position: absolute; top: 12px; left: 12px; z-index: 1000; display: flex; gap: 0; background: rgba(255,255,255,0.92); border: 1px solid #f0ede6; border-radius: 8px; overflow: hidden; backdrop-filter: blur(8px); }
+.map-section.fullscreen #layer-switch { position: fixed; top: 16px; left: 16px; z-index: 10000; }
 .ls-btn { padding: 6px 12px; font-size: 12px; cursor: pointer; color: #a0987a; transition: all .15s; user-select: none; background: transparent; border: none; font-family: inherit; }
 .ls-btn.active { background: #efece4; color: #7a6a4a; font-weight: 600; }
 .ls-btn:not(.active):hover { color: #3d3929; }

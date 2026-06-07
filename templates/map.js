@@ -280,3 +280,26 @@ function u() {
   if (map.hasLayer(labelLayer)){map.removeLayer(labelLayer);map.addLayer(labelLayer);}
 }
 map.on('zoomend',u); u();
+
+// ── 全屏切换 ──
+function toggleMapFullscreen() {
+  var el = document.getElementById('map-section');
+  el.classList.toggle('fullscreen');
+  var btn = document.getElementById('fullscreen-btn');
+  btn.textContent = el.classList.contains('fullscreen') ? '✕' : '⛶';
+  btn.title = el.classList.contains('fullscreen') ? '退出全屏' : '全屏浏览';
+  // 延迟让 CSS transition 完成后刷新地图
+  setTimeout(function(){ map.invalidateSize(); }, 350);
+}
+// ESC 退出全屏
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var el = document.getElementById('map-section');
+    if (el.classList.contains('fullscreen')) {
+      el.classList.remove('fullscreen');
+      document.getElementById('fullscreen-btn').textContent = '⛶';
+      document.getElementById('fullscreen-btn').title = '全屏浏览';
+      setTimeout(function(){ map.invalidateSize(); }, 350);
+    }
+  }
+});
