@@ -1,1 +1,5 @@
-__pycache__/\n.cache/\n*.pyc
+__pycache__/
+.cache/
+*.pyc
+output/
+resolved/
