@@ -573,6 +573,9 @@ def resolve(yaml_path: str, output_path: str | None = None):
             duration_min = route_result['duration_min']
             day['_resolved_distance'] = distance_km
             day['_resolved_duration'] = duration_min
+            # 用 OSRM polyline 端点覆盖入参坐标（OSRM 会 snap 到公路）
+            day['_resolved_start'] = polyline[0]
+            day['_resolved_end'] = polyline[-1]
         else:
             polyline = [[0,0],[0,0]]
             distance_km = 0
@@ -698,6 +701,24 @@ def resolve(yaml_path: str, output_path: str | None = None):
     {shuttle_note}
     {timeline_html}
   </div>''')
+    
+    # ── 城市坐标同步到路线端点 ──
+    # 修正: Nominatim 返回的城区中心和 OSRM 公路入口可能差数公里
+    # 导致城市圆点不在路线上。同步 route start/end 到对应城市。
+    for c in cities_res:
+        cname = c['name']
+        for d in days_data:
+            sc = d.get('_resolved_start')
+            ec = d.get('_resolved_end')
+            for pt, role in [(sc, 'start'), (ec, 'end')]:
+                if not pt: continue
+                rd = d.get('route', {})
+                if rd.get(role) == cname:
+                    c['lat'] = pt[0]
+                    c['lng'] = pt[1]
+                    if cname in city_name_to_coord:
+                        city_name_to_coord[cname]['lat'] = pt[0]
+                        city_name_to_coord[cname]['lng'] = pt[1]
     
     # ── 5d. 城市-颜色分配 ──
     city_assigned = {}

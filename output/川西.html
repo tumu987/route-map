@@ -975,7 +975,7 @@ var spurRoutes = [
   ['#3f51b5', sr_1],
   ['#e91e63', sr_2],
 ];
-var cityPosData = [{"name": "成都", "lat": 30.659867, "lng": 104.063315, "color": "#e74c3c", "elevation": 497}, {"name": "康定", "lat": 30.000256, "lng": 101.954558, "color": "#e74c3c", "elevation": 2818}, {"name": "新都桥", "lat": 30.046713, "lng": 101.491804, "color": "#f39c12", "elevation": 3465}, {"name": "丹巴", "lat": 30.987923, "lng": 101.795737, "color": "#27ae60", "elevation": 4170}, {"name": "四姑娘山", "lat": 30.995599, "lng": 102.830852, "color": "#00bcd4", "elevation": 3147}];
+var cityPosData = [{"name": "成都", "lat": 30.659867, "lng": 104.063315, "color": "#e74c3c", "elevation": 497}, {"name": "康定", "lat": 29.999862, "lng": 101.954555, "color": "#e74c3c", "elevation": 2818}, {"name": "新都桥", "lat": 30.046372, "lng": 101.491958, "color": "#f39c12", "elevation": 3465}, {"name": "丹巴", "lat": 30.97911, "lng": 101.853808, "color": "#27ae60", "elevation": 4170}, {"name": "四姑娘山", "lat": 30.995775, "lng": 102.830977, "color": "#00bcd4", "elevation": 3147}];
 var dxData = [{"name": "D1", "lat": 30.026903, "lng": 102.722166, "color": "#e74c3c", "dist": "🚗 280km · 3.5h", "sub": ""}, {"name": "D2", "lat": 30.065837, "lng": 101.810555, "color": "#f39c12", "dist": "🚗 80km · 2.5h", "sub": ""}, {"name": "D3", "lat": 30.437002, "lng": 101.534923, "color": "#27ae60", "dist": "🚗 150km · 4h", "sub": ""}, {"name": "D4", "lat": 31.035799, "lng": 102.173328, "color": "#00bcd4", "dist": "🚗 120km · 3h", "sub": ""}, {"name": "D5", "lat": 31.015599, "lng": 102.830852, "color": "#3f51b5", "dist": "🚗 景区游览", "sub": "四姑娘山全天"}, {"name": "D6", "lat": 31.107395, "lng": 103.293394, "color": "#9c27b0", "dist": "🚗 200km · 4h", "sub": ""}, {"name": "D7", "lat": 30.679867, "lng": 104.063315, "color": "#e91e63", "dist": "", "sub": "成都全天"}];
 var majorSpots = [[29.914526, 102.230202, "#8b6a4a", "泸定桥", 0, -20], [30.074341, 101.804066, "#8b6a4a", "折多山垭口", 0, -20], [30.337029, 101.560724, "#8b6a4a", "塔公草原", 0, 18], [30.4496, 101.5417, "#8b6a4a", "墨石公园", 0, -20], [30.386496, 101.66313, "#8b6a4a", "雅拉雪山观景台", 0, -20], [30.943108, 101.864079, "#8b6a4a", "甲居藏寨", 0, 18], [30.981747, 102.767846, "#8b6a4a", "双桥沟", 0, -20], [30.910711, 102.894498, "#8b6a4a", "巴朗山垭口", 0, 18]];
 var spots = [[31.115827, 103.250362, "鱼子西"], [30.564468, 101.4932, "惠远寺"]];
@@ -984,7 +984,7 @@ var spots = [[31.115827, 103.250362, "鱼子西"], [30.564468, 101.4932, "惠远
 // map.js — 线段碰撞检测（路线用线段而非散点）
 // ═══════════════════════════════════════════════════
 
-var map = L.map('map', { center: [30.5882, 102.5471], zoom: 7, zoomControl: true, scrollWheelZoom: true });
+var map = L.map('map', { center: [30.5874, 102.5519], zoom: 7, zoomControl: true, scrollWheelZoom: true });
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
 
 var standardTile = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 });

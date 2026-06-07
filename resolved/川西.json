@@ -20,29 +20,29 @@
     },
     {
       "name": "康定",
-      "lat": 30.000256,
-      "lng": 101.954558,
+      "lat": 29.999862,
+      "lng": 101.954555,
       "color": "#e74c3c",
       "elevation": 2818
     },
     {
       "name": "新都桥",
-      "lat": 30.046713,
-      "lng": 101.491804,
+      "lat": 30.046372,
+      "lng": 101.491958,
       "color": "#f39c12",
       "elevation": 3465
     },
     {
       "name": "丹巴",
-      "lat": 30.987923,
-      "lng": 101.795737,
+      "lat": 30.97911,
+      "lng": 101.853808,
       "color": "#27ae60",
       "elevation": 4170
     },
     {
       "name": "四姑娘山",
-      "lat": 30.995599,
-      "lng": 102.830852,
+      "lat": 30.995775,
+      "lng": 102.830977,
       "color": "#00bcd4",
       "elevation": 3147
     }
@@ -1373,8 +1373,8 @@
   "stop_css": "  .stop-0 .stop-dot { border-color: #e74c3c; } .stop-0 .stop-line { background: linear-gradient(to bottom, #e74c3c, #f39c12); } .stop-0 .stop-title { color: #e74c3c; }\n  .stop-1 .stop-dot { border-color: #f39c12; } .stop-1 .stop-line { background: linear-gradient(to bottom, #f39c12, #27ae60); } .stop-1 .stop-title { color: #f39c12; }\n  .stop-2 .stop-dot { border-color: #27ae60; } .stop-2 .stop-line { background: linear-gradient(to bottom, #27ae60, #00bcd4); } .stop-2 .stop-title { color: #27ae60; }\n  .stop-3 .stop-dot { border-color: #00bcd4; } .stop-3 .stop-line { background: linear-gradient(to bottom, #00bcd4, #3f51b5); } .stop-3 .stop-title { color: #00bcd4; }\n  .stop-4 .stop-dot { border-color: #3f51b5; } .stop-4 .stop-line { background: linear-gradient(to bottom, #3f51b5, #9c27b0); } .stop-4 .stop-title { color: #3f51b5; }\n  .stop-5 .stop-dot { border-color: #9c27b0; } .stop-5 .stop-line { background: linear-gradient(to bottom, #9c27b0, #e91e63); } .stop-5 .stop-title { color: #9c27b0; }\n  .stop-6 .stop-dot { border-color: #e91e63; } .stop-6 .stop-title { color: #e91e63; }\n",
   "tile_url": "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
   "center": {
-    "lat": 30.5882,
-    "lng": 102.5471
+    "lat": 30.5874,
+    "lng": 102.5519
   },
   "day_colors": [
     "#e74c3c",
